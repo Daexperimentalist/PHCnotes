@@ -1,0 +1,642 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Nutrition</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="978ee55d-6ba3-4fd8-ad84-7ea493869108" class="page sans"><header><h1 class="page-title">Nutrition</h1></header><div class="page-body"><ul id="c1c748e0-2af9-4748-97b3-e9f76b8b208b" class="toggle"><li><details open=""><summary>define nutrition?</summary><p id="c921252a-a040-4cd1-bcc8-e388ec3277ca" class="">the science of food and its relation to health. It is the intake of food, considered in relation to the body’s dietary needs.</p></details></li></ul><ul id="dfefc506-df0d-477c-b63a-6a9ff984f58f" class="toggle"><li><details open=""><summary>types of nutrients?</summary><p id="9ce9009f-25c8-4e07-a896-4e8f0d396ace" class="">Nutrients are the complexes contained in food; it is divided into:</p><ul id="b6fd94f5-f642-4224-a106-6f1cd632107c" class="bulleted-list"><li><mark class="highlight-orange_background">Macronutrients</mark> which form main bulk of food ( i.e. protein, fats and carbohydrates).</li></ul><ul id="1e80a599-d264-4467-9654-059a5708ec11" class="bulleted-list"><li><mark class="highlight-orange_background">Micronutrients</mark> required in small amounts ( i.e. vitamins and minerals).</li></ul></details></li></ul><ul id="64277689-2d67-4dab-9fb1-091ba337466a" class="toggle"><li><details open=""><summary>what&#x27;s a balanced diet?</summary><p id="cac4a9e4-7888-423d-a2a1-2f1d890fe354" class="">the one that contains a variety of foods in such <mark class="highlight-orange_background">quantities &amp; proportions that meet all the needs for maintaining health,</mark> vitality &amp; general well-being. It has become an accepted means to safeguard a population from nutritional deficiencies.</p></details></li></ul><ul id="91dbb85a-f7da-4167-ad92-344d846abdb7" class="toggle"><li><details open=""><summary>what&#x27;re the factors that affect the variety if diet?</summary><ul id="aa75bd18-12d4-4298-b2a7-fa71a0a88531" class="bulleted-list"><li>individual factors and needs ( e.g. age, gender, lifestyle, degree of physical activity)</li></ul><ul id="9825adaf-e9bd-484b-94ca-664c89ec6ff8" class="bulleted-list"><li>cultural context ( i.e. individual preferences and believes)</li></ul><ul id="64746514-1bf4-40d5-a433-a1e31880290a" class="bulleted-list"><li>geographical and environmental factors affects the locally available foods and dietary customs.</li></ul><ul id="61e16599-5e0d-4827-ae93-3dae17297367" class="bulleted-list"><li>Income and food prices</li></ul></details></li></ul><ul id="6162159d-dd55-47e7-aa98-64d94db69097" class="toggle"><li><details open=""><summary>what influences the nutritional status of the community?</summary><ul id="53c3aef2-672c-4a3e-ab41-62e3fff06708" class="bulleted-list"><li>nutritional status of the individuals who form the community.</li></ul><ul id="771118e6-34c6-47ea-b7cd-6bd45e055fc0" class="bulleted-list"><li>which is affected by the adequacy of food intake both in term of quality and quantity.</li></ul><ul id="a806bb68-559c-4c95-98e4-cc41ffee7200" class="bulleted-list"><li>The nutritional status of the community is the sum of the nutritional status of the individuals, duh!.</li></ul></details></li></ul><ul id="387609b9-d37f-4ca5-b2c8-97cce38d7166" class="toggle"><li><details open=""><summary>dietary recommendations</summary><ul id="12161876-3e64-4e74-8e4a-8de0b02c5551" class="toggle"><li><details open=""><summary>children</summary><ul id="982aff35-c9ba-4642-97d2-4e0ca9ba8e0d" class="toggle"><li><details open=""><summary>infants and children</summary><ul id="d1e28ffc-61e8-43c8-893e-5c00fdc04eb7" class="toggle"><li><details open=""><summary>WHO and UNICEF recommendations</summary><ol id="72c450f3-4fa4-48c5-a5f7-7c6488ed925a" class="numbered-list" start="1"><li>Early initiation of breastfeeding within 1 hour of birth;</li></ol><ol id="9b2be912-5371-4e85-90dd-dba1c1354de7" class="numbered-list" start="2"><li>Exclusive breastfeeding for the first 6 months of life;</li></ol><ol id="95b743de-c4b1-4ce0-b1ee-0ca3ba631a46" class="numbered-list" start="3"><li>Breastfeeding should be &quot;on demand&quot;, as often as the child wants day and night; and</li></ol><ol id="ebd61e80-01e7-4896-a4d2-1aa413825409" class="numbered-list" start="4"><li>Bottles or pacifiers should be avoided</li></ol><ol id="3f2697a6-4b37-405b-b88b-3f71fef40a0e" class="numbered-list" start="5"><li>Introduction of nutritionally-adequate and safe complementary (solid) foods at 6 months together with continued breastfeeding up to 2 years of age or beyond.</li></ol></details></li></ul><ul id="32d2a303-538b-47ac-8637-1de92097ba7a" class="toggle"><li><details open=""><summary>breastfeeding</summary><ul id="30bf259f-0f19-48e4-bbda-fd2341f9a221" class="toggle"><li><details open=""><summary>what&#x27;re the benefits?</summary><ul id="42a5ab22-81e1-4f5b-b7ab-65b47d03b944" class="toggle"><li><details open=""><summary>for infants?</summary><ul id="4d642318-0859-4f77-ad9c-a3d1d3c7594a" class="bulleted-list"><li>It is safe and contains antibodies that help protect infants from common childhood illnesses such as: diarrhea and pneumonia, the two primary causes of child mortality worldwide.</li></ul><ul id="173a64f6-f824-42b9-a97b-fc333238bd95" class="bulleted-list"><li>Infant and young child feeding is a key area to improve child survival and promote healthy growth and development</li></ul><ul id="d9d4e978-a797-488e-af24-ee4480843aeb" class="bulleted-list"><li>Breast milk is readily available and affordable, which helps to ensure that infants get adequate nutrition.</li></ul></details></li></ul><ul id="e3be0dd1-b8c3-44c1-b20c-1300ea37c04e" class="toggle"><li><details open=""><summary>in the long-term ( children)?</summary><ul id="00f83afb-0685-4566-b27c-af9213f827cc" class="bulleted-list"><li>Breastfeeding contributes to a lifetime of good health.</li></ul><ul id="b850b53a-8582-4504-b5aa-cf099758eef1" class="bulleted-list"><li>Adolescents and adults who were breastfed as babies are less likely to be overweight or obese.</li></ul><ul id="5f4a0099-7f45-4f5d-b715-aae19a6e1d05" class="bulleted-list"><li>They are less likely to have type-II diabetes and perform better in intelligence tests.</li></ul></details></li></ul><ul id="aaaed9fe-6618-4535-915a-5e270fe232e2" class="toggle"><li><details open=""><summary>for mothers?</summary><p id="8867aef3-16bc-4b0b-8c5a-e6c961aab125" class="">short-term:</p><ul id="4ec15272-d6bb-461b-86e4-07e5e6627511" class="bulleted-list"><li>The risk of postpartum haemorrhage may be reduced by breastfeeding immediately after delivery</li></ul><ul id="817e91d3-80c8-45c5-9756-cc7c1c62c86c" class="bulleted-list"><li>postpartum depression is less among women who breastfed Also breastfeeding accelerate recovery of pre-pregnancy weight.</li></ul><p id="6ca01f08-f610-4cad-82b4-2d17e48da3c8" class="">long-term:</p><ul id="c8a730c5-db58-4800-9399-87574fe40a16" class="bulleted-list"><li>reduced risk of breast and ovarian cancer</li></ul><ul id="61533fc1-e84a-4989-ab55-765bbe7f2163" class="bulleted-list"><li>exclusive breastfeeding can <mark class="highlight-orange_background">delay the return of fertility</mark>, Mothers who breastfeed exclusively and frequently have less than a 2% risk of becoming pregnant in the first 6 months postpartum, provided that they still have amenorrhoea.</li></ul></details></li></ul></details></li></ul><ul id="64a51ed4-0a38-4d37-a7b6-3c1a15907d46" class="toggle"><li><details open=""><summary>what&#x27;s colostrum?</summary><ul id="40b2958c-a1e5-41a4-8254-dbae248223b5" class="bulleted-list"><li>Colostrum is the special milk that is secreted in the first 2–3 days after delivery. It is produced in small amounts, about 40–50 ml on the first day, but is all that an infant normally needs at this time. </li></ul><ul id="4eaa5ab4-6eb4-43ba-a246-2e2be19bfbb1" class="bulleted-list"><li>Colostrum is rich in white cells and antibodies &amp; provides important immune protection to an infant when he or she is first exposed to the micro-organisms in the environment.</li></ul><ul id="644ae275-ab68-431f-a11d-50fbaf40c13c" class="bulleted-list"><li>Colostrum contains a larger percentage of protein, minerals and fat-soluble vitamins (A, E and K) than later milk.</li></ul></details></li></ul><ul id="5f6259dc-5931-4950-8f89-29f6b16c4c35" class="toggle"><li><details open=""><summary>what&#x27;re the reasons to avoid giving infants a formula?</summary><ul id="2788c17e-c39c-4102-ab37-c3589f605775" class="bulleted-list"><li>Infant formula does not contain the antibodies found in breast milk.</li></ul><ul id="dd026487-0f66-4e1f-beba-72ae791b182e" class="bulleted-list"><li>The long-term benefits of breastfeeding for mothers and children cannot be replicated with infant formula.</li></ul><ul id="b09b228d-e2ab-4c89-8bf4-9073c2d62d43" class="bulleted-list"><li>When infant formula is not properly prepared, there are risks arising from the use of unsafe water and unsterilized equipment or the potential presence of bacteria in powdered formula. Malnutrition can result from over-diluting formula to &quot;stretch&quot; supplies.</li></ul><ul id="f5275d15-f303-4b59-bddb-b2d18cfc4362" class="bulleted-list"><li>If formula is used but becomes unavailable, a return to breastfeeding may not be an option due to diminished breast milk production.</li></ul></details></li></ul><ul id="b0923e21-6e1c-46f5-b110-669c7275416e" class="toggle"><li><details open=""><summary>why is bottle feeding not recommended?</summary><ul id="6aea9f49-cd2a-40c1-90d6-a3e0c995100b" class="bulleted-list"><li>Risk of contamination</li></ul><ul id="e4eab52a-ea01-4805-8873-5faed21f9ec6" class="bulleted-list"><li>Prone to over-dilution</li></ul><ul id="a7dc8edd-c297-4327-8c19-ced0da3c5416" class="bulleted-list"><li>infective diarrhea</li></ul><ul id="8ed74ae8-5ee5-42d6-88c8-411b2d9ab7e2" class="bulleted-list"><li>Costly</li></ul><ul id="c63269bd-05d4-4f7a-a3bc-6213892ce2b5" class="bulleted-list"><li>Asso. w/ infantile obesity or protein-calorie malnutrition</li></ul></details></li></ul><ul id="1efb11cd-983f-49c6-83e4-450dd6f58f9f" class="toggle"><li><details open=""><summary>HIV and breastfeeding?</summary><ul id="a67fe809-b70b-4212-ac7f-4a3f3ef22eb1" class="bulleted-list"><li>An HIV-infected mother can pass the infection to her infant during pregnancy, delivery and through breastfeeding.</li></ul><ul id="12c12fc7-89cb-47ab-bfc9-c445a270acc8" class="bulleted-list"><li>However, antiretroviral (ARV) drugs given to either the mother or HIV-exposed infant reduces the risk of transmission.</li></ul><ul id="f1da8326-d5f6-4a95-8c70-0e941e0b3a5f" class="bulleted-list"><li>Together, breastfeeding and ARVs have the potential to significantly improve infants&#x27; chances of surviving while remaining HIV uninfected.</li></ul><ul id="d8961940-642f-4d79-8360-d56316e9e8e8" class="bulleted-list"><li>WHO recommends that when HIV-infected mothers breastfeed, they should receive ARVs and follow WHO guidance for infant feeding.</li></ul></details></li></ul><ul id="b216189c-4de2-4862-8eef-4822f79f6d3f" class="toggle"><li><details open=""><summary>types of mixed feeding?</summary><ul id="2d560677-0046-42b7-ae4e-7b38d93f7632" class="bulleted-list"><li>Complemental : bottle is given because mother’s milk is insufficient</li></ul><ul id="83ef0dbd-bfb1-443e-8062-529859ae933c" class="bulleted-list"><li>Supplemental: bottle is given to replace 1 or more feeding when mother is away for periods longer than feeding intervals</li></ul></details></li></ul></details></li></ul><ul id="3af96d98-df09-44a3-8358-89cb3d37e1f2" class="toggle"><li><details open=""><summary>weaning and complementary foods</summary><ul id="1c00fcdb-fa6b-4639-a2b1-6c0d5ebaaabf" class="toggle"><li><details open=""><summary>define weaning?</summary><p id="9b8cd1d0-8258-4def-b694-4c23fba73f60" class="">Gradual change from an all-milk diet to a diet composed of a variety of foods(6 month)</p></details></li></ul><ul id="08638fa4-987d-4d78-9a27-6fe97e2cb8c9" class="toggle"><li><details open=""><summary>completions of early and late weaning?</summary><p id="d80c4023-36be-4595-9656-47eaca52eb5e" class="">Early abrupt weaning lead to:</p><ul id="3b0399fe-17b9-47f4-adc4-0d80156bdc1e" class="bulleted-list"><li>Infections</li></ul><ul id="24ef2dce-355c-4e7f-9470-3afab4442e13" class="bulleted-list"><li>Protein Energy Malnutrition</li></ul><p id="423bef71-9a6f-4c1f-942d-2a974226b0ef" class="">Late weaning lead  to Protein Energy Malnutrition</p></details></li></ul><ul id="36a08030-9692-40cb-b366-8ee98f1561fb" class="toggle"><li><details open=""><summary>complementary food?</summary><p id="4017e0a1-0004-4f55-961f-7353aeaa0bae" class="">
+</p><ul id="858718e3-424f-4c0c-88f9-aeea15d75913" class="bulleted-list"><li>Need to be nutritionally-adequate, safe and appropriately fed in order to meet the young child’s energy and nutrient needs.</li></ul><ul id="3718a5f7-0c4d-4e2c-8b5c-2d5f3137a6c6" class="bulleted-list"><li>Start at 6 months of age with small amounts of food, and increase the quantity as the child gets older, while maintaining frequent breastfeeding.</li></ul><ul id="178fdcec-5d40-45f0-9823-e77df958a240" class="bulleted-list"><li>Gradually increase food consistency and variety as the infant grows older, adapting to the infant’s requirements and abilities.</li></ul><ul id="d1e8241b-ccd2-4105-a437-0e3cb566318c" class="bulleted-list"><li>Increase the number of times that the child is fed complementary foods as the child gets older and feed a variety of nutrient-rich foods to ensure that all nutrient needs are met.</li></ul><p id="a34ba434-087b-406a-97dc-372a15399bf9" class="">Complementary foods should be :</p><p id="2cc4c966-a2bc-4e34-b396-6c43e6aa91b1" class="">* Rich in energy, protein and micronutrients
+* Not spicy or salty;
+* Easy for the child to eat;
+* Liked by the child;
+* Locally available and affordable.</p><p id="e387603b-3178-4c10-9dea-0c984bef8433" class="">Indications of Good Nutrition of Children:</p><ul id="9afc4bd5-04d7-48b7-bc9c-4fb12a64644f" class="bulleted-list"><li>Body weight gain (“wt. in kg/ height in m2)</li></ul><ul id="41ba18c2-9b40-4078-80a6-59d9b8b953a1" class="bulleted-list"><li>MUAC(mid upper arm circumference)</li></ul><ul id="cf4dd566-aea9-4f3a-bd47-1fe06f33b8fe" class="bulleted-list"><li>Behavioral development</li></ul><ul id="1375b32c-c835-4e33-926b-f9b0128d5370" class="bulleted-list"><li>Bowel movements</li></ul><ul id="9ca52b70-ab62-4031-869f-9e8d622fe815" class="bulleted-list"><li>Sleeping habit</li></ul><ul id="0d14fb76-16ca-4470-af94-3c2d86e0be88" class="bulleted-list"><li>Developed motor coordination</li></ul><ul id="144fc4c8-44a2-4521-84d0-c64e07de3b7e" class="bulleted-list"><li>Well-formed muscles</li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="37a32bac-2faa-4ee8-bea9-4bcb48ff7d59" class="toggle"><li><details open=""><summary>adults</summary><ul id="abe8b634-3bd2-418e-9c6d-f1aae90ce7a4" class="bulleted-list"><li>Eating more fruit, vegetables, legumes, nuts and grains; cutting down on salt, sugar and fats. It is also advisable to choose unsaturated fats, instead of saturated fats.</li></ul></details></li></ul></details></li></ul><ul id="6f6cc5fb-0e3d-472a-8d1c-154150a86041" class="toggle"><li><details open=""><summary>malnutrition</summary><ul id="4cfadeab-89ea-42d1-8918-6ff4c49d2d82" class="toggle"><li><details open=""><summary>def?</summary><p id="8dc74eb4-959c-4a28-89fc-b8d8d1f890f0" class="">Is defined as a pathological state resulting from a relative or absolute deficiency or excess of one or more essential nutrients</p></details></li></ul><ul id="5e43200d-77c1-4312-985a-6e4e629f3873" class="toggle"><li><details open=""><summary>what&#x27;re the causes of malnutrition  ( nutritional disorders)?</summary><ul id="06a5a3e5-34d8-4296-b7f7-0310a093abe0" class="bulleted-list"><li>An insufficient intake of food or of certain nutrients.</li></ul><ul id="d844d3e5-b254-45bf-8057-93be91ac5881" class="bulleted-list"><li>An inability of the body to absorb and use nutrients.</li></ul><ul id="59290500-53d4-441f-84cb-379e746bbfe8" class="bulleted-list"><li>Or by over consumption of certain foods.</li></ul><p id="63819f84-5366-40fe-bc34-3de552b6d4a7" class="">
+</p><p id="c0a73db0-2402-413d-9ee5-d9ddde03684f" class="">
+</p><ul id="4a6803e6-d7da-4e41-a2ed-39a4edaa1585" class="bulleted-list"><li>Infectious diseases are important conditioning factors responsible for malnutrition.</li></ul><ul id="4c0bd737-fbb1-4b6a-b2ce-f99c03e904e5" class="bulleted-list"><li>Diarrhea, measles, malaria, T.B, all contribute to malnutrition.</li></ul><ul id="8b7bca54-8685-451c-ace8-f6c4521dccca" class="bulleted-list"><li>Cultural influences e.g. food habits, customs; believes; traditions and attitudes…etc.</li></ul><ul id="2946c842-c797-4377-849e-bf299e0502cf" class="bulleted-list"><li>Socio economic factors includes poverty, ignorance, large family size lack of knowledge regarding the nutritive value of food.</li></ul></details></li></ul><ul id="31dd1132-6719-4f83-90d6-c9c491bc8e55" class="toggle"><li><details open=""><summary>what&#x27;re the forms of malnutrition?</summary><ol id="c0f1963e-3715-4c19-9adf-9d68c10bf496" class="numbered-list" start="1"><li>Under nutrition : results when insufficient food is eaten over an extended period of time</li></ol><ol id="170967b4-210b-458e-8f1b-ae410cb5f1aa" class="numbered-list" start="2"><li>Over nutrition ( Obesity) pathological state resulting from the consumption of excessive quantity of food over an extended period of time.<ul id="133c64fe-65ba-4c5e-b65c-0f0f4f63b642" class="toggle"><li><details open=""><summary>Obesity</summary><ul id="1f43c40f-d167-4837-9e32-9f6af1cd5b6e" class="toggle"><li><details open=""><summary>def?</summary><p id="a26881fc-cabf-49e7-b223-f9718f26cbaa" class="">abnormal or excessive fat accumulation that presents a risk to health.</p><ul id="6d3c9232-91df-4bf0-afd7-2398d0b0b957" class="bulleted-list"><li>The fundamental cause of obesity and overweight is an energy imbalance between calories consumed on one hand, and calories expended on the other hand.</li></ul></details></li></ul><ul id="658094d5-1592-4acf-a7df-75ee3fe9b2ac" class="toggle"><li><details open=""><summary>what&#x27;s the cause of global fatness?</summary><ol id="4f8d6980-edad-420f-aef9-042c095460fa" class="numbered-list" start="1"><li>a global shift in diet towards increased intake of energy-dense foods that are high in fat and sugars but low in vitamins, minerals and other micronutrients</li></ol><ol id="0807ea76-9de0-44f1-9294-6b9112f9220a" class="numbered-list" start="2"><li>a trend towards decreased physical activity due to the increasingly sedentary nature of many forms of work,</li></ol><ol id="49b53b44-d325-4295-a492-dcf44eec6ca1" class="numbered-list" start="3"><li>changing modes of transportation, and increasing urbanization</li></ol></details></li></ul><ul id="670e51ea-1723-4665-a74f-f8e8f470aac8" class="toggle"><li><details open=""><summary>how do you measure obesity?</summary><ul id="83d829ec-94f5-441d-a683-eefececfead0" class="bulleted-list"><li>using the BMI for +18 ( weight in Kg /  height in m squared)</li></ul><ul id="91b4c85d-8362-46f0-b192-847005c77dd0" class="bulleted-list"><li>18.5 = underweight</li></ul><ul id="673e9cc1-15dd-45b9-a23c-d55fd06c3d1d" class="bulleted-list"><li>18.5 - 24.9 = healthy weight</li></ul><ul id="2b000dd8-a7e1-4df9-b2fe-007b7bbab073" class="bulleted-list"><li>25 - 29 = overweight</li></ul><ul id="62dc3ed7-7fe4-4eb9-b07b-49b7b1b4b293" class="bulleted-list"><li>+30 = obese</li></ul></details></li></ul><ul id="c5f25a2c-3642-4609-9577-a420da8bbc69" class="toggle"><li><details open=""><summary>how to prevent people from getting fat?</summary><ul id="3ec313a6-59cb-4647-b184-ae3aeb825c4c" class="bulleted-list"><li>achieve energy balance and a healthy weight;</li></ul><ul id="6496e9c5-b261-48ab-91e8-bec344796904" class="bulleted-list"><li>limit energy intake from total fats,</li></ul><ul id="2ea3fd8b-24e8-46d4-958d-c7083cae2884" class="bulleted-list"><li>increase consumption of fruit and vegetables, as well as whole grains;</li></ul><ul id="60968d6a-36b8-48f3-815f-d545cd58dada" class="bulleted-list"><li>limit the intake of sugars;</li></ul><ul id="ca203711-74d1-48fa-9e37-5febeb12da06" class="bulleted-list"><li>increase physical activity at least 30 minutes per day</li></ul><ul id="ee901d6d-2d0e-4e59-ad0a-58733454a1cb" class="bulleted-list"><li>More activity may be required for weight control.</li></ul></details></li></ul><ul id="87bc24bb-9204-41d7-8f74-5110c4be5bed" class="toggle"><li><details open=""><summary>what&#x27;s the double burden of malnutrition?</summary><ul id="dfcae9fb-eb49-4cb5-8e5d-f3417ef2f7ec" class="bulleted-list"><li>The double burden of malnutrition is a situation where overweight and obesity exist side-by-side with under-nutrition in the same country.</li></ul><ul id="835ea04b-d225-4d80-9a28-ed5fcb8797ce" class="bulleted-list"><li>We see this a lot in countries that are going through fast economic growth, also known as the nutrition transition.</li></ul></details></li></ul></details></li></ul></li></ol><ol id="793e5792-8df7-4b7e-84fb-aa5203abe70a" class="numbered-list" start="3"><li>Imbalance a pathological state resulting from a disproportion among essential nutrients with or without the absolute deficiency of any nutrient.</li></ol><ol id="2c05d590-5754-4880-99fd-c94cec02cb0d" class="numbered-list" start="4"><li>Specific deficiency the pathological state resulting from a relative or absolute lack of an individual nutrient.</li></ol></details></li></ul><ul id="12d4dc0b-997c-4901-b9e7-3174cb8d94ae" class="toggle"><li><details open=""><summary>what&#x27;re the common nutritional problems in public health?</summary><ul id="32e86458-dedd-406b-98bc-9d5a09d52e45" class="toggle"><li><details open=""><summary>low birth weight</summary><p id="0885352d-0524-4c85-b023-d6dc6ef85d10" class="">(i.e. birth weight less than 2.5 Kg), is a multi factorial problem although not all causes of LBW are known, maternal malnutrition &amp; anemia appear to be significant risk factors. Other associated factors includes, maternal illness, very young age, high parity, close birth intervals…etc.</p></details></li></ul><ul id="60b485ad-d2af-42bf-b486-da7fae54577b" class="toggle"><li><details open=""><summary>Iodine deficiency</summary><ul id="2e9abb91-a35d-4377-9a00-8b3dab30e9c2" class="bulleted-list"><li>It is a major public health problem for populations throughout the world, particularly for pregnant women and young children.</li></ul><ul id="32b69307-5d78-4f1c-9b84-2033da15c6dc" class="bulleted-list"><li>The most devastating outcomes of iodine deficiency are increased perinatal mortality and mental retardation</li></ul><ul id="e61a3d0a-d149-4d25-9baa-56e8e512e074" class="bulleted-list"><li>The main factor responsible for iodine deficiency is a low dietary supply of iodine .It occurs in populations living in areas where the soil has a low iodine content. Crops grown in this soil, therefore, do not provide adequate amounts of iodine when consumed.</li></ul><ul id="7dde310b-e743-4e65-8f7d-d6e5f62276b5" class="bulleted-list"><li>When iodine requirements are not met, thyroid hormone synthesis is impaired. If iodine deficiency occurs during the most critical period of brain development (from the foetal stage up to the third month after birth), the resulting thyroid failure will lead to irreversible alterations in brain function.</li></ul><p id="76447f9f-2d4f-4c1e-80fe-6671f4dde874" class="">
+</p><p id="4d2f4dda-fbf9-46ed-b73c-be91a9229501" class="">Iodine Deficiency Control:</p><ul id="cb106b41-8eee-4919-9c5f-6d83d850094f" class="bulleted-list"><li>The recommended strategy for Iodine Deficiency control is based on correcting the deficiency by increasing iodine intake through :</li></ul><ul id="1f8c55ff-06e7-430e-bc1d-bc2c4a2b5208" class="bulleted-list"><li>Universal Salt Iodization – was adopted in 1993. Salt was chosen because it is widely available and consumed in regular amounts throughout the year, and because the cost of iodizing it is extremely low</li></ul></details></li></ul><ul id="f4b9dcae-9c18-4b60-9102-2444e7846df9" class="toggle"><li><details open=""><summary>Vitamin A deficiency</summary><p id="82a69dc4-5a7e-4a37-a146-5c06fccb2690" class="">WHO’s New goal for Vitamine A:</p><ul id="0d907b6d-31e1-4d61-b966-1f9d656eb1ce" class="bulleted-list"><li>Use of multiple micronutrient powders for home fortification of foods consumed by infants and children 6–23 months of age (WHO 2011).</li></ul><ul id="3e37a6e8-2b40-4484-bb4a-76447d6f3940" class="bulleted-list"><li>Use of multiple micronutrient powders for point-of-use fortification of foods consumed by infants and young children aged 6–23 months and children aged 2–12 years is an update of the2011</li></ul><ul id="57d4641e-dccc-464a-a9aa-63f74d9829f0" class="bulleted-list"><li>The word “home” has been substituted by “point-of-use”, to reflect the variety of settings where this intervention.</li></ul><ul id="91bf26b4-48cc-4b10-94c1-c067493fdef6" class="bulleted-list"><li>The population groups covered in the guideline have been expanded to include preschool and school-age children (i.e. children aged 2–12 years).</li></ul></details></li></ul><ul id="f51af7ef-fa29-41d5-be6f-0638b9470dcd" class="toggle"><li><details open=""><summary>nutritional anemia</summary><ul id="3e053342-1648-4915-b04b-30070e593631" class="bulleted-list"><li>Anaemia is a condition in which the number of red blood cells or their oxygen-carrying capacity is insufficient to meet physiologic needs, which vary by age, sex, altitude, smoking, and pregnancy status.</li></ul><ul id="3a5a2ac8-e01f-40b4-8384-2cfa61e2671e" class="bulleted-list"><li>Nutritional anaemia is not a disease entity. It is rather a syndrome caused by malnutrition in its widest sense.</li></ul><ul id="229f0d2b-20a0-4ed3-95d2-dc3939b09c4d" class="bulleted-list"><li>Anaemia is an indicator of both poor nutrition and poor health.</li></ul></details></li></ul><ul id="5f7408cb-9de9-4c70-a3c2-63bd25e5d03d" class="toggle"><li><details open=""><summary>protein energy malnutrition ( PEM)</summary><ul id="006a9a16-a791-4112-9a3f-dd0cc295e5fd" class="toggle"><li><details open=""><summary>def?</summary><ul id="0736c418-1e63-40b2-afc0-651b7e958e4f" class="bulleted-list"><li>A major cause of childhood morbidity and mortality.</li></ul><ul id="40d7bace-a38d-4b2b-9970-7418a01aff35" class="bulleted-list"><li>PEM is primarily due to an inadequate intake of food [food gap] both in quantity and quality.</li></ul><ul id="e99d8b69-c0b6-423d-8b05-b28b1e696ec2" class="bulleted-list"><li>The first indicator of PEM is underweight for age which is best detected by maintaining growth charts; PEM is a spectrum ranging from growth failure to overt marasmus or kwashiorkor.</li></ul><ul id="a8e53659-afea-40bb-8598-c6b32af281af" class="bulleted-list"><li>growth failure 🔜 Marasmus (The main sign is a sever wasting</li></ul><p id="da87c27d-c833-4424-bb40-f5ff8585176f" class="">“Skin and bones”), Kwashiorkor (The main sign is oedema), Marasmic Kwashiorkor: It is a mixed form of PEM.</p></details></li></ul><ul id="73243721-755c-457f-9e02-422462f96f6a" class="toggle"><li><details open=""><summary>how do you classify PEM?</summary><ul id="a72cae8b-37a2-4ae6-a9c1-9c0886ad516c" class="toggle"><li><details open=""><summary>Gomez classification</summary><ul id="3854b251-33fc-43e2-a9ee-5e94a499c566" class="bulleted-list"><li>is based on wt retardation. It locates the child,,s wt in comparison with a normal child of the same age. This classification has a prognostic value for children.</li></ul><ul id="3a75857c-0dd4-491f-8f70-1249046ef35f" class="bulleted-list"><li>Wt/Age (%) = wt of the child x100
+wt of normal child
+90 &amp; 110 % normal nut. Status
+75 &amp; 89 % 1st degree of mal (mild)
+60 &amp; 74 % 2nd degree of mal (moderate)
+Under 60 % 3rd degree of mal (severe)</li></ul></details></li></ul><ul id="73ce2e50-af93-4742-a4ea-8063c497ec87" class="toggle"><li><details open=""><summary>Waterlow classification</summary><p id="43ca3d99-ba95-405c-98d0-c8f3b66c2f77" class="">defines 2 groups for PEM:</p><ul id="499acdbf-7350-4db7-8ad0-d9c97a6b5177" class="bulleted-list"><li> malnutrition with retarded growth in which a drop in ht/age ratio points to chronic condition (shortness, or stunting).</li></ul><ul id="acb5c2b0-15be-4dda-936f-9e3d9c728d74" class="bulleted-list"><li>malnutrition with a low wt for normal ht (wt/ht) is indicative of an acute condition of rapid wt loss or wasting.</li></ul><p id="3a36fb39-10e3-444d-8663-bace54947eaa" class="">
+</p></details></li></ul><ul id="400e4533-8777-48a2-9cb0-0323d05a19ac" class="toggle"><li><details open=""><summary>arm circumference</summary><p id="6882a007-2020-4183-82d9-388ad5d92116" class="">gives a relatively reliable estimation of body muscle mass .it is used btw the age of 1-5 years.</p><ul id="63247de3-820b-4b5a-b658-9feaca8ec968" class="bulleted-list"><li>Exceeding 13.5 cm is a sign of a satisfactory nut. Status</li></ul><ul id="2b409166-152d-4ad6-879b-7e0511fca733" class="bulleted-list"><li>btw 12.5 &amp; 13.5 cm it indicate mild-moderate mal.</li></ul><ul id="3241c223-e0a4-4619-bfa8-24aa2fbcc2f3" class="bulleted-list"><li>Below 12.5 cm is severe mal.</li></ul></details></li></ul></details></li></ul><ul id="0eae397f-2a3c-4b85-816b-3ed39b0c2b7f" class="toggle"><li><details open=""><summary>how can you prevent PEM?</summary><ol id="b5c8ba8f-4f76-4370-958b-7ad5adcf693e" class="numbered-list" start="1"><li> health promotion such as, measures directed to pregnant &amp; lactating women, promotion of br. feeding, nutrition education ,family planning…etc.</li></ol><ol id="0a4d9b88-86b5-44df-8082-8bb1a6bb09e5" class="numbered-list" start="2"><li>Specific protection, the child diet should contain protein &amp; energy rich food, also, milk, eggs, fresh fruits should be given if possible. Immunization is mandatory.</li></ol><ol id="fbc09f68-d38d-44a7-a935-a7c2a9d64cbd" class="numbered-list" start="3"><li>Early diagnosis &amp; treatment by periodic surveillance, diagnosis of any lag in growth, treatment of repeated infections… etc</li></ol></details></li></ul><ul id="0302a68c-f77d-4f2d-adfc-240466d8e959" class="toggle"><li><details open=""><summary>what&#x27;s the treatment for PEM?</summary><p id="b2f3229d-8e1c-4dc7-a451-dd19a689938b" class="">general treatment involves two phase:</p><ol id="2345c0ae-47a4-4df3-a6b6-89a0d890a59b" class="numbered-list" start="1"><li>An initial stabilization phase for management of acute medical conditions</li></ol><ol id="4611029e-e861-4016-80d4-965ca3a064b5" class="numbered-list" start="2"><li>And a longer rehabilitation phase: A recently developed home-based treatment for severe acute malnutrition is improving the lives of hundreds of thousands of children a year.</li></ol><ul id="a07322a9-2a39-4e41-9401-877b78f6dd72" class="toggle"><li><details open=""><summary>what&#x27;re the advantages of ready-to-use therapeutic food?</summary><ul id="57d81dc2-7746-4b13-b7dc-455bd6ebd569" class="bulleted-list"><li>It is a ready-to-use paste which does not need to be mixed with water, thereby avoiding the risk of bacterial proliferation in case of accidental contamination.</li></ul><ul id="8dfe6690-0203-42ae-9764-9cf808c9afd1" class="bulleted-list"><li>The product, which is based on peanut butter mixed with dried skimmed milk and vitamins and minerals, can be consumed directly by the child and provides sufficient nutrient intake for complete recovery.</li></ul><ul id="e7eb289f-d195-49cd-b58e-8f5c5cc949f5" class="bulleted-list"><li>It can be stored for three to four months without refrigeration, even at tropical temperatures</li></ul></details></li></ul><p id="83a6f62f-aaaa-4496-bd34-41e962126b1d" class="">
+</p></details></li></ul></details></li></ul></details></li></ul></details></li></ul></div></article></body></html>

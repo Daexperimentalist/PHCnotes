@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Health education</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="44389e3d-e30b-4b21-ab95-aba10cccba94" class="page sans"><header><h1 class="page-title">Health education</h1></header><div class="page-body"><ul id="3218f183-65e4-4ad0-8d4b-7cf89911f5ff" class="toggle"><li><details open=""><summary>what&#x27;s health education ( HE)?</summary><ul id="b7b0adf4-9b2d-40f3-aaa7-79e16a0b039a" class="bulleted-list"><li>is any combination of learning experiences designed to help Individuals and communities improve their health, by increasing their knowledge or influencing their attitudes.</li></ul><ul id="6df3c60a-1440-439e-89fa-7143b6ebf2cb" class="bulleted-list"><li>It is a systematic, comprehensive and consistent activity Adapted to age, gender, education and particular health, mental or social problems of an individual OR community</li></ul></details></li></ul><ul id="481bf606-89a7-483b-94c1-6554bb45f6d4" class="toggle"><li><details open=""><summary>what&#x27;s the concept of HE?</summary><p id="21908713-7e01-4b0b-8529-84cbc55f0d14" class="">Teaching process providing basic knowledge and practice of health so as to be interpreted into proper health behavior.</p><p id="15fd6d2b-2244-4b4c-aca3-d1d90e6853eb" class="">Health Eduction leads to a knowledge-attitude-behavior change</p></details></li></ul><ul id="a57b5caf-e01d-4c20-b7a6-86e0df647ee5" class="toggle"><li><details open=""><summary>how can it help people?</summary><ol id="e7b1de5e-fab3-49e2-bbe8-c87161141969" class="numbered-list" start="1"><li>To think about health,</li></ol><ol id="3e37d77c-e094-47ec-b7d1-0648b033eda6" class="numbered-list" start="2"><li>Make decisions,</li></ol><ol id="e02ca112-016d-4589-b753-2a10d599e65c" class="numbered-list" start="3"><li>Acquiring the necessary skills to change their behaviors and to undertake voluntary changes in their health-related behavior.</li></ol><p id="d7def99c-6694-4142-8110-0447a3391110" class="">So it provides information and advice about health directly to members of the public through individuals and organizations who provide health education to the public.</p></details></li></ul><ul id="1eae851c-ae81-409b-a120-a8672a72a29e" class="toggle"><li><details open=""><summary>what are the aims of HE?</summary><ol id="44e082ad-78c5-433b-91fc-e1ed0238d865" class="numbered-list" start="1"><li>Health promotion and disease prevention.</li></ol><ol id="2496c5b8-6515-4334-9045-3131004563a5" class="numbered-list" start="2"><li>Utilization of available health services.</li></ol><ol id="61c9fd34-cb1c-4688-be62-117ae578c7b3" class="numbered-list" start="3"><li>Early diagnosis and management.</li></ol></details></li></ul><ul id="29bbbfce-cd81-455f-a10e-ef97b8ee86fa" class="toggle"><li><details open=""><summary>what are the main components of HE?</summary><ul id="edb0aea9-1a9a-4042-a5e2-758b60633d47" class="toggle"><li><details open=""><summary>The message and methods of delivery.</summary><ul id="a40b56be-2c83-438d-85fd-88092f99491b" class="toggle"><li><details open=""><summary>methods</summary><ul id="000d102a-3d9d-4ae0-a3ee-f16c7ad32843" class="toggle"><li><details open=""><summary>def method?</summary><p id="fc217c8e-267f-410f-b646-555a5a7fc826" class="">refers to ways through which messages are conveyed to achieve a desired behavioral changes in a target audience.</p></details></li></ul><ul id="d23b9af9-4bd7-4a62-8a2d-0c56a354427e" class="toggle"><li><details open=""><summary>what&#x27;re some common formal teaching methods?</summary><ol id="5cfd19f8-91bb-42c9-9813-c08e787bcb83" class="numbered-list" start="1"><li>Conference</li></ol><ol id="a427ab87-52e9-449a-88c2-974d32198935" class="numbered-list" start="2"><li>Workshop </li></ol><ol id="18951a99-2174-43a5-8877-dd9b514621fe" class="numbered-list" start="3"><li>Seminar</li></ol></details></li></ul><ul id="f7852d2e-0cc1-4e6b-9ee0-648b48862de5" class="toggle"><li><details open=""><summary>what&#x27;re some common informal teaching methods?</summary><ul id="94e74e96-a8ef-4974-8195-e98a911f766c" class="bulleted-list"><li>health talk</li></ul><ul id="6c0facfe-19b1-47c7-a5ab-6240e61be0c8" class="toggle"><li><details open=""><summary>brainstorming</summary><p id="c3a09585-abfe-4beb-b4d9-5257c9ccd165" class="">The participants encouraged to make a list in a short period of time all the ideas that come to their mind regarding the problems Without the participants discussing among themselves their ideas and solution on health issues</p></details></li></ul><ul id="0569d371-90a0-4dd3-af3c-58cdfba3e107" class="toggle"><li><details open=""><summary>group discussion</summary><p id="9a18e489-462f-4181-8f45-a08a8ee31242" class="">It is collective thinking and exchange ideas shared equally by all the members of the group. Extremely useful in health to solve problems.</p></details></li></ul><ul id="0b2a6bb5-5f23-4663-85b3-01b29f78a5d5" class="toggle"><li><details open=""><summary>demonstrations</summary><p id="4396af69-09bc-49c1-9127-ba47ed7f3639" class="">basically focuses on practice/skill it involves “Showing how is better than telling e.g. way of preparation of Oral Rehydration Salts .</p></details></li></ul><ul id="29491fc5-23b0-444d-ae41-86df6c963fac" class="toggle"><li><details open=""><summary>role play</summary><p id="cdaab3be-b9a4-49fe-86d7-78d369cad8fc" class="">A type of drama in a simplified manner. It unrehearsed acting out of real-life situations .It is a very direct way of learning; you are given a role or character and have to think and speak immediately without detailed planning</p></details></li></ul></details></li></ul><ul id="8ffed790-233a-4ee8-857f-9060719904b5" class="toggle"><li><details open=""><summary>what&#x27;re some points to consider before choosing a method?</summary><p id="4008a194-4f34-4d7f-bacb-4a006524e0e5" class="">1. How ready and able are people to change?</p><p id="5f43bac3-e871-43fb-8aba-9d2bf6559c06" class="">2. Your ‘learning’ objectives.</p><p id="49bd2ee2-d0c1-4725-99df-ffc6c302bdaa" class="">3. How many people are involved?</p><p id="e0f5f326-d2db-4ddc-8e3a-d7246bdaa783" class="">4. Is the method appropriate to the local culture?</p><p id="b29281b3-bf7d-477d-90a6-2306514e05ba" class="">5. What resources are available?</p><p id="a071a782-0e3b-4f0d-a96d-cb5a1fde3a6a" class="">6. What mixture of methods is needed?</p><p id="bafc8812-8099-4541-b818-4a4e8ab53067" class="">7. Subject matter</p><p id="39eccdb2-4f2b-4cfd-a3d1-cfd3df981fdb" class="">8. Limitations of time.</p><p id="5c3a3d11-dedf-44db-9792-718ff9c70511" class="">9. What methods fit the characteristics of the target group?</p><p id="0edbbe57-681d-4dd6-a1ad-281d7836f655" class="">it is important thing to remember that effective health education is seldom achieved through the use of one method .The best method of teaching combines the various methods.</p></details></li></ul></details></li></ul><ul id="86b1430e-a758-4bc1-8313-39fbd6cb6687" class="toggle"><li><details open=""><summary>message</summary><ul id="5c2c0aa1-e99a-4152-b5e0-5015f1394b37" class="toggle"><li><details open=""><summary>def HLMs?</summary><p id="d4dbf4d2-168f-49c1-b239-79c7080f7b60" class="">are those teaching aids which specifically directed to clearly defined group of audience to give information and instruction about health</p></details></li></ul><ul id="b8dd1926-daea-4d5d-95ef-644f6af1615f" class="toggle"><li><details open=""><summary>what&#x27;re the types of HLMs?</summary><p id="55f49f37-8b78-47ec-a6e7-f29b9366a33c" class="">1. Printed HLMs (such as leaflets, booklets and posters)</p><p id="2bdca87c-a181-46bb-bd99-9fd7cf13a901" class="">2. Visual HLMs</p><p id="7817d0ea-f673-4c24-837a-45f17ac82d29" class="">3. Audio HLMs</p><p id="f7f648e3-b0f1-4d7f-8067-64220fb44d12" class="">4. Audio-visual HLMs</p><p id="5e4ed144-f5fd-4525-b58e-cdd5bc2c9174" class="">As a media of health education, posters have much less effect in changing behaviours since it is one-way , with no way for groups to participate actively in learning, hence their failure to influence people&#x27;s behaviour</p></details></li></ul></details></li></ul></details></li></ul><ul id="e95a5972-8209-4f4f-a4cb-5c548a3e720c" class="toggle"><li><details open=""><summary>The introducer of the massage.</summary><p id="e195349f-e1a9-4cd3-b937-bccd59f57598" class="">should be aware of what information is about to be introduced &amp; who is going to get it &amp; what is the best, simple way of introducing this message</p></details></li></ul><ul id="0a9a10db-1d39-4b14-a26c-b3970c698073" class="bulleted-list"><li>The recipient of the massage</li></ul><p id="49e8a7e9-a2bf-4e09-9d49-41a0df0aabdc" class="">
+</p></details></li></ul></div></article></body></html>

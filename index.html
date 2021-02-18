@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>primary healthcare (PHC)</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c0357490-929b-4554-8767-7ffd973bb49e" class="page sans"><header><h1 class="page-title">primary healthcare (PHC)</h1><table class="properties"><tbody><tr class="property-row property-row-multi_select"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>Tags</th><td></td></tr></tbody></table></header><div class="page-body"><ul id="d2978a22-8472-4440-accd-148995c56c22" class="toggle"><li><details open=""><summary>community med def</summary><p id="70c2800f-ae25-4138-b59d-32b9f9ee9f5a" class="">Has been defined as that specialty which deals with populations, and comprises those doctors who try to measure the needs of the population, both sick and well, plan and administer services to meet those needs, and are engaged in research and teaching in the field.</p><ul id="ab09501e-af26-48d9-944b-295ac7c4efa5" class="toggle"><li><details open=""><summary>services provided by C. med</summary><ul id="87b34b9f-fa09-4f87-b782-3a849bba9062" class="toggle"><li><details open=""><summary>Preventive</summary><ul id="6603dc0c-d06d-478a-9def-88a0e99b1a51" class="toggle"><li><details open=""><summary>what&#x27;s prevention</summary><p id="28676290-a850-40a9-a319-59b6269a18be" class="">To prevent means stop from happening”. It is to intercept or oppose the “cause” and thereby the disease process</p></details></li></ul><ul id="138c6fd8-beb3-4cbc-aaa8-96e43b4a01a1" class="toggle"><li><details open=""><summary>successful prevention depends upon</summary><ul id="2357efac-2fc1-4bf4-b91a-9be01f0ae401" class="bulleted-list"><li>a knowledge of causation</li></ul><ul id="a1da1add-0cbb-49ea-8428-d711eb9d977f" class="bulleted-list"><li>dynamics of transmission</li></ul><ul id="8ba03f6e-20e2-4304-b9e6-4a8a768f2e0a" class="bulleted-list"><li>identification of risk factors and risk groups.</li></ul></details></li></ul><ul id="b73a58e4-3ecb-4498-87e6-bbfd01319e5a" class="toggle"><li><details open=""><summary>types of health preventions</summary><ul id="051104fd-c7f4-4916-93cd-2268f20b702b" class="toggle"><li><details open=""><summary>primordial</summary><p id="d044e37c-0986-49a2-ab0a-5ac6d91c9f1a" class="">prevention of risk factors themselves, beginning with change in social and environmental conditions in which these factors are observed to develop, and continuing for high risk children, adolescents and young adults.</p></details></li></ul><ul id="76a7b509-f435-4a2b-966e-3b785a4871d8" class="toggle"><li><details open=""><summary>primary</summary><p id="60633c8f-0a10-4ec7-b3a6-bece1862e134" class="">is directed toward preventing the initial occurrence of a disorder; (i.e. prevention before health problems occur).</p></details></li></ul><ul id="d0a307bb-fa85-4e8b-9769-71b8ea4fa08a" class="toggle"><li><details open=""><summary>secondary</summary><p id="a5a2b1d7-ba0e-4d33-9b5c-8f71901ea98d" class="">seeks to arrest or retard existing disease and its effects; (prevention after diagnosis but before damage).</p></details></li></ul><ul id="1ed60680-fe99-401e-8140-48675a1f37e4" class="toggle"><li><details open=""><summary>tertiary</summary><p id="3d1d6b3b-2c6f-4bbe-8bf8-5600255b3418" class="">(prevention after damage from disease)and seeks to reduce the occurrence of relapses.</p><p id="27a754cd-7b83-4772-a053-a3e5526b4e8c" class="">Finally, health recovery includes early intervention, treatment, rehabilitation, and harm reduction.</p></details></li></ul></details></li></ul></details></li></ul><ul id="1431dfa1-df82-4aff-8c5c-789a72f3e818" class="toggle"><li><details open=""><summary>Promotive</summary><ul id="134dd352-5e19-40d9-8971-b62a7585c0fe" class="toggle"><li><details open=""><summary>def health promotion</summary><ul id="dfc7096a-544a-400d-a305-83eaa0e1d742" class="bulleted-list"><li>It is “the process of enabling people to increase control over and to improve their health” .In a sense, health promotion is the science of practice and art of helping people to change their life style to move toward a state of optimal healthy lifestyles.</li></ul><ul id="2d3058fa-e8a5-49da-85c3-58c47ffe55e3" class="bulleted-list"><li>It is the provision of information and/or education to individuals, families, and communities that make positive contributions to their health status.</li></ul><ul id="09fba222-9818-4bc6-b34f-f22943bd31e0" class="bulleted-list"><li>Health Promotion is also the promotion of healthy ideas and concepts to motivate individuals to adopt healthy behaviors.</li></ul><ul id="0e7901a3-9afc-43c8-a65f-c7a39b8bbb50" class="bulleted-list"><li>According to the WHO: Health promotion is the process of enabling people to increase control over, and to improve their health.</li></ul></details></li></ul></details></li></ul><ul id="d258dd52-ad90-415c-bfcf-8d1bfe0d7acf" class="toggle"><li><details open=""><summary>Curative to Rehabilitative services</summary></details></li></ul></details></li></ul></details></li></ul><ul id="3af8a45f-fb2a-49f8-9e16-a3e78d5ad9ac" class="toggle"><li><details open=""><summary>concepts of health, disease, its causation and control</summary><ul id="d9a21723-37fd-494c-ac02-0d463889242a" class="bulleted-list"><li>WHO definition(1948): Health is a state of complete physical, mental and social wellbeing and not merely an absence of disease or infirmity.</li></ul><ul id="9cb8bbf1-61a9-47ff-807d-b56608f2949d" class="bulleted-list"><li>no adequate def for disease, but, It is a spectrum since it ranges from subclinical (with prodromal symptoms) to a disease. The floating tip of iceberg represents what the physician sees in the community i.e clinical cases</li></ul><ul id="45f86d9e-f739-4d09-9b27-7924ba255106" class="bulleted-list"><li>causation is: all diseases result from a complex interaction between host, agent and environment ( epidemiological triad)<ul id="f2471432-8ec2-4a36-aa4c-b7073d122e18" class="toggle"><li><details open=""><summary>epidemiological triad</summary><ul id="57f69d98-6902-4fd0-9898-14431f65c8c1" class="toggle"><li><details open=""><summary>agent factor</summary><p id="39e9fbee-1b3f-4026-acbc-a4c8f798659c" class="">is defined as a substance living or non living ,the excessive presence or relative lack of which may initiate a disease, includes: biological, physical, chemical, nutrient and social</p></details></li></ul><ul id="e36671f7-a7a3-4d54-84d4-ad5644c8b108" class="toggle"><li><details open=""><summary>host factor</summary><p id="cecb6481-21a4-4764-8120-05d2e62d7c97" class="">classified as:</p><ul id="c0a348dc-2694-439d-9322-9a5894a005b9" class="bulleted-list"><li>Demographic characteristics ( age, sex)</li></ul><ul id="d27927a8-05d9-4b51-93a3-b9781300beda" class="bulleted-list"><li>biological characteristics</li></ul><ul id="341eeb90-fd03-4012-a859-2cac145055c8" class="bulleted-list"><li>socioeconomic characteristics</li></ul><ul id="3e5ecd60-71d3-4b1c-ae9e-3e33230a785a" class="bulleted-list"><li>life style</li></ul></details></li></ul><ul id="1ba12b9e-da56-4187-811a-15e6a0792f68" class="toggle"><li><details open=""><summary>environmental factor</summary><p id="728b42a9-2dbf-4e7a-8bc4-8e7f3823aaa2" class="">includes man’s external surroundings which may be: physical, biological and psychosocial environment.</p></details></li></ul></details></li></ul></li></ul><ul id="2c17240e-f08f-47b4-9f43-2829dcf1a31f" class="bulleted-list"><li>disease control: The term disease control describes ongoing operations aimed at reducing<ol id="cc69cd56-d84c-4d69-97d6-0ba9b4a6eb26" class="numbered-list" start="1"><li>the incidence of disease</li></ol><ol id="983ba2f9-c58e-420d-bf95-7fe65e6d0304" class="numbered-list" start="2"><li>the duration of disease [transmition]</li></ol><ol id="76fb0456-ebc9-4c21-a3d9-8935b459f8ec" class="numbered-list" start="3"><li>the different complications</li></ol><ol id="6f5f05ec-224d-4966-b119-5ec9605f588d" class="numbered-list" start="4"><li>the financial burden to the community</li></ol></li></ul></details></li></ul><ul id="9fd587b8-1a8c-45e1-a65a-aaf28cacfab0" class="toggle"><li><details open=""><summary>Primary health care ( PHC)</summary><ul id="d9a68609-965f-43b5-8545-1f5877ed7108" class="toggle"><li><details open=""><summary>historical background</summary><ul id="941b10ce-a6c8-44e7-b689-038f588cccf3" class="toggle"><li><details open=""><summary>what&#x27;s health for all (HFA)?</summary><p id="4e6db600-74e0-4538-9b53-a2936a1dc764" class="">defined as attainment of health level that enable individuals to lead a socially &amp; economically productive life. It would be the first level of contact of individuals, the family and community with the national health system, bringing healthcare as close as possible to where people work and live and constitute the first element of a continuing health care process.</p></details></li></ul><ul id="e4e17d10-0cc2-4848-854e-9c85263d1aba" class="toggle"><li><details open=""><summary>what&#x27;s the basic principle of HFA?</summary><p id="25dced20-b11a-4994-bf1e-f93e0f302714" class="">equity i.e. equal health status for all individuals &amp; countries by equal distribution of health resources</p></details></li></ul><ul id="6abb2b60-00d9-498a-b43a-c46c35b99bf5" class="toggle"><li><details open=""><summary>what&#x27;s Alma Ata declaration?</summary><p id="32957bf7-e1c8-48b1-938e-79f71c6a9cbe" class="">the meeting where PHC strategies were first introduced, as a best way to attain HFA</p></details></li></ul><ul id="904f779b-abe6-469d-bd9f-ca7838b29180" class="toggle"><li><details open=""><summary>what&#x27;s the bamako initiative?</summary><p id="f85a2005-cd45-446a-b801-1b412d4d713a" class="">a strategy adopted for accelerating PHC implementation and ensuring access to essential health services to the majority of the population</p><ul id="3da4bb5f-249a-4a83-bf4b-b16dea059365" class="toggle"><li><details open=""><summary>it emphasized on</summary><ul id="78c78a6a-f40a-440c-89d4-b02cd13977b9" class="bulleted-list"><li>The promotion and implementation of a minimum package of services;</li></ul><ul id="6c011084-efd6-480c-809f-687670cd79c7" class="bulleted-list"><li>Access to drugs at affordable cost;</li></ul><ul id="cfefec39-1d44-4863-aec3-065550c4621f" class="bulleted-list"><li>cost-sharing between government and users and,</li></ul><ul id="7efc5aad-6f6f-4dfb-8685-5dc3c638065a" class="bulleted-list"><li>Effective participation of the community in the local management of the health system.</li></ul></details></li></ul></details></li></ul><ul id="ef98945d-c03c-411c-9988-c393c4362c43" class="toggle"><li><details open=""><summary>what&#x27;s the Millennium Developmental Goals(MDG)?</summary><p id="d0d0fb2d-befc-4d32-b133-35e07a31ac0c" class="">are 8 goals set for improving the lives of the world&#x27;s poorest people, deadlined between 2000 and 2015</p></details></li></ul><ul id="0428cfca-5cef-42a8-8e0b-599bc9ebfffa" class="toggle"><li><details open=""><summary>what&#x27;re the goals of the MDG?</summary><ol id="caf5d4b6-49db-42fa-9c0d-cf8929c55307" class="numbered-list" start="1"><li>to eradicate extreme poverty and hunger;</li></ol><ol id="1fc520e3-0601-49ab-adb0-c8c04be35aa2" class="numbered-list" start="2"><li>to achieve universal primary education;</li></ol><ol id="1c2fd8b9-dec5-4dc9-80d9-f1aa1a6aeede" class="numbered-list" start="3"><li>to promote gender equality and empower women;</li></ol><ol id="8896a4e3-d1b8-4de9-823d-2f2d796c2a49" class="numbered-list" start="4"><li>to reduce child mortality;</li></ol><ol id="ef3b5415-9cdb-4ef2-aaed-4e23e6e44765" class="numbered-list" start="5"><li>to improve maternal health;</li></ol><ol id="e9a4d5e7-9240-4d9e-b71f-c770c2fa6d71" class="numbered-list" start="6"><li>to combat HIV/AIDS, malaria, and other diseases;</li></ol><ol id="00cb9ea3-0118-41cf-9920-17ff1deb9512" class="numbered-list" start="7"><li>to ensure environmental sustainability; and</li></ol><ol id="34130c98-c91c-458a-b27f-aa7b696a12f8" class="numbered-list" start="8"><li>to develop a global partnership for development.</li></ol><figure id="dce772f7-8bd3-4944-862a-182741813bb7" class="image"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Untitled.png"><img style="width:468px" src="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Untitled.png"/></a></figure></details></li></ul><ul id="f7515faa-960b-4c0b-8a31-5a6c9705975e" class="toggle"><li><details open=""><summary>what&#x27;s the Sustainable Development Goals (SDG)?</summary><ul id="f2d8fcaa-5728-46ca-a1a5-867c08da26fc" class="bulleted-list"><li>are 17 goals with 169 targets that all 191 UN Member States have agreed to try to achieve by the year 2030. It aims to be relevant to all countries and focuses on improving equity to meet the needs of women, children and the poorest, most disadvantaged people.</li></ul><ul id="02fb1ae4-2df1-4ef7-98a5-ede92323a47c" class="bulleted-list"><li>are built on the MDG</li></ul><ul id="e2e056ec-825c-4400-ac5e-f560cd6ba305" class="bulleted-list"><li>They reflect continuity and consolidation of MDGs</li></ul><ul id="f6f43950-7344-4a23-99a4-a4de87d7bb0b" class="bulleted-list"><li>Ensure healthy lives and promoting well-being for all at all ages, underpinned by 13 targets that cover a wide spectrum of WHO’s work. Almost all of the other 16 goals are directly related to health or will contribute to health indirectly.</li></ul><figure id="bd5fd50a-4422-4d54-be56-738114a62c6c" class="image"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Untitled%201.png"><img style="width:850px" src="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Untitled%201.png"/></a></figure></details></li></ul></details></li></ul><ul id="fd44269e-8ae5-4d66-8acd-6b475c901763" class="toggle"><li><details open=""><summary>PHC</summary><ul id="5e98d7c8-1cbc-4f53-879b-2951c47ceafc" class="toggle"><li><details open=""><summary>def PHC?</summary><p id="81ccf1be-9d25-4c03-a2da-cd9398cde921" class="">essential health care based on practical, scientifically sound and socially acceptable methods and technology, made universally accessible to individuals and families in the community through their full participation and at a cost that the community and the country can afford. It is the first level care provided by a suitably trained workforce supported by integrated referral systems and in a way that gives priority to those most in need, maximises community and individual self-reliance and participation and involves collaboration with other sectors</p></details></li></ul><ul id="d5ad7f82-7de1-4d34-b8f0-a95652950396" class="toggle"><li><details open=""><summary>PHC includes?</summary><ul id="daac89bf-b42f-4e5f-a7ed-382ed682c6a4" class="bulleted-list"><li>health promotion</li></ul><ul id="eb46db59-2489-4951-a9fe-ec655c9c1dd3" class="bulleted-list"><li>illness prevention</li></ul><ul id="b55b331f-84cc-4fdd-9094-13de1797ec17" class="bulleted-list"><li>care of the sick</li></ul><ul id="334322cf-5d42-4ad9-80e3-0a38f936ef20" class="bulleted-list"><li>community development</li></ul></details></li></ul><ul id="97d191ff-dc0d-4b91-9320-bcc4b421f26d" class="toggle"><li><details open=""><summary>what&#x27;re the principles of PHC?</summary><ul id="72b2727d-ba5e-432d-a30f-900186709f3b" class="toggle"><li><details open=""><summary>Equitable distribution</summary><p id="55480a13-0713-46d2-a7dc-fa314ed1b5ac" class="">i.e. health services must be shared equally by all people &amp; to bring services as near to people’s homes as possible</p></details></li></ul><ul id="61a5cfbc-1a46-400a-9dd4-0dfea673068b" class="toggle"><li><details open=""><summary>community participation</summary><p id="dde81abc-c1d6-4a2a-8cfd-40ca5cd1ccf3" class="">in planning, implementation, besides maximum reliance on local resources such as manpower, money &amp; material.</p></details></li></ul><ul id="8877a16b-7a76-4c84-94e1-3c7ee0be9be5" class="toggle"><li><details open=""><summary>intersectional coordination</summary><p id="ee0f4ec5-3b3c-41ab-bb05-0fc70cff0d87" class="">involvement of all related sectors, such as agriculture, food industry, education…etc</p></details></li></ul><ul id="2cd4051c-71aa-43ba-a994-fe369233f5c9" class="toggle"><li><details open=""><summary>appropriate tech</summary><p id="ce9ebf83-8441-4dfe-9a57-b47abab97e8e" class="">is defined as technology that is adoptable to local needs &amp; acceptable to those who apply to it &amp; those for whom it is used.</p></details></li></ul></details></li></ul><ul id="bd45ee42-43c3-4191-996e-6937db854ea2" class="toggle"><li><details open=""><summary>what&#x27;re the elements of PHC?</summary><p id="99eeabb4-1ab4-41a1-8a42-d79d8f84768b" class="">8 main elements 👇</p><figure id="44389e3d-e30b-4b21-ab95-aba10cccba94" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Health%20education%2044389e3de30b4b21ab95aba10cccba94.html">Health education</a></figure><figure id="1cef11b0-d7dd-4499-a5ea-ab6c4a7b9fcb" class="block-color-brown_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Maternal%20and%20child%20health%20%5BMCH%5D%201cef11b0d7dd4499a5eaab6c4a7b9fcb.html">Maternal and child health [MCH]</a></figure><figure id="ac4cf855-664d-4391-bba6-f572713a8c28" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Immunization%20ac4cf855664d4391bba6f572713a8c28.html">Immunization</a></figure><figure id="978ee55d-6ba3-4fd8-ad84-7ea493869108" class="block-color-brown_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Nutrition%20978ee55d6ba34fd8ad847ea493869108.html">Nutrition</a></figure><figure id="d60b9c15-e072-444f-b270-42c7b706bb39" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Environmental%20sanitation%20d60b9c15e072444fb27042c7b706bb39.html">Environmental sanitation</a></figure><figure id="68b5b615-24f8-4b1a-acb6-99b9c0c8ffde" class="block-color-brown_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Prevention%20and%20control%20of%20endemic%20diseases%20(outlin%2068b5b61524f84b1aacb699b9c0c8ffde.html">Prevention and control of endemic diseases (outline)</a></figure><figure id="da643291-ba18-44a4-b6fa-38d6feded518" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Appropriate%20treatment%20of%20common%20diseases%20and%20injur%20da643291ba1844a4b6fa38d6feded518.html">Appropriate treatment of common diseases and injuries</a></figure><figure id="eab2a2ed-aa97-49a8-a20b-e6f360decc98" class="block-color-brown_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Provision%20of%20essential%20drugs%20eab2a2edaa9749a8a20be6f360decc98.html">Provision of essential drugs</a></figure><hr id="a5f3dbed-4f2b-4e2b-8467-c3905a35f4f0"/><p id="1fcf04aa-e80b-4784-9b76-4cdfbd19d970" class="">@xtra elements 👇</p><figure id="8be3e764-a00b-4478-b4f1-1eed05506402" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Mental%20Health%208be3e764a00b4478b4f11eed05506402.html">Mental Health</a></figure><figure id="2c9dce7b-1660-480a-ab50-45cd4d14651e" class="block-color-brown_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/School%20Health%20Program%202c9dce7b1660480aab5045cd4d14651e.html">School Health Program</a></figure><figure id="b2f23a4f-6b02-492b-a9ba-546482c4bcaa" class="block-color-gray_background link-to-page"><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/Occupational%20Health%20b2f23a4f6b02492ba9ba546482c4bcaa.html">Occupational Health</a></figure><p id="e7978af9-2cdd-408b-b2a3-537e066cbfda" class="">
+</p></details></li></ul><hr id="81dc658b-0b40-45fd-964e-e45167e9ea07"/><p id="361be660-a7c1-4c0f-b7f1-cebf94eece92" class=""><a href="primary%20healthcare%20(PHC)%20dce772f78bd34944862a182741813bb7/health%20planning%20and%20management%2097a5f0775c2e455cadb9755e2f00671c.html">health planning and management</a> </p></details></li></ul></details></li></ul></div></article></body></html>

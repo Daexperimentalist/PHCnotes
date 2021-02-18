@@ -1,0 +1,628 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>School Health Program</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="2c9dce7b-1660-480a-ab50-45cd4d14651e" class="page sans"><header><h1 class="page-title">School Health Program</h1></header><div class="page-body"><ul id="789ee519-4e6b-40e5-a67d-3c8760a58b90" class="toggle"><li><details open=""><summary>def?</summary><p id="6930c5a7-ea11-41a3-9ca2-23b1946ab0bf" class="">all the activities and services provided in schools to enhance the health of the pupil and the staff in the educational field physically, psychologically and socially through programs and activities concerned with health through the health system</p></details></li></ul><ul id="3176dec8-be63-4405-9694-01001db55e13" class="toggle"><li><details open=""><summary>importance?</summary><ul id="8041cba0-361a-4597-bbaa-35ee8185a545" class="bulleted-list"><li>Student and staff absenteeism decreases.</li></ul><ul id="0d1343f9-6038-4c68-aecd-646b4a7bfae2" class="bulleted-list"><li>Student concentration improves</li></ul><ul id="39c1841b-e03c-4acf-a751-7285a683d4de" class="bulleted-list"><li>Student behavior problems are reduced</li></ul><ul id="bc85d9ff-9ae8-47e0-b130-40d79372b5c3" class="bulleted-list"><li>Children and adolescents establish life-long health promoting behaviors.</li></ul></details></li></ul><ul id="1e3f858c-5d0c-430e-98e1-dca444f4883b" class="toggle"><li><details open=""><summary>general objectives?</summary><p id="09c40fc1-2ce8-4b81-ab5e-c97b04a4f307" class=""><strong>is to strengthen , improve and maintain the health of students and education staff by:</strong></p><p id="6a590e6c-25c3-44e0-9370-f4590261b0bd" class="">1-Raise awareness of  health education within the school community</p><p id="bc9e4570-ea73-4b05-894d-ffd58f48c529" class="">2-Provision of curative services and health care in schools.</p><p id="f4e622b9-1857-4c4e-8672-99e33a3b1a85" class="">3-Improve health of school environment.</p><p id="4e359913-160f-4937-bc18-a35fcdcf7aac" class="">4-Building the capacity of workers in the field of school health.</p><p id="20f1dcec-3267-4613-9a9a-5445ae7e990c" class="">5-Contribute in building a healthy balanced diet.</p><p id="496d511f-b8a8-43cd-b38a-8950282d703c" class="">6-Motivation and capacity in confronting and combating epidemics and endemic diseases.</p><p id="c9b16a16-277d-48ad-a3a2-46a6d84078a6" class="">7-Promote the mental health of students and workers in the education field .</p><p id="46cf2f19-b521-48f0-907e-81baba12637d" class="">8-Activation of physical activity in schools for the health of the body</p></details></li></ul><ul id="0bc4b19a-1bfa-461c-afe5-30d966877a0b" class="toggle"><li><details open=""><summary>what&#x27;s the gov role in school health programs?</summary><ul id="d93ef2ae-3d7e-4490-9e65-f8c8ae8d0a4c" class="toggle"><li><details open=""><summary>ministry of health</summary><p id="451e77a0-9db1-4227-9d7d-f44eef320a37" class="">(Hospital, health center, and basic health units)</p><ul id="0220b0d9-8d8a-42c0-9437-30c76eadb611" class="bulleted-list"><li>The initial medical check-up of new students(first grade)</li></ul><ul id="c8d5352a-92c0-4eea-a1c1-e0749874387a" class="bulleted-list"><li>Emergency care</li></ul><ul id="605358bf-7bdb-414b-a0bd-3322e6a93fa5" class="bulleted-list"><li>Vaccination and immunization programs</li></ul><ul id="5bd8125f-cc52-4837-b814-c8fd303369f3" class="bulleted-list"><li>Other medical services (eye, ear, tooth….)</li></ul></details></li></ul><ul id="e012b41a-7bbe-4516-87c6-9fd38ccdec9f" class="toggle"><li><details open=""><summary>ministry of ed</summary><ul id="6931501f-f332-421b-bfc9-6ee3862b2d0c" class="bulleted-list"><li>Medical records for pupils</li></ul><ul id="adc1d688-9b87-4487-aa4c-40c71ee968ff" class="bulleted-list"><li>Mental Health of pupils</li></ul><ul id="df353afd-2633-4c4f-aeab-0fa10e1c2d48" class="bulleted-list"><li>Physical Education</li></ul><ul id="7b0faede-a4e5-47ff-b651-aae1785e11fc" class="bulleted-list"><li>Care for students with special needs</li></ul><ul id="51f8ed7d-25a2-44fa-a856-9637e4c46f57" class="bulleted-list"><li>First aid procedures</li></ul><ul id="ec6bd9a1-85dd-4284-a623-671f255a8faf" class="bulleted-list"><li>Health Survey activities and prioritize health problems</li></ul><ul id="2b647e4b-9259-412c-a893-d3e2fe73597f" class="bulleted-list"><li>Referral to the nearest health center</li></ul></details></li></ul></details></li></ul><ul id="39f2a354-e5ef-4b73-9493-b7b6e909dad4" class="toggle"><li><details open=""><summary>what&#x27;s the justification for the establishment of health promoting schools?</summary><ol id="8c6e92d5-b1f8-4be9-b5a4-efc65c11e65f" class="numbered-list" start="1"><li>The children represent in most countries at least a quarter of the population.</li></ol><ol id="6bcf9025-4803-440f-b015-0ebb6dc02e22" class="numbered-list" start="2"><li>Easy access to the school environment.</li></ol><ol id="80c20ce3-5971-430a-b203-e417852858f5" class="numbered-list" start="3"><li>Teachers have influential educational role among students and schools.</li></ol><ol id="4cf6852d-db56-4a1e-8785-e0d71cb03bb3" class="numbered-list" start="4"><li>Ability of transmission of health awareness from school to the family and society.</li></ol><ol id="566bd8e0-a297-4cb6-9188-813e8791b34d" class="numbered-list" start="5"><li>The school health program is a powerful, yet economical approach towards raising the level of community health.</li></ol></details></li></ul><ul id="3d82b8e3-bfef-4fea-ae6a-38d68e27e3fa" class="toggle"><li><details open=""><summary>how to achieve a healthy school environment?</summary><ol id="76a77668-10d9-4d43-88ee-7d8ba9bd1a3e" class="numbered-list" start="1"><li><strong></strong>Fresh water safe for drinking and use.</li></ol><ol id="9b19ca6c-1d2c-4ce5-8c3c-7195e8ad36e2" class="numbered-list" start="2"><li>Safe means of sanitation.</li></ol><ol id="d1fb0694-4d93-49ca-99d8-4ceb72f88b8d" class="numbered-list" start="3"><li>Protection from infectious diseases.</li></ol><ol id="28865389-3933-4b38-8b6d-c215a6922d1f" class="numbered-list" start="4"><li>protection from violence</li></ol><ol id="1fc51763-af22-4cdb-aa8b-833c6c2ce9ed" class="numbered-list" start="5"><li>Protection from smoking and drugs.</li></ol></details></li></ul><ul id="2bd8a7ef-c8d0-40d8-8ab2-89bfb02072fb" class="toggle"><li><details open=""><summary>what&#x27;re the components of school health Program?</summary><ul id="4b1d511e-cd8c-436b-98ac-ff6e5e12b742" class="toggle"><li><details open=""><summary>school health services</summary><ul id="74f93dc4-99d9-44fc-a45d-79c476ae5436" class="bulleted-list"><li>initial medical examination on the new students</li></ul><ul id="f24782b4-8885-4e3c-9f9d-9ab23cb678d9" class="bulleted-list"><li>periodic check-ups (for fourth grade and seventh and second secondary)</li></ul><ul id="c4e4cf51-566b-4856-abc2-2d6defa44ccf" class="bulleted-list"><li>activities of the health survey and to identify priority health problems,</li></ul><ul id="6debfb89-5b5b-449b-aaf5-5934067c4d59" class="bulleted-list"><li>First aid procedures</li></ul><ul id="2756de6e-fba9-471b-b931-742005cf5783" class="bulleted-list"><li>emergency care</li></ul><ul id="18540532-4a54-4e2d-9a16-1bde06fdb816" class="bulleted-list"><li>early detection of health problems</li></ul><ul id="c9b415da-8d50-47b2-8b73-4415767cea44" class="bulleted-list"><li>vaccination programs against infectious diseases</li></ul><ul id="aa105bb8-acdc-4b10-9ca2-fcea1392655a" class="bulleted-list"><li>care of pupils with special needs</li></ul><ul id="6c99d868-a726-4746-bb37-75c454c83bf3" class="bulleted-list"><li>Oral health care and dentistry</li></ul><ul id="343f3f0d-4401-4ab0-a12f-f637a2743e31" class="bulleted-list"><li>eye-care and vision consideration</li></ul><ul id="f70dfe60-9cac-48c0-b3af-8a9870576802" class="bulleted-list"><li>care of ear, nose and throat</li></ul><ul id="8d5267dd-fb9e-483e-a5b5-6e7b151aac68" class="toggle"><li><details open=""><summary>good maintenance of medical records</summary><ul id="ed9b2804-a01b-463d-b5c5-2d1819231907" class="bulleted-list"><li>provide a sufficient number of students form</li></ul><ul id="ae1f2ce2-4f56-420a-948a-f4b58623af50" class="bulleted-list"><li>follow-up cases referred with parents</li></ul><ul id="9bb038ed-ebed-4e06-b830-e1f829b75cd0" class="bulleted-list"><li>follow-up of chronic conditions (diabetes and asthma)</li></ul><ul id="857ac615-8879-432d-9d5d-2d3b017e3dd3" class="bulleted-list"><li>referral system with adequate health units</li></ul></details></li></ul></details></li></ul><ul id="2d928e5d-22b2-44b5-81d8-4e917a29193f" class="toggle"><li><details open=""><summary>school health education</summary><ul id="015964fd-4d1a-486f-84fd-ab24acdb67d5" class="toggle"><li><details open=""><summary>messages at the morning program</summary><ul id="5ddee65b-c2b5-4a47-9253-75097c27f501" class="bulleted-list"><li>12 different health messages during the month, for the morning program</li></ul><ul id="d950741d-5ae2-4e80-8c4d-393ad05562e7" class="bulleted-list"><li>Identification of the topics are the messages from the school by the Department of Health is then printed and distributed to all schools mandate</li></ul></details></li></ul><ul id="068f8c0d-8f20-4ba4-ad96-fc10436e227d" class="toggle"><li><details open=""><summary>Exhibitions</summary><p id="1be76d99-1e2c-480e-b6bc-b995500bb775" class="">Is a special exhibition to school designed to include various health topics, and some important messages that the Department is keen to be known in details by the students. And these exhibitions of health services are in coordination with the local health departments</p></details></li></ul><ul id="f0e7ec99-8a4f-4dbd-bbc9-791d82528583" class="toggle"><li><details open=""><summary>wall newspapers</summary><p id="63a7e7b9-62c5-44c0-8832-b26e363f7bf9" class="">Monthly health wall newspaper containing only healthy subjects Articles are provided by pupils in the school under the supervision of school health teacher</p></details></li></ul><ul id="a655cc0a-b8f2-49d3-b11c-6ddbb8b525b4" class="toggle"><li><details open=""><summary>lectures, video presentations</summary><p id="46bcb120-80d2-4874-bddb-301d119144c5" class="">Lectures , Health video presentations in schools and when possible literary Nights</p></details></li></ul><ul id="95ad9a30-665e-4673-b2f1-06de19163d9e" class="toggle"><li><details open=""><summary>the curriculum</summary><p id="f8ec13d3-f95c-45d8-8952-4b99f4ed2626" class="">which usually contain many health issues in the related subjects.</p></details></li></ul></details></li></ul><ul id="a397cef9-0404-49dc-91f6-9341fed1d9b3" class="toggle"><li><details open=""><summary>Healthy School Environment</summary><ul id="e6ee13d8-d8a8-469c-a6f4-62e396211fe5" class="toggle"><li><details open=""><summary>goal?</summary><p id="52f7ac37-15c9-4e5a-b23b-016ec3419ad2" class="">Is the environment of the school community to <mark class="highlight-orange_background">protect against direct injury or disease</mark> and <mark class="highlight-orange_background">promote health and provide preventive measures</mark> <mark class="highlight-orange_background">and positions against the known risk factors</mark> that can lead to diseases or health problems or disability in the future</p></details></li></ul><ul id="61e3809a-e5e1-4912-986c-cf7bd94f8695" class="toggle"><li><details open=""><summary>what&#x27;re the factors that influence the physical environment?</summary><p id="46fbff59-7ac8-45f4-bc44-b5b411f2bdd4" class="">the school building, and all the areas surrounding it including biological or chemical agents.</p><p id="17b422a5-6e2d-4957-a4ba-56125db680e9" class="">the weather and other forms of pollution that affect learners and staff of the school community.</p></details></li></ul><ul id="a0527a49-7daa-45a2-91bc-0b6131db3426" class="toggle"><li><details open=""><summary>what&#x27;s the ideal school location and environment?</summary><ul id="904b2089-7dba-4b29-9963-47837b11a10a" class="bulleted-list"><li>school should be at the center and close to transport links.</li></ul><ul id="d7d914fb-a9ce-406f-8383-494574c8b86f" class="bulleted-list"><li>far from industries with odors and fumes ,factories and railway noise.</li></ul><ul id="116f3b41-35cd-4af6-ac68-e08a6f6746a4" class="bulleted-list"><li>The school building should be relatively wide because narrow building does not allow freedom of movement</li></ul><ul id="199134ec-6e43-4e37-96a7-8a0055f40bd6" class="bulleted-list"><li>The direction of the building should be designed according to exposure to the sun and ensure that the arrival of the sun to all corners.</li></ul><ul id="b6ca9ee4-39d5-4986-91eb-2ad2a4e2eacc" class="bulleted-list"><li>Good ventilation are encouraged by the wide windows facing the opposite.</li></ul><ul id="3d004335-d1fe-4a0c-b0ff-050c0accfc44" class="bulleted-list"><li>Lighting: is very important and should be in a proper way for students.</li></ul><ul id="0c28985e-0855-48b3-b057-40ff9692ab38" class="bulleted-list"><li>Provision of safe drinking water is very important and the best source is from the taps directly rather than alzir</li></ul><ul id="57a33d97-6752-47cd-9c33-2710d69f2d69" class="bulleted-list"><li>There should be sufficient number of Toilets</li></ul></details></li></ul></details></li></ul><ul id="5222eec6-fa72-466e-b8a2-d9945153b186" class="toggle"><li><details open=""><summary>mental health</summary><p id="21c798ee-12c6-4d54-8355-bb65477c4da9" class="">based on primary health care for detecting the emotional, psychological mental and educational problems.</p></details></li></ul><ul id="e73e6383-40e6-4e33-bd0e-1f527b42e703" class="toggle"><li><details open=""><summary>school feeding</summary><p id="a6cd1d5b-edab-42cd-b0b0-8bdc44853085" class="">Aimed at the administration&#x27;s plan to cover some of the schools with a healthy school meal ,distribution of preventive doses of vitamin A .Ensure the safety of the food vendors outside schools and to provide safe and clean canteen services</p></details></li></ul><ul id="04a61129-0fb2-439b-bd44-d6b8bea0a0d4" class="toggle"><li><details open=""><summary>physical health</summary><p id="2d75f7d7-7a37-4174-b2d8-8c8f608d9493" class="">including holidays , rest between classes. Physical activities and this is done in coordination with the Department of Student Activity</p></details></li></ul><ul id="5523741c-2c3d-4b47-a6c0-cbc84bc82e22" class="toggle"><li><details open=""><summary>community involvement</summary><p id="25db81cb-569e-4c34-847d-30f3c2d98d2e" class="">Associations and councils of parents and teachers. Community participation in planning for school health programsHealth insurance for workers in schools. Vaccination against diseases (meningitis). Services, safe motherhood and reproductive health. Tobacco Control (School of smoke-free)</p></details></li></ul><ul id="9f0d62a6-8d1d-4132-a7b2-10f4e24045f3" class="toggle"><li><details open=""><summary>Promoting the health of school staff</summary><p id="214e2ca9-1fa0-4393-9226-24b82647669f" class="">Health insurance for workers in schools. Vaccination against diseases (meningitis). Services, safe motherhood and reproductive health. Tobacco Control (School of smoke-free)</p></details></li></ul></details></li></ul><ul id="6e2654d1-49c8-4248-b761-2254a5cce4d0" class="toggle"><li><details open=""><summary>what&#x27;re the basic constraints of the school health program?</summary><ul id="2ea2de47-fb51-4bdf-9fe1-dab785977615" class="bulleted-list"><li>Poor coordination</li></ul><ul id="70f8a7c6-f5e4-4c15-a191-f3429646a36f" class="bulleted-list"><li>Training</li></ul><ul id="ec0b65f1-9b2f-48d1-9a18-c079dc7507c0" class="bulleted-list"><li>Movements of the trainers</li></ul><ul id="024cddb8-b9f6-4c50-b614-8198943069de" class="bulleted-list"><li>The school environment</li></ul><ul id="a5d777b7-856d-4d3f-839e-388afa4e32c6" class="bulleted-list"><li>Coverage of private schools</li></ul><ul id="15978d66-eb37-433f-9ff3-ef1b1eb9e5cf" class="bulleted-list"><li>Inactivation of some components of school health</li></ul><ul id="79a288ce-3b1c-4dff-a254-246b5b854559" class="bulleted-list"><li>Lack of fund</li></ul></details></li></ul><p id="9f3259b3-4aa9-498f-ad27-e4b6cc04723c" class="">
+</p></div></article></body></html>

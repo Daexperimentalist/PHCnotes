@@ -1,0 +1,634 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Environmental sanitation</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d60b9c15-e072-444f-b270-42c7b706bb39" class="page sans"><header><h1 class="page-title">Environmental sanitation</h1></header><div class="page-body"><ul id="7dd0f485-1ade-4608-be2b-6c0bf7d0f6a5" class="toggle"><li><details open=""><summary>define environment?</summary><ul id="9933145c-404c-44d1-bcbc-108479e0835b" class="bulleted-list"><li>The term environment implies all the external factors which surround man.</li></ul><ul id="163cbf16-6293-4400-8062-f2b8b370c1b7" class="bulleted-list"><li>In modern concept environment includes not only water, air and soil but also the social and economic conditions under which we live.</li></ul></details></li></ul><ul id="568ff9e9-9889-4867-a322-d69a0abab4f0" class="toggle"><li><details open=""><summary>what&#x27;re components of environment?</summary><ul id="24c9de8c-23cc-4b81-ad5d-a94acde908df" class="bulleted-list"><li>For descriptive purposes En. has been divided 3 related components:</li></ul><ol id="2d5198d6-93a7-49da-9bf9-06ad365991f7" class="numbered-list" start="1"><li>Physical: water, air, soil…etc.</li></ol><ol id="6aeaa1b4-a9fb-4b46-bfe5-fd0aca69df51" class="numbered-list" start="2"><li>Biological: plant, animal, bacteria, viruses…etc</li></ol><ol id="6911d0a1-8f8a-4e08-8fd3-265d25da9585" class="numbered-list" start="3"><li>Social: culture, habits, income, occupation…etc.</li></ol></details></li></ul><ul id="6b7f35b5-567e-4e99-aac6-8b698cdf7ad5" class="toggle"><li><details open=""><summary>define environmental sanitation?</summary><ul id="10ff30fa-8d41-485f-b443-37d785f9c553" class="bulleted-list"><li>is the control of all those factors in man’s physical environment which may exercise a delirious effect on his physical development, health and survival.</li></ul><ul id="99dcf85f-6b0d-4da0-aec5-6bffa84984b8" class="bulleted-list"><li>The purpose of Environmental Health is to create and maintain ecological conditions that will promote health and thus prevent disease</li></ul></details></li></ul><ul id="e764ee3b-102c-4f0e-9c0b-6451289b3773" class="toggle"><li><details open=""><summary>Water</summary><ul id="4cf2a54a-0515-4998-95a2-6868e5c67ba7" class="toggle"><li><details open=""><summary>water sources and treatment</summary><ul id="eaa66dfd-5aac-4372-b83c-16f7968bb778" class="toggle"><li><details open=""><summary>water sources?</summary><ul id="0e9d7e97-414f-4231-adc4-1f9f42abdbeb" class="bulleted-list"><li>Rainwater(the prime source of all water.)</li></ul><ul id="a7e0ab8b-aa7c-4483-a6e9-7d82ba17913a" class="bulleted-list"><li>Surface water (rivers, streams, lakes)</li></ul><ul id="5204b918-a2f6-407d-a891-763236ecab74" class="bulleted-list"><li>Groundwater (from wells and springs).</li></ul><ul id="f71ac251-3f79-4337-a586-d35b39ece8aa" class="bulleted-list"><li>part sinks into the ground to form ground water; part of it evaporates back into the atmosphere &amp; some runs off to form streams &amp; rivers which flow ultimately into the sea. This is known as the &lt;water cycle&gt;.</li></ul></details></li></ul><ul id="f22785c7-c2eb-4148-b1b1-3e65f2ba08dc" class="toggle"><li><details open=""><summary>what makes a safe and wholesome water?</summary><ul id="67fc87fb-c784-4c40-9310-f90c0077a3df" class="bulleted-list"><li>Free from pathogenic agents,</li></ul><ul id="95622ecb-70b7-4457-b99b-59ced1e81b5f" class="bulleted-list"><li>Free from harmful chemical substances,</li></ul><ul id="6cf341c5-cf56-48fe-bd1d-9df054d5b630" class="bulleted-list"><li>Pleasant to taste, i.e. free from color and odour,</li></ul><ul id="ee0683e2-71fa-46c2-a261-5cd6abcb5865" class="bulleted-list"><li>Usable for domestic purposes.</li></ul></details></li></ul><ul id="21dba8b3-0017-4ac3-91ef-d2d9d5e6c69f" class="toggle"><li><details open=""><summary>what&#x27;s polluted water?</summary><p id="b247dd8c-1834-45c0-b7e1-36625375d805" class="">Water is said to be polluted or contaminated when it does not fulfill the above criteria of safe and wholesome.</p><p id="f33a66e6-16b5-4e2c-b33d-67313544065d" class="">Water quantity is important as water quality.</p><ul id="dade6aaf-ef81-42db-ad04-72f0d1f99584" class="toggle"><li><details open=""><summary>more serious aspect caused by man activity includes?</summary><ul id="7eecd45c-98a0-4caf-b664-7aa78b3b9293" class="bulleted-list"><li>sewage,</li></ul><ul id="3fe08cf6-71b8-4184-9971-fe8b0838288d" class="bulleted-list"><li>industrial &amp; trade wastes,</li></ul><ul id="62181e29-a8ea-44be-b8e0-61f7b1f5c2a6" class="bulleted-list"><li>agricultural pollutants,</li></ul><ul id="2ae236b9-b942-4a6e-88e9-bdec218a9453" class="bulleted-list"><li>Physical pollutants.</li></ul></details></li></ul></details></li></ul><ul id="80cdd425-cd10-4833-a4b3-79a8d9104e61" class="toggle"><li><details open=""><summary>What&#x27;s water treatment, and what&#x27;s the purpose?</summary><ul id="4c59ee7b-18b1-443f-a1af-8e2685341613" class="bulleted-list"><li>Water treatment is an essential way to have whole some water.</li></ul><ul id="fbc905ed-e951-4763-a16d-5270b76e7d89" class="bulleted-list"><li>The purpose of water treatment is to remove substances which may be dangerous to human health, &amp; produce safe &amp; wholesome water. Purification of water is either on a large scale, or on a small scale.</li></ul></details></li></ul><ul id="6a7344b1-3edb-4b5d-bb73-dc5e7c99b444" class="toggle"><li><details open=""><summary>what determines the water treatment method?</summary><ol id="7813e569-29e0-4a13-aea4-d2d94105469a" class="numbered-list" start="1"><li>nature of raw water</li></ol><ol id="a12dac11-1439-47bd-aeb0-a8984576ac56" class="numbered-list" start="2"><li>desired standards of water supply</li></ol><p id="4320d30f-703b-461b-bb01-067e128523f7" class="">e.g. ground water (wells &amp; springs) may need no treatment other than disinfection, while surface water (river water), requires extensive treatment.</p></details></li></ul><ul id="539ed3bd-5b17-4010-b442-a9d85772281a" class="toggle"><li><details open=""><summary>Types of water purification (treatment)?</summary><ul id="68e5d981-8cce-4f94-ab61-31f9a5038e54" class="toggle"><li><details open=""><summary>small scale</summary><p id="e918f60c-f0c2-467a-be4f-e2644997d794" class="">Three methods are generally available for purifying water on domestic scale, they can be used singly or in combination:</p><ul id="6d60cef2-ca3a-4ff3-81d2-0e2a0b90f7f0" class="bulleted-list"><li>Boiling</li></ul><ul id="c93c8502-21cf-4f96-b274-e009651e05f6" class="bulleted-list"><li>Chemical Disinfection</li></ul><ul id="3ca7f5d6-fcd7-43a5-9d93-0f0ceea33ab6" class="bulleted-list"><li>Filtration</li></ul></details></li></ul><ul id="f19f7667-0bc8-4989-be10-fdb5b4765b0f" class="toggle"><li><details open=""><summary>large scale</summary><p id="5d41a987-73cd-4e9b-81c9-74e6d8139645" class="">the components of a typical purification system comprise one or more of the following:</p><ul id="debb6eb0-a89f-4797-8a71-19c265515577" class="toggle"><li><details open=""><summary>Storage</summary><ul id="32f6a8f0-fdbc-4113-9fa5-b742450775f1" class="bulleted-list"><li>is either in natural or artificial reservoirs, it provides natural purification, about 90% of suspended impurities settle down in 24 hrs by gravity,also a tremendous drop takes place in bacterial count. About 90% drops in the first 5-7 days.</li></ul><ul id="a6c1a1ed-cabe-4bc9-93c1-fc0030172f1e" class="bulleted-list"><li>The optimum period of storage of river water is considered to be about 10-14 days.</li></ul></details></li></ul><ul id="cfd5c703-c865-4f5c-885c-0c409cd87437" class="toggle"><li><details open=""><summary>Filtration</summary><ul id="bcdaa20a-ec40-4fe8-9d2d-8065e42a6777" class="bulleted-list"><li>about 98 -99 % of bacteria, are removed by filtration, apart from other impurities. There are 2 types of filters:</li></ul><ul id="6b9c011c-fdff-4a16-98f9-361f0118cd20" class="bulleted-list"><li>Slow sand or biological filters,</li></ul><ul id="fcf2e466-4731-4df4-b406-cc08a4f4a0a0" class="bulleted-list"><li>Rapid sand or mechanical filters.</li></ul></details></li></ul><ul id="59b0c608-4c6c-4ce9-b28f-77b9cae37e58" class="toggle"><li><details open=""><summary>Disinfection</summary><ul id="1f2c8cd3-0329-41ab-a734-248ee02fb469" class="toggle"><li><details open=""><summary>what&#x27;s the purpose of disinfection?</summary><p id="d979cf66-129f-4122-b8ef-b206fc743858" class="">The purpose of disinfection is to kill or inactivate pathogenic (disease causing) microbes. Disinfection of water is therefore an important step in the control of water-borne diseases such as cholera, typhoid, hepatitis A and many diarrheal diseases, although all of these diseases may be transmitted in other ways as well.</p></details></li></ul><ul id="6afd3b73-2b15-482a-92e3-48353e89427d" class="toggle"><li><details open=""><summary>what&#x27;re the properties of disinfectants?</summary><ul id="63062745-c403-4b14-b576-fdb8970af0d6" class="bulleted-list"><li>Should be capable of destroying the pathogenic organisms present</li></ul><ul id="b36033d4-4f06-4a3a-9256-c476fbce780e" class="bulleted-list"><li>Should not leave products of reaction which are toxic or change colour or odour</li></ul><ul id="05d79bc2-12e5-4718-9b82-78ec69720dff" class="bulleted-list"><li>Has a reasonable cost</li></ul><ul id="692211d5-d8d5-4cb6-a374-cc5390fe3c45" class="bulleted-list"><li>Has the property of leaving residual concentration to deal with any possible recontamination.</li></ul></details></li></ul><ul id="cbe8829e-493d-4d4b-ae45-949621b16198" class="toggle"><li><details open=""><summary>What&#x27;s the ideal disinfectant?</summary><p id="d3f1aa79-94cf-452a-ae00-850a5934550b" class="">Chlorine; it is a supplement not a substitute to the other steps.</p><ul id="df02a9e5-8f7a-48d2-afa2-3a5182865200" class="toggle"><li><details open=""><summary>what&#x27;re the principles of chlorination?</summary><ul id="930d4b46-fba5-4b08-8278-86acaaeb9656" class="bulleted-list"><li>The mere addition of chlorine to water is not chlorination. There are rules to be followed:</li></ul><ol id="b0e8eb80-d7d2-4d12-abee-f64704f03ac0" class="numbered-list" start="1"><li>Water should be clear</li></ol><ol id="c1bbf81c-18c3-4085-9724-04aed73be91c" class="numbered-list" start="2"><li>Chlorine demand of water should be estimated the correct dose to be applied is the sum of chlorine demand of water plus the free residual chlorine of 0.5mg/L.</li></ol><ol id="ab3a3fc6-f666-4ea1-b1d5-06943208413d" class="numbered-list" start="3"><li>Contact period at least one hour to kill bacteria &amp; viruses.</li></ol></details></li></ul><ul id="39fdda96-91cd-440e-8b22-ebb468b5bc79" class="toggle"><li><details open=""><summary>what&#x27;s the breaking point?</summary><p id="df692655-6c76-49c9-864b-66aa36f3e285" class="">The point at which the chlorine demand of water is met is known as “break point”</p></details></li></ul><ul id="f4ad0c64-585e-4270-abee-9bb3c32c92cd" class="toggle"><li><details open=""><summary>what&#x27;s super chlorination?</summary><ul id="faa4669a-3ca9-462b-b727-a5cb6364e4cd" class="bulleted-list"><li>A method applicable to heavily polluted waters whose quality fluctuates greatly .</li></ul><ul id="3842d692-e76c-42c3-b930-e726cf6000ed" class="bulleted-list"><li>It is the addition of large doses of chlorine to water &amp; removal of excess of chlorine after disinfection (Super chlorination followed by de-chlorination)</li></ul></details></li></ul></details></li></ul><ul id="9bae8930-214b-43ab-b966-eb00940816d4" class="toggle"><li><details open=""><summary>what&#x27;s a good pretreatment agent?</summary><ul id="88258302-d66a-4d74-b40d-a499c1a0b0cd" class="toggle"><li><details open=""><summary>ozone gas</summary><ul id="c738922d-4697-4dae-9a7d-c9ba5b0d100b" class="bulleted-list"><li>It eliminates undesirable odour, taste &amp; colour.</li></ul><ul id="cddd151e-12ba-4160-b7b7-f7b644c8727a" class="bulleted-list"><li>It has a strong veridical effect.</li></ul><ul id="70fe95c4-d827-4fd2-ba1a-df745bae1e64" class="bulleted-list"><li>It inactivates viruses in a matter of seconds unlike chlorine which needs minutes to do so.</li></ul><ul id="0444d1c9-3432-4a1c-b18c-7dc33a79f308" class="bulleted-list"><li>The drawback of ozone is that after it has done its job it decomposes &amp; disappears, there is no residual germicidal effect.</li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="b3cdcc59-d9e8-412f-af72-bfdd0441fac6" class="toggle"><li><details open=""><summary>Diseases Related to Water</summary><ul id="33ebced4-4d54-42e1-b00b-7fd3cd141f87" class="bulleted-list"><li>children are a susceptible population.</li></ul><ul id="42fed3fe-62e1-4234-8121-abf9bda3b0c5" class="toggle"><li><details open=""><summary>Water-borne Diseases</summary><ul id="69a9bb0c-c320-4521-ad7f-9d2886359eab" class="toggle"><li><details open=""><summary>def?</summary><p id="bbd60903-8573-4548-a7cf-e41c5d5e0dad" class="">Caused directly by the presence of an infective agent in the water such as diseases caused by ingestion of water contaminated by:</p><ol id="e54cd0fb-d4b5-4649-90ad-8681f012e7bc" class="numbered-list" start="1"><li>Human or animal excrement, which contain pathogenic microorganisms e.g. Viral (viral hepatitis A and E, polio etc),Bacterial,Protozoal (amoebiasis, giardiasis),Helmenthic (roundworm, threadworm, hydatid disease etc)</li></ol><ol id="f601c89c-53d2-4453-b6f6-f0d854cb537a" class="numbered-list" start="2"><li>Chemicals that have an adverse effect on health such as: Flouride , Nitrates from fertilizers, Carcinogenic pesticides (DDT),Lead (from pipes).Chemical pollutants may also affect man’s health indirectly by accumulating in aquatic life (e.g. fish) used as human food .</li></ol><p id="143d4620-e268-4342-ae94-84b236ebc9a6" class="">
+</p></details></li></ul></details></li></ul><ul id="aa0d5c64-3327-41cd-8aef-64679a6bf32b" class="toggle"><li><details open=""><summary>Water-washed Diseases</summary><ul id="bbcdeb2d-b1dc-4038-83dd-cf61f0847f26" class="bulleted-list"><li>Diseases caused by poor personal hygiene and skin and eye contact with contaminated water.</li></ul><ul id="a0956c8e-ba3e-4fbd-86e5-9971856511c9" class="bulleted-list"><li>These include scabies, trachoma, typhus, and other flea, lice and tick-borne diseases.</li></ul></details></li></ul><ul id="7936d293-1370-4a4e-bcef-120e55162faf" class="toggle"><li><details open=""><summary>Water-based Diseases</summary><p id="985a8f31-04d9-4155-827a-143164b12f9f" class="">Diseases caused due to the presence of an aquatic host (intermediate host) such as: A snail for schistosomasis ,Cyclops (water fleas) for guineaworm (Dracunculiasis)</p></details></li></ul><ul id="f50cc989-275b-409b-864a-fe5d5c84694e" class="toggle"><li><details open=""><summary>water-related diseases</summary><p id="8e95c1f8-6201-489f-8b96-da5ab9c06cb3" class="">Water-related diseases are caused by insect vectors, especially mosquitoes, that breed or feed near water like: dengue, filariasis, malaria, onchocerciasis, trypanosomiasis ….etc</p></details></li></ul><ul id="fe8a0cff-50a7-41c6-9382-214680db2aef" class="toggle"><li><details open=""><summary>Health ED points to control water diseases</summary><ul id="17a18aa8-0638-4bcc-bf2d-79674a9d7cf8" class="bulleted-list"><li>Hygiene education</li></ul><ul id="3f9721da-564f-4c24-b8c5-7e5863b1156e" class="bulleted-list"><li>Improvements in habitation and general sanitation</li></ul><ul id="00b658dc-3ce1-4da0-a569-7f4e89415ff0" class="bulleted-list"><li>Higher education training in water-related issues.</li></ul><ul id="81f9fea1-8afa-46bb-8ad5-26b13f4abe60" class="bulleted-list"><li>Do not defecate outdoors.</li></ul><ul id="e732d3ff-9cc7-480a-bb48-65451ba94b62" class="bulleted-list"><li>Wash hands with soap and water before handling food.</li></ul><ul id="248833a4-f48a-4143-9f56-e77e5bc4f624" class="bulleted-list"><li>Wash, peel or cook all raw vegetables and fruits before eating.</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="442945a2-36b7-4af9-9e2a-8b06fcd681c3" class="toggle"><li><details open=""><summary>waste</summary><ul id="916b02be-70f8-4804-a987-d98afa4f0e72" class="toggle"><li><details open=""><summary>define the term refuse?</summary><p id="b7479de1-31fa-455c-87b1-4ad485b8c080" class="">is a general term applied to solid and semi solid waste materials other than human excreta.</p></details></li></ul><ul id="2790a82b-bfb5-434d-8431-b9384d3c40ad" class="toggle"><li><details open=""><summary>what&#x27;re the types of refuse?</summary><ul id="6b0f402a-2ed9-4af6-a130-eaa5461d2b95" class="bulleted-list"><li>GARBAGE: left-over vegetables, animal and fish material from kitchens and food establishments.</li></ul><ul id="0bc18ccd-f89a-4ccf-b6c5-134360992ad4" class="bulleted-list"><li>RUBBISH: waste material such as bottles, broken glass, tin cans, waste papers, discarded porcelain ware, pieces of metal, wrapping papers etc.</li></ul><ul id="00af2352-328f-4c19-a12c-f96a19bb4e4f" class="bulleted-list"><li>Ashes: left-over from burning of wood and coal. Dead animals/ carcasses</li></ul><ul id="2d6ecf3a-8d63-4cfe-997a-2cb367dabff2" class="bulleted-list"><li>Stable manure. Yard cuttings: leaves, branches, grass .Street sweeping: dust, manure, leaves, cigarette butts, waste paper and other materials that are swept from the streets</li></ul></details></li></ul><ul id="dd677ecd-6e7c-4900-b00a-fc5ad48248e3" class="toggle"><li><details open=""><summary>waste management</summary><ul id="47b81035-e090-4b88-8dce-1f361d7c0d5c" class="toggle"><li><details open=""><summary>define?</summary><p id="0a9c1f19-b2ae-49b7-8864-0598e3bbc46d" class="">Is the collection, transport, processing, recycling or disposal and monitoring of waste materials.</p></details></li></ul><ul id="f3bf705c-2f51-42ba-a817-685a4a2100cb" class="toggle"><li><details open=""><summary>why waste accumulation causes health hazards?</summary><ul id="e2f77b5e-b10f-4787-bed4-4049677bde0a" class="bulleted-list"><li>favours fly breeding,</li></ul><ul id="3b2a589c-928a-4c1e-a173-c923bcb4ae6c" class="bulleted-list"><li>attracts rodents,</li></ul><ul id="69eda6bf-4d74-44be-8228-2a3e15e1c624" class="bulleted-list"><li>pathogens in waste contaminate man’s food through dust and flies,</li></ul><ul id="cc42fbd3-0f9c-4d93-b38d-dc366291318d" class="bulleted-list"><li>water and soil pollution,</li></ul><ul id="c7189daf-8f2a-4660-a41b-4e33146f6031" class="bulleted-list"><li>Unsightly appearance…ect</li></ul></details></li></ul><ul id="06c91632-11fa-4a78-ac8e-b91a3666fb12" class="toggle"><li><details open=""><summary>what&#x27;re the methods of solid disposal?</summary><ul id="cec01206-c103-4923-b331-d36e0ff83266" class="bulleted-list"><li>Landfill is the most common</li></ul><ul id="4cbb6b02-363d-4807-a361-c9d880df7b7f" class="bulleted-list"><li>Burning of Refuse.</li></ul><ul id="7d973ee6-e1ad-4e0b-b1af-7c004cfc0632" class="bulleted-list"><li><a href="http://www.ace.mmu.ac.uk/eae/sustainability/older/Waste_Recycling.html">Recycling waste</a>.</li></ul></details></li></ul></details></li></ul><ul id="feaa49f4-fa7f-41f6-85a1-5374e4cd73d5" class="toggle"><li><details open=""><summary>sanitation</summary><ul id="cdeb986f-8f3b-4d73-92a7-5e0599d8921c" class="toggle"><li><details open=""><summary>def?</summary><p id="3781c4dc-88ec-486f-8cc2-fa603aa45281" class="">is any system that improves proper disposal of human and animal wastes, proper use of toilet, and avoiding open space defecation.</p></details></li></ul><ul id="12d75cce-ed75-4bda-9902-2eed73eb5b0e" class="toggle"><li><details open=""><summary>excreta disposal</summary><ul id="bf4d683e-db47-424f-9854-4f467222efbb" class="toggle"><li><details open=""><summary>what&#x27;s a sanitation barrier?</summary><ul id="69cb9b22-75a2-4cd4-86c7-3061d0d0836e" class="bulleted-list"><li>anything that hinders the safe disposal of excreta is important , so that it does not contaminate the environment, water, food or hands.</li></ul><ul id="4e9d16ea-d815-4f36-8e49-067158f73554" class="bulleted-list"><li>Primary barrier - prevent excreta accumulation and shortcut the disease carrier from the source.</li></ul><ul id="41bb4331-573d-43e2-b5be-1592d3718fae" class="bulleted-list"><li>secondary barrier - shortcut the carrier from the host.</li></ul></details></li></ul><ul id="a12a9268-87c0-4307-a03b-66afd84959f3" class="toggle"><li><details open=""><summary>what&#x27;s a sanitation ladder?</summary><p id="b0900c47-97f4-452a-b10e-ca42374eb218" class="">several different sanitation options (layers) required with varying levels of convenience and cost within a community.</p></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="06570d15-d20e-40d6-834e-402ac6333334" class="toggle"><li><details open=""><summary>housing</summary><ul id="8efa0860-21db-4bdc-85a4-9905ae135905" class="toggle"><li><details open=""><summary>WHO-ish def?</summary><p id="f8c376bd-d6be-4c4c-b429-46dc0c6bcc1b" class="">a place which protects privacy, contributes to physical and psychological well-being.</p></details></li></ul><ul id="3227a4a9-4806-4721-8c8b-8a4414d709d6" class="toggle"><li><details open=""><summary>define adequate shelter?</summary><p id="1a2f1f48-59fe-43ef-ae4d-d0c89fc25a4b" class="">Means adequate privacy; adequate space; physical accessibility; adequate security, structural stability and durability; adequate lighting, heating and ventilation; adequate basic infrastructure, such as water-supply, sanitation and waste-management facilities; suitable environmental quality and health-related factors; and adequate and accessible location with regard to work and basic facilities, all of which should be available at an affordable cost.</p></details></li></ul><ul id="63341a37-e8a3-40ee-a689-70e1b3891305" class="toggle"><li><details open=""><summary>define settlement?</summary><p id="ea2626fb-2df9-47c9-b5e4-43eeb32f0129" class="">all places in which a group of people reside &amp; pursue their life goals</p></details></li></ul><ul id="151dcfa6-ffb6-4f37-be81-dc04ab55e60f" class="toggle"><li><details open=""><summary>overcrowding</summary><ul id="2bdb3c7c-db4f-4124-a9a8-bee5174cbd72" class="toggle"><li><details open=""><summary>def?</summary><p id="032058d5-7976-4a13-abbb-5423c6dae102" class="">refers to the situation in which more people are living within a single dwelling than there is a space for, so that movement is restricted, privacy is secluded, hygiene is impossible, rest &amp; sleep is difficult. Clearly infectious diseases spread rapidly &amp; psychosocial stress is common.</p></details></li></ul><ul id="c7a2165f-0001-4a41-9202-614843704670" class="toggle"><li><details open=""><summary>what&#x27;re the complications of large population rapid influx?</summary><p id="9fa8f76a-8845-4f35-9654-a15e81c61350" class="">lack of public services such as :</p><ul id="fa49f506-aea5-4809-91b8-d9813bd2b334" class="bulleted-list"><li>insufficient provision of safe water,</li></ul><ul id="a42052ac-bfa4-4891-9077-8d0684a439b0" class="bulleted-list"><li>inadequate levels of appropriate sanitation,</li></ul><ul id="d5105f42-5025-4477-8e70-368386b9dcb7" class="bulleted-list"><li>inadequate disposal of solid waste,</li></ul><ul id="87e6fbdd-4eac-43a2-91e0-1b00ac8e5e28" class="bulleted-list"><li>inadequate drainage of surface water,</li></ul><ul id="3bd458dd-862c-4d11-95e0-0cb3f7337807" class="bulleted-list"><li>poor personal and domestic hygiene,</li></ul><ul id="224d73a2-0372-47d8-8f24-d4eb10bb1623" class="bulleted-list"><li>inadequate housing, overcrowding and</li></ul><ul id="3637de3b-592e-4799-ad79-23b34ab225b7" class="bulleted-list"><li>inadequate education and energy services</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="39b0061b-3d43-4e74-9ffc-b740e5e91280" class="toggle"><li><details open=""><summary>pollution</summary><ul id="9ca00e3d-5cbc-47e1-a5da-71f4ca0d3eee" class="toggle"><li><details open=""><summary>air pollution</summary><ul id="189029e6-2cc3-4828-a90c-475a8579b799" class="toggle"><li><details open=""><summary>def?</summary><p id="bf2849c4-0adc-439c-bfcc-49e61d5284f0" class="">is contamination of the indoor or outdoor environment by any chemical, physical or biological agent that modifies the natural characteristics of the atmosphere.</p></details></li></ul><ul id="625a8a1f-2dee-4d8e-808c-4cb1806b8b1b" class="toggle"><li><details open=""><summary>What are the affects of air pollution?</summary><ul id="91b3b77b-aa60-41d8-b055-c3e04bd8959c" class="toggle"><li><details open=""><summary>health effects</summary><ul id="f4432ccf-4e29-4de6-ae3c-bafdf2cc3815" class="bulleted-list"><li><strong>Immediate effects</strong> borne by the respiratory system which result in acute bronchitis &amp; if the pollution is intense it may result in immediate death of suffocation.</li></ul><ul id="3d21f16c-8fbb-4926-a7f8-d1b0c915380f" class="bulleted-list"><li><strong>Delayed effects</strong> which are linked with air pollution are chronic bronchitis, lung cancer, bronchial asthma, emphysema, &amp; respiratory allergies.</li></ul></details></li></ul><ul id="232ec17f-c446-4797-9ec2-04aa4b07627b" class="toggle"><li><details open=""><summary>social and economic effects</summary><p id="02269fe6-9e2f-417d-9b12-9e32bc6c4380" class="">which includes mainly destruction of plant &amp; animal life.</p></details></li></ul></details></li></ul><ul id="f10d50b8-e325-40ad-96b4-44baf1e63f4f" class="toggle"><li><details open=""><summary>what&#x27;re modes of air pollution?</summary><ul id="8ebdbb51-ddbd-4644-ab22-665ce39ef412" class="toggle"><li><details open=""><summary>household air pollution</summary><p id="ea65540c-27b4-42ee-ba44-29545bc4852e" class="">smoke, cooking gases, usage of solid fuels</p></details></li></ul><ul id="4dab023b-82be-4821-9939-d93ad31b5217" class="toggle"><li><details open=""><summary>ambient (outdoor) air pollution</summary><p id="0e572d8d-e0a5-43a4-9cbc-b73f2d24bc1f" class="">Most sources of outdoor air pollution are well beyond the control of individuals and demand action by cities, as well as national and international policymakers in sector like transport, energy waste management, buildings and agriculture.</p></details></li></ul></details></li></ul><ul id="1c9760c6-aaec-4eab-8113-213f0b170999" class="toggle"><li><details open=""><summary>causes of air pollution according to WHO?</summary><ul id="bb6dfb6c-9236-427d-bc93-3a24cdffe007" class="toggle"><li><details open=""><summary>Particulate matter (PM)</summary><p id="713c9e71-a6b3-4865-a1c6-36354f4b0ec3" class="">consists of a complex mixture of solid and liquid particles of organic and inorganic substances suspended in the air. The most health-damaging particles are those with a diameter of 10 microns or less, (≤ PM10), which can penetrate and lodge deep inside the lungs. Chronic exposure to particles contributes to the risk of developing cardiovascular and respiratory diseases, as well as of lung cancer</p></details></li></ul><ul id="0c937514-25dc-4104-bdf5-66e2a26c4756" class="bulleted-list"><li>ozone (O3)</li></ul><ul id="2eb4911b-0e07-4f86-8e64-ea98a96d8c5b" class="bulleted-list"><li>nitrogen dioxide (NO2) and</li></ul><ul id="e5bcef90-73c8-4e93-aef1-966f015ed524" class="bulleted-list"><li>sulfur dioxide (SO2)</li></ul><ul id="a66101f1-a09f-4ebe-b104-898f5d8d0e91" class="bulleted-list"><li>Ozone is a major factor in asthma morbidity and mortality, while nitrogen dioxide and sulfur dioxide also can play a role in asthma, bronchial symptoms, lung inflammation and reduced lung function.</li></ul></details></li></ul><ul id="970b58f8-4af4-4ea7-944e-e36f5752e80a" class="toggle"><li><details open=""><summary>prevention and control?</summary><ul id="c1320911-73dc-47a5-925f-4780e798c853" class="bulleted-list"><li>new cleaner tech</li></ul><ul id="59810222-ae64-4784-b5f0-ce9edf1a0943" class="bulleted-list"><li>Dilution e.g. establishment of green belts btw industrial &amp; residential areas.</li></ul><ul id="118b140f-aa88-4480-9d0e-8b4f313009ae" class="bulleted-list"><li>legislations for cleaner environment</li></ul></details></li></ul></details></li></ul><ul id="4c39551d-015c-4bbc-b04b-035c8acc91e7" class="toggle"><li><details open=""><summary>noise</summary><ul id="f32b9e27-259b-49e9-9411-27fe4cf88c01" class="toggle"><li><details open=""><summary>def?</summary><ul id="83b51a49-6835-4068-8bd2-74742d7ef47a" class="bulleted-list"><li>unwanted sound, and Noise Pollution is a very disturbing noise which affects man in a way that affects his health.</li></ul><ul id="878651c1-1dcb-49de-9287-13b80e9091b3" class="bulleted-list"><li>The maximum safe threshold for humans is 80 decibels.</li></ul></details></li></ul><ul id="7e18b92c-1c67-4e10-b373-a7f9cfe910e6" class="toggle"><li><details open=""><summary>what&#x27;re the factors that determining the impact of noise?</summary><ul id="1b5c193e-a9f3-474f-b255-67e4b7226d57" class="bulleted-list"><li>frequency</li></ul><ul id="a548c2d1-ad26-4188-8127-26fc51e69456" class="bulleted-list"><li>sound pressure</li></ul><ul id="fa791ae6-27f5-4072-8d9c-6b6a8267cc11" class="bulleted-list"><li>duration</li></ul><ul id="692f7bf4-89a7-4383-8239-470f99059b90" class="bulleted-list"><li>time sequence</li></ul><ul id="8897ae7a-3109-48ac-942e-da4982e60d8f" class="bulleted-list"><li>physical fitness</li></ul><ul id="072f241b-e6ec-4508-86e8-d6460e99cde4" class="bulleted-list"><li>personal attitude</li></ul><ul id="abc6d330-0ba5-4876-8ab5-7abbc846ff8a" class="bulleted-list"><li>kind of activity</li></ul></details></li></ul><ul id="613549d2-9d58-4911-bf75-ea4a0e3c7510" class="toggle"><li><details open=""><summary>according to WHO noise can cause?</summary><p id="045ce1b5-8055-47ae-a9a0-24a39ac66e19" class="">a number of short- and long-term health problems such as sleep disturbance, cardiovascular effects, poorer work and school performance, hearing impairment, etc</p></details></li></ul><ul id="363f4ee8-77f7-45ad-bd63-160df79092d0" class="toggle"><li><details open=""><summary>Define recreational noise?</summary><p id="11701ddd-25c2-4857-b550-fc17acfffa18" class="">bloddy music! 1.1 Billion are at risk of hearing loss</p></details></li></ul><ul id="72fc2730-5626-4f71-bc9f-3bb70dbe7dce" class="toggle"><li><details open=""><summary>define community noise?</summary><ul id="d3c8dc01-331d-431c-ab04-ba4cb0a35f89" class="bulleted-list"><li>also called environmental noise, residential noise or domestic noise)</li></ul><ul id="718d2aed-f2d1-462a-b0a4-90bd33211c2b" class="bulleted-list"><li>It is defined as noise emitted from all sources except noise at the industrial workplace.</li></ul><ul id="ad00b502-a11b-40da-bebd-6a51b5bff969" class="bulleted-list"><li>Main sources of community noise include road, rail and air traffic; construction and public work; and the neighborhood and the main indoor noise sources are ventilation systems, office machines, home appliances and neighbours</li></ul></details></li></ul><ul id="e426998e-ef90-48d5-9440-39ca3eeceb75" class="toggle"><li><details open=""><summary>causes of noise pollution</summary><ul id="e2c5e239-ee85-4aab-b952-1463bce98883" class="bulleted-list"><li>Industrialization</li></ul><ul id="4ab25966-4469-42b0-8992-5a733661bad3" class="bulleted-list"><li>Poor Urban Planning</li></ul><ul id="50fad822-39fc-4dc3-b4c9-4e142fbd5080" class="bulleted-list"><li>Social Events</li></ul><ul id="70440b84-622b-4eff-850d-e7d352778895" class="bulleted-list"><li>Transportation</li></ul><ul id="c2cd1237-6f43-4923-9e4e-62010a386335" class="bulleted-list"><li>Construction Activities</li></ul><ul id="65b9189f-531c-4c1d-9b1f-95a25d4fac8f" class="bulleted-list"><li>Household gadgets</li></ul><ul id="6a519207-663a-4eb4-af31-091932fc76dd" class="bulleted-list"><li>Etc...</li></ul></details></li></ul><ul id="b54973e6-9945-4514-958a-f52266c07ba3" class="toggle"><li><details open=""><summary>what&#x27;re the effects of noise?</summary><ul id="74d6b21d-17c6-4627-8166-b7865c1d53ae" class="toggle"><li><details open=""><summary>auditory</summary><p id="9d8d55f8-c788-4b5f-b292-7712d968f85b" class="">Repeated or continuous exposure to noise may result in hear loss which may be temporary or permanent.</p></details></li></ul><ul id="4de4645b-c01f-4c6b-9da5-7a767a6dd055" class="toggle"><li><details open=""><summary>non auditory</summary><p id="9a769440-0aa6-4821-9ea8-65179587bfab" class="">which include nervousness, decrease mental concentration, psychological changes, interference with sleep …etc.</p></details></li></ul></details></li></ul><ul id="b651277c-4e34-4830-bf32-c600d643c820" class="toggle"><li><details open=""><summary>what&#x27;re some general measures for noise control?</summary><ul id="0117b271-ebb7-44e6-895c-b699cb5b1855" class="bulleted-list"><li>Careful planning of cities</li></ul><ul id="392c2002-5a19-415a-a12a-4ff9c772766c" class="bulleted-list"><li>Control of vehicles</li></ul><ul id="3d8c0fcd-f98b-4968-90c2-7a45a679e39a" class="bulleted-list"><li>Industries, railways &amp; airports should be far from houses</li></ul><ul id="1115d64e-64a8-4a9b-992e-9d96091833ed" class="bulleted-list"><li>Protection of exposed persons</li></ul><ul id="a817b51d-e5f8-4f35-9641-5c1b2eff8151" class="bulleted-list"><li>Legislation, developing countries often lack both effective legislation against noise and programme to prevent noise-induced hearing loss.</li></ul></details></li></ul></details></li></ul><ul id="6ac64347-4693-4f3f-85df-c5597c2d4795" class="toggle"><li><details open=""><summary>radiation</summary><ul id="88f1829b-da08-4cbb-bab0-b215becc43b0" class="toggle"><li><details open=""><summary>types of radiation</summary><ul id="e3a40ee5-e685-4dbd-94b6-22ef787da52b" class="bulleted-list"><li><strong>ionizing radiation</strong> is the one which has the ability to penetrate tissues and deposit its energy within them.</li></ul><ul id="8b3ab911-0834-4057-abb5-aae089b0f1ca" class="bulleted-list"><li><strong>non ionizing radiation</strong> refers to many electro magnetic radiation of wave lengths longer than those of ionizing radiation so have less energy e.g. radio frequency.</li></ul></details></li></ul><ul id="eb450fc5-bab4-41cd-8591-dd8d2c3809ca" class="toggle"><li><details open=""><summary>sources of radiation</summary><ul id="676d37ce-b1c0-488c-a13f-113f1792b71f" class="bulleted-list"><li>natural:
+- cosmic source
+- environmental [radio active elements e.g. uranium].</li></ul><ul id="392852ad-9cd6-45ef-9719-b813a6bcd8e7" class="bulleted-list"><li>man made:
+- x-rays[ patients &amp; radiologists] 
+- nuclear explosions.</li></ul></details></li></ul><ul id="72f13083-285b-424f-b253-951cae103ea7" class="toggle"><li><details open=""><summary>biological effects of radiation?</summary><ul id="47aac1b8-a9b6-4007-9525-3adaf512b16d" class="toggle"><li><details open=""><summary>somatic</summary><ul id="12b525ab-7d47-44d3-abaa-039cf5f1e031" class="bulleted-list"><li>Immediate effects according to the dose, can only cause mild lassitude or which can be fatal</li></ul><ul id="ea4ee8c8-018c-49e2-bcbd-3fdff4d7ce44" class="bulleted-list"><li>Delayed effects :take time to develop , the latent period may vary from a few weeks to years &amp; the delayed effects are mainly leukaemia, malignant tumours, foetal development abnormalities &amp; shortening of life.</li></ul></details></li></ul><ul id="09bd4663-1aa5-4996-a438-b2c4188991ae" class="toggle"><li><details open=""><summary>genetic</summary><p id="97a3f5cb-a14f-4f5d-9260-f10f575f22ec" class="">shows effects in remote off-springs as a result of injury to the chromosomes which are associated with sterility or affects the genes.</p></details></li></ul></details></li></ul><ul id="0b87feef-2a62-4227-a8db-3e488da8745b" class="toggle"><li><details open=""><summary>radiation hazards?</summary><ul id="234c74e1-d312-492f-b5c3-78807f6d5883" class="bulleted-list"><li>Occupational hazards due to ionizing radiation may be :</li></ul><ul id="44aae085-f99b-47a5-bfe0-47493cd95b74" class="bulleted-list"><li>Acute burns, dermatitis and blood dyscarsias</li></ul><ul id="81077e6c-dd5f-4a88-b0d9-e34dfe1921d4" class="bulleted-list"><li>Chronic exposure may cause malignancies and genetic effects.</li></ul></details></li></ul><ul id="532cedb5-12bc-4420-81a7-0fd5357825e7" class="toggle"><li><details open=""><summary>preventive measures?</summary><ul id="8125c61b-9922-48a7-a986-40d51d491920" class="bulleted-list"><li>Workers must wear a dosimeter which shows accumulated exposure to radiation.</li></ul><ul id="e0073459-d23e-4a10-b951-0b506e74f97a" class="bulleted-list"><li>Employees should be monitored at intervals not exceeding 6/12.</li></ul><ul id="1da431f8-ceae-4bb3-b2ff-46989380af99" class="bulleted-list"><li>Shielding should be used (lead shielding).</li></ul><ul id="171590b3-605d-449c-bee2-9271da49d2a3" class="bulleted-list"><li>Pregnant women should not be allowed to work at places where there is continuous exposure</li></ul></details></li></ul></details></li></ul><p id="7625ac04-1e12-4199-bfb7-62f2384987a0" class="">
+</p></details></li></ul><p id="df2f90e0-b0d8-41f8-bb45-a1ca38d835cd" class="">
+</p></div></article></body></html>

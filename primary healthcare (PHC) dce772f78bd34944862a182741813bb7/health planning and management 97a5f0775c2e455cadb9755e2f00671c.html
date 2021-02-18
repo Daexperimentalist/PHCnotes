@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>health planning and management</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="97a5f077-5c2e-455c-adb9-755e2f00671c" class="page sans"><header><h1 class="page-title">health planning and management</h1></header><div class="page-body"><ul id="cd034bbb-a702-4628-a8fd-40964adc0f60" class="toggle"><li><details open=""><summary>def?</summary><p id="f9328b2a-77cf-49a2-8dd6-0f928ed87730" class="">It is the process of: defining community health problems, identifying unmet needs, surveying the resources to meet them, establishing priority goals that are feasible and projecting administrative action to accomplish the purpose of proposed program.</p></details></li></ul><ul id="2b705c04-a7e8-4c12-988e-e02b3ebacdd5" class="toggle"><li><details open=""><summary>objective (purpose)?</summary><p id="98f9a169-0072-4b3d-8471-c9674a55b25e" class="">is to meet the health needs and demands of the people by the following:</p><ul id="e49e9132-296d-4575-af62-a4ad494d6fe0" class="bulleted-list"><li>To match limited resources with many problems.</li></ul><ul id="de2f12a4-7ff0-4323-9c21-254a8bb730bd" class="bulleted-list"><li>To eliminate wasteful expenditure or duplication of expenditure.</li></ul><ul id="a16d5cd5-3a43-4175-9928-97017672f523" class="bulleted-list"><li>To develop best course of action to accomplish an objective.</li></ul></details></li></ul><ul id="48859459-5298-4d22-8922-83dddd3d75aa" class="toggle"><li><details open=""><summary>strategy (steps of planning)?</summary><ul id="334f6b15-c9cf-4441-bd40-2bb01cae0f7c" class="toggle"><li><details open=""><summary>plan formulation</summary><ul id="e13e8e79-6d3f-42d4-b172-acd1c44230e8" class="toggle"><li><details open=""><summary>what&#x27;re the elements of a plan?</summary><ul id="1dcf7e37-c26b-472c-91ea-3ebb9e917abd" class="bulleted-list"><li>Objective</li></ul><ul id="0890ed36-14cd-409d-a5f3-8d7c0a180242" class="bulleted-list"><li>Policy : guiding principles stated as an expectation.</li></ul><ul id="41028b3e-e23c-4de8-b97f-245a53d0cf4a" class="bulleted-list"><li>Program: sequence of activities</li></ul><ul id="432c93ae-cfb5-4d26-8b49-61e5ac65d71c" class="bulleted-list"><li>Schedule : is time sequence for work to be done.</li></ul><ul id="d46c979c-86c5-46a0-b9cf-e3af13f66e69" class="bulleted-list"><li>budget</li></ul></details></li></ul><ul id="e044877b-5b80-450a-9072-c24f2face583" class="toggle"><li><details open=""><summary>steps of planning cycle?</summary><ul id="05eed11e-9195-4a30-8c6a-11ca11a4a523" class="toggle"><li><details open=""><summary>analysis of the health situation</summary><p id="10c3cede-d87c-4490-ac9a-d068d6f222e1" class="">by looking for:</p><ol id="af5e908b-e207-43d0-a258-61feb32c9d03" class="numbered-list" start="1"><li>Population</li></ol><ol id="a2521322-7adb-4df8-a7f1-261eeae55ecf" class="numbered-list" start="2"><li>Statistics of morbidity and mortality</li></ol><ol id="d297282a-6d1a-41f0-9a50-2dd1eb07c091" class="numbered-list" start="3"><li>Epidemiology</li></ol><ol id="eda090d3-9da0-4557-9ac9-7265ec5f8b18" class="numbered-list" start="4"><li>Medical care facilities</li></ol><ol id="0e877cc5-4c2e-48b4-b674-a716210452bb" class="numbered-list" start="5"><li>Manpower (HR)</li></ol><ol id="93733116-5fb4-4d17-a11b-8b9aa72e0a99" class="numbered-list" start="6"><li>Attitudes and beliefs</li></ol></details></li></ul><ul id="45a1620d-ef6c-41a2-a4ff-23de9548a1b5" class="toggle"><li><details open=""><summary>Establishment of objectives and goals</summary><p id="e42cb698-ba1a-49b5-b3ad-bb5c89a95a8b" class="">It should be set by a person having authority.</p><ul id="d620e7ef-7ad7-417d-9f6a-54d902763d24" class="bulleted-list"><li>The goal should be realistic.</li></ul><ul id="9aa581eb-7132-4383-9475-69eb149f798f" class="bulleted-list"><li>It should be specific.</li></ul><ul id="ddcb2b72-71a2-4201-bf74-30ac9df51276" class="bulleted-list"><li>Acceptability</li></ul><ul id="621293c0-ec49-4606-a1d2-3f2258cc877d" class="bulleted-list"><li>Easily measurable</li></ul></details></li></ul><ul id="9ce419a6-9aee-4e7b-9602-e29b0c3825fc" class="toggle"><li><details open=""><summary>assessment of resources</summary><p id="e23c2c86-553c-4ebd-9d15-5c677d67dc51" class="">resources include:</p><ol id="57eb21a0-152d-4e36-81b3-83f3b7c12cb3" class="numbered-list" start="1"><li>Manpower</li></ol><ol id="b47698e5-7982-4240-ac87-ee04e2f1f35b" class="numbered-list" start="2"><li>Money</li></ol><ol id="4c1bf8b6-6cac-4071-bab3-263b005981b6" class="numbered-list" start="3"><li>Materials</li></ol><ol id="c7e3e44b-8cf2-41a7-99d8-70cbbdc4f233" class="numbered-list" start="4"><li>Skills and knowledge</li></ol><ol id="c3517b6a-b24b-4dfe-a30c-17b557ba017a" class="numbered-list" start="5"><li>Technical needs</li></ol></details></li></ul><ul id="28e0b9a7-0ddb-4360-8a94-575b428817f1" class="toggle"><li><details open=""><summary>fixing priorities</summary><ul id="9fe8eea6-7509-4db5-995a-8ca633514076" class="bulleted-list"><li>Establishment of priorities in order of importance and magnitude (shortage of resources).</li></ul><ul id="1845e655-a881-4413-bedb-a2832a37f2f3" class="bulleted-list"><li>Once priorities have been established alternate plans for achieving them are also formulated</li></ul></details></li></ul><ul id="eb47f5e7-abdd-436a-960a-6ceb8b195065" class="toggle"><li><details open=""><summary>writing formulated plans</summary><p id="31f4aae1-acff-4ff7-b1b6-fe61d83b4a01" class="">Detailed plan detecting input and output</p><ol id="9ef05808-e8ce-4617-b5d5-7765a8e15a70" class="numbered-list" start="1"><li>Each stage of the plan is defined and costed</li></ol><ol id="8ff608df-8643-43b8-9a59-abb937db5c48" class="numbered-list" start="2"><li>Contained working guidance for execution</li></ol><ol id="18c57513-c09e-4425-b321-1bf1828a3cc0" class="numbered-list" start="3"><li>Evaluation should be built in.</li></ol></details></li></ul><ul id="1446bfcd-74b7-4440-b8f9-20d5eafca2bc" class="toggle"><li><details open=""><summary>programming and implantation</summary><ol id="bb1b28c7-b101-4a5e-8847-446403625909" class="numbered-list" start="1"><li>Assign and fix responsibilities</li></ol><ol id="2c4d9a52-c136-4197-9abd-d407f3952866" class="numbered-list" start="2"><li>Define roles and tasks</li></ol><ol id="b126a32b-e580-4f65-bb60-d052d75308ba" class="numbered-list" start="3"><li>Selection, training, motivation and supervision</li></ol><ol id="ff3a6d2b-4751-4952-b6f0-12734e42b974" class="numbered-list" start="4"><li>Organization and communication</li></ol><ol id="5ccf43f1-217a-493b-a33d-390a06da78f7" class="numbered-list" start="5"><li>Efficiency of health institutions</li></ol></details></li></ul><ul id="0bd18eec-d17c-488a-a9e6-19feff665718" class="toggle"><li><details open=""><summary>monitoring</summary><ul id="a36f8285-2b45-4c14-8161-b5cb038c43fd" class="bulleted-list"><li>It is day to day follow up of activities during their implementation to ensure that they are proceeding as planned and are on schedule.</li></ul><ul id="73dd940d-ebce-4f8c-914d-4cf4a9f77f41" class="bulleted-list"><li>It is continues process of observing, recording and reporting on the activities of the organization or project.</li></ul><p id="77705d1d-5022-4cf9-86bf-e372c0b0e48c" class="">Monitoring , thus consists of:</p><ol id="9e79773b-e608-4683-a9c9-901f7e0fbd20" class="numbered-list" start="1"><li>keeping track of the course of activities</li></ol><ol id="93a4163f-3b33-4858-b998-83dc93ab7891" class="numbered-list" start="2"><li>identifying deviations</li></ol><ol id="c63d9f0f-2b45-4bd0-8ca1-e39ff88d7136" class="numbered-list" start="3"><li>taking corrective action if excessive deviations occur.</li></ol></details></li></ul><ul id="e4efaad7-46ce-48de-89eb-0af9697d345b" class="toggle"><li><details open=""><summary>evaluation</summary><p id="a5be992c-1e19-4b27-bc09-da514e8627b5" class="">Is mostly concerned with the final outcome and with associated factors with it. It measures the degree to which objectives and targets are fulfilled and the quality of results obtained.</p></details></li></ul></details></li></ul></details></li></ul><ul id="8a7f9ce9-dc21-4815-bfd5-ecb7c669ac0c" class="toggle"><li><details open=""><summary>execution</summary></details></li></ul><ul id="5f6a3e11-0799-469f-b58c-b7bf50c6c2f6" class="toggle"><li><details open=""><summary>evaluation</summary></details></li></ul></details></li></ul><ul id="388bc093-59ba-4616-915b-93e7ca7cb851" class="toggle"><li><details open=""><summary>management</summary><ul id="7ef569d1-995d-4ecd-9d96-edce2757482a" class="toggle"><li><details open=""><summary>def</summary><p id="77a5cae5-0154-487d-babf-9f75bfd96ab9" class="">It is effective and purposeful use of resources for fulfilling a predetermined objective.</p></details></li></ul><ul id="4bb69dbc-93df-44e7-84f2-1c7c89bf0ba3" class="toggle"><li><details open=""><summary>basic components (activities)?</summary><ul id="df5b20a8-f31c-475c-ba81-a138f8b40b7f" class="bulleted-list"><li>Planning – determining what is to be done</li></ul><ul id="11b7ccb9-0280-44c9-9c5a-84e486674143" class="bulleted-list"><li>Organizing – setting up the framework and making it possible for groups to do the work</li></ul><ul id="a4d6159e-df83-47c8-a646-9d9dd522d62d" class="bulleted-list"><li>Communicating – motivating people</li></ul><ul id="4d873fbb-7767-48c4-a66c-0ec4c957049e" class="bulleted-list"><li>Monitoring – checking to make sure the work is progressing satisfactorily</li></ul></details></li></ul><ul id="3085b2a0-e019-4b92-bfe3-002d0ad85eac" class="toggle"><li><details open=""><summary>what&#x27;re the types of management methods?</summary><ul id="85da3354-75d1-40d9-bd0a-caef033c24e1" class="toggle"><li><details open=""><summary>methods based on behavioural science</summary><ul id="f710fb6a-8d14-4dfc-926d-5025be3bd45d" class="toggle"><li><details open=""><summary>Organizational design</summary><ul id="8d7e3909-905d-4c69-91df-e21cb8aa87ea" class="bulleted-list"><li>Health services should be so designed to meet the health needs and demands of people.</li></ul><ul id="fb8b1e8d-d718-45a4-bfca-04b82a1a45c0" class="bulleted-list"><li>It should be reviewed every few years because of change in concept ,purpose, problems or technology.</li></ul></details></li></ul><ul id="0a6324a3-7c62-4ff8-bc1f-bcdefeea5627" class="toggle"><li><details open=""><summary>Personnel management</summary><p id="d9a32dd5-e226-4a6d-8f3a-c2a1893cf489" class="">It is skillful use of human resources like selection and training , motivation ,division of responsibilities, incentives and promotions</p></details></li></ul><ul id="3df9f56b-6f51-4dd8-85a5-21a1ba56d24f" class="toggle"><li><details open=""><summary>Communication</summary><ul id="1f9af8c5-e6d4-4fbf-a400-49f7c443694c" class="bulleted-list"><li>Communication barriers cause delay in reporting, notification and release of supplies.</li></ul><ul id="b3fde23c-7c78-4de0-9c48-049c54de3c9c" class="bulleted-list"><li>It should be solved by establishing suitable vertical and horizontal communication channels.</li></ul></details></li></ul><ul id="d69e45c2-fe4a-45d7-a0c9-db6e0e86512b" class="toggle"><li><details open=""><summary>Information system</summary><p id="5ed419cc-7a91-400d-872f-ea0a0c5299d4" class="">It helps in collection , classification, transmission, storage and display of information. A good IS provides data for monitoring and evaluation of health programs and gives the required feedback to the health administrators and planners at all levels.</p></details></li></ul><ul id="f9e12b97-3ebd-4eaf-a4fe-997ac4b7f552" class="toggle"><li><details open=""><summary>Management by objectives</summary><p id="48bcf947-552a-4309-95c8-cc5da7ba5b49" class="">Objectives are set up for different units and subunits , each prepares its own plan of action.</p></details></li></ul></details></li></ul><ul id="4cbae249-35b7-4017-b265-f4bf6be10608" class="toggle"><li><details open=""><summary>quantitative methods</summary><ul id="70c0e273-6d60-4b0d-86d8-9ebf6c4d1061" class="toggle"><li><details open=""><summary>Cost effective analysis</summary><p id="3b946755-0871-4cda-8c85-020f404c437b" class="">Benefits are expressed in results achieved e.g. Number of deaths prevented, no. of children vaccinated.</p></details></li></ul><ul id="8acf6d31-ddbd-4b84-83b5-186a0fa4651d" class="toggle"><li><details open=""><summary>Cost accounting</summary><p id="4fc12635-7554-4591-990a-7e33229edc0b" class="">Gives basic data on cost of any program. It helps in cost control, planning and allocation of people and financial resources</p></details></li></ul><ul id="5bdaef90-ed99-4a86-88f9-c0bba62a7fff" class="toggle"><li><details open=""><summary>Input output analysis</summary><p id="2c344152-d5d2-4bc9-9463-7e73824d9547" class="">It shows how much input (health service activities which consume resources) are needed to produce a unit amount of each output (such as cases treated, lives saved).</p></details></li></ul><ul id="9cbc4d66-61c5-4bf9-9a48-74e1bb2b5125" class="toggle"><li><details open=""><summary>System analysis</summary><ul id="aae26394-6965-4b24-b89d-d8c98ecee8f5" class="bulleted-list"><li>Is essentially finding the cost-effectiveness of the available alternatives.</li></ul><ul id="369cf84f-fb99-461d-b9af-a5f31aad4d3c" class="bulleted-list"><li>It helps the decision maker to choose an appropriate course of action by investigating his problem,</li></ul><ul id="7b720f42-075f-4fc8-b335-71421f17e972" class="bulleted-list"><li>searching out objectives</li></ul><ul id="cf296790-98e9-4212-a034-321ea6d5ff11" class="bulleted-list"><li>finding alternative solutions,</li></ul><ul id="ee8cbe1d-675f-47a1-b6d2-c307d656c2a3" class="bulleted-list"><li>evaluating cost effectiveness of the alternatives</li></ul></details></li></ul><ul id="5da6e304-0434-4b89-9ee1-5ca6cbe59e21" class="toggle"><li><details open=""><summary>Network Analysis</summary><p id="c6a3d7bd-96ae-4ca0-bddc-56d518fd0c06" class="">It is a graphic plan of all activities and events to be completed in order to reach an end objective.</p><ul id="fb5c84cb-f0a0-4c84-a86d-dbc364679991" class="toggle"><li><details open=""><summary>what&#x27;re the two common types of Network Analysis?</summary><ol id="136e562c-2248-48f0-884f-dde882366e2f" class="numbered-list" start="1"><li>PERT ( Program evaluation and review technique) Is a management technique which makes possible more detailed planning and more comprehensive supervision.</li></ol><ol id="3be02763-3523-4a31-ab07-0bffdac9af13" class="numbered-list" start="2"><li>CPM (Critical Path Method) The longest path of the network is called the critical path. If any activity along the path is delayed the entire project will be delayed</li></ol></details></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="9cceae15-89a6-4212-90ba-1b83db2728c4" class="toggle"><li><details open=""><summary>some weird defs!</summary><ul id="9a190933-4957-42bb-a125-67d0052b640a" class="toggle"><li><details open=""><summary>objectives</summary><p id="326d1488-b9f1-47b3-82a7-ff84c98e7565" class="">It is planned end point of all activities and is concerned with the problem itself.</p></details></li></ul><ul id="7762bcbb-55ca-4da5-9e2a-1185e1dbf3f7" class="toggle"><li><details open=""><summary>targer</summary><p id="d0bb9f48-5fb9-4d89-907d-422592ba330e" class="">is discreet activity. It is degree of achievement. E.g. No. of blood films.</p></details></li></ul><ul id="f55b81b7-3fae-4652-aff5-462f63f46e10" class="toggle"><li><details open=""><summary>goal</summary><p id="ebcfed78-94d6-48d4-ab41-c7c780f68b10" class="">ultimate desired state towards which objectives and resources are directed. Unlike objectives and targets ,goals are not constrained by time or existing resources nor are they necessarily attainable.</p><ul id="7779f0f7-5ead-4906-983d-032e30b7ff9e" class="toggle"><li><details open=""><summary>it&#x27;s described in terms of</summary><ul id="df630d44-e539-4901-9295-356f4b47c4cd" class="bulleted-list"><li>What is to be attained</li></ul><ul id="7109f855-540d-438f-81f6-65be5b0e74bc" class="bulleted-list"><li>Extent to which it is to be obtained</li></ul><ul id="f8ad2a94-0463-4227-ba16-2a0e37972fbf" class="bulleted-list"><li>Population involved</li></ul><ul id="60dcb11a-aec0-4ab8-8874-616d07973c9f" class="bulleted-list"><li>Geographical area</li></ul><ul id="1013d136-01ec-48b7-8bf8-458fd72e783f" class="bulleted-list"><li>Length of time required for attaining the goal</li></ul></details></li></ul></details></li></ul><ul id="488c7069-c98f-42a5-b419-74f7464fe063" class="toggle"><li><details open=""><summary>plan</summary><p id="ba21c209-1e44-426c-9000-4b036bada58b" class="">is a blue print for taking action</p></details></li></ul></details></li></ul></div></article></body></html>

@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Mental Health</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="8be3e764-a00b-4478-b4f1-1eed05506402" class="page sans"><header><h1 class="page-title">Mental Health</h1></header><div class="page-body"><ul id="1f680607-59d7-4af1-8b0e-d983a1613e53" class="toggle"><li><details open=""><summary>def</summary><ul id="8a37c61f-c835-4fc1-bad8-7ec9f083bb65" class="bulleted-list"><li>state of well-being in which every individual realizes his or her own potential, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to her or his community.</li></ul><ul id="f6e0b8d3-fcb9-47ea-92c6-f01b691e5df2" class="bulleted-list"><li>balanced development of the individual’s personality and emotional attitudes which enable him to live harmoniously with his community</li></ul></details></li></ul><ul id="db323ace-308c-4ce9-bb13-542f08bfe521" class="toggle"><li><details open=""><summary>mental health prob in africa and sudan</summary><ul id="1dc9691f-00c2-41e4-9502-268ebf4a0d48" class="toggle"><li><details open=""><summary>stigma and discrimination</summary><ul id="fb1d13e2-5cd0-4030-b156-0a478b846ea7" class="bulleted-list"><li>Misunderstanding and stigma surrounding mental ill health are widespread. It is against patients and families and often prevents people from seeking mental health care. This stigma can lead to abuse, rejection and isolation and exclude people from health care or support.</li></ul><ul id="eb3f9b0a-21b9-4b87-966c-b5850a512dec" class="bulleted-list"><li>Despite the existence of effective treatments for mental disorders, there is a belief that they are untreatable or that people with mental disorders are difficult, not intelligent, or incapable of making decisions.</li></ul></details></li></ul><ul id="f34dd324-6fed-4454-bc23-63fcd840756a" class="toggle"><li><details open=""><summary>what causes mental health problems in African regions?</summary><ul id="620d8eac-c194-4787-b4ac-b187cde5bc84" class="bulleted-list"><li>Armed conflicts, genocide, violence, famine and displacement</li></ul><ul id="8e570c37-9e3b-4a8a-ba14-4fa896338f6b" class="bulleted-list"><li>&lt;20% primary health care clinics have assessment and treatment protocols for key mental health conditions available.</li></ul><ul id="f44dbb77-e0b1-4b5e-a070-c5efb2a0081a" class="bulleted-list"><li>two mental health is often classified a low priority.</li></ul><ul id="be92540b-10a9-439b-a1ac-1f82c9febac2" class="bulleted-list"><li>Shortages of psychiatrists, psychiatric nurses, psychologists and social workers are among the main barriers to providing treatment and care in low- and middle-income countries.</li></ul></details></li></ul><ul id="74e57ac9-9f0d-4b9d-8cab-3fd99441d3f3" class="toggle"><li><details open=""><summary>problem with mental health in sudan?</summary><ul id="78f6310c-402d-446b-9eae-2b9141b85064" class="bulleted-list"><li>only to 2 main hospitals</li></ul><ul id="1968d59c-7add-4c15-a4d8-648ce67961d6" class="bulleted-list"><li>None of these facilities provide active follow-up care in the community, and there are no mental health mobile teams. High cost of medications is also a</li></ul><ul id="ac0c3cdf-a57f-445d-b114-0f5fc350f004" class="bulleted-list"><li>thirds of people with a known mental disorder never seek help from a health professionals</li></ul></details></li></ul></details></li></ul><ul id="dea56159-2f70-45ff-a3f5-e661803a3649" class="toggle"><li><details open=""><summary>what&#x27;re the characteristics of a mentally health person?</summary><ul id="793859e9-0dec-415e-a998-dc913125567a" class="bulleted-list"><li>Feels comfortable about himself</li></ul><ul id="4ba7f330-e76c-4a0c-a30b-c4a663da1219" class="bulleted-list"><li>Feels reasonably secure</li></ul><ul id="ab9d3abe-ff57-4c36-8926-a99feef8e921" class="bulleted-list"><li>Accepts his shortcomings</li></ul><ul id="8142fa32-d496-4498-9ec7-eb319d89044d" class="bulleted-list"><li>He has self respect</li></ul><ul id="25defd90-5f75-4e48-97dd-b41c79bfe6a6" class="bulleted-list"><li>Neither under-estimates nor over-estimates his own abilities</li></ul><ul id="d8c7b599-ce2c-4a06-8c15-890845d30732" class="bulleted-list"><li>Feels right towards others</li></ul><ul id="c77b2665-3ccc-4ddf-9530-b5ef0e23df75" class="bulleted-list"><li>He is able to be interested in others and to love them</li></ul><ul id="66736a62-9f86-477a-a02d-10a649dddcbd" class="bulleted-list"><li>His friendships are satisfying and lasting</li></ul><ul id="7a25e4e4-f7cb-4915-80a0-220f9679556d" class="bulleted-list"><li>Able to feel a part of a group without being submerged</li></ul><ul id="79ba3323-73c4-4d74-8754-56b7bb6441e5" class="bulleted-list"><li>He is able to trust others</li></ul><ul id="80f0e4fe-e136-42b7-b404-c793d92d9b20" class="bulleted-list"><li>Able to meet the demands of life</li></ul></details></li></ul><ul id="911cc243-48dd-45cc-bab2-8a26d8fff606" class="toggle"><li><details open=""><summary>mental health and human lifecycle</summary><ul id="cfc5ea2a-f292-418e-995b-4ef7fdaa158a" class="bulleted-list"><li>Prenatal period<strong> (pregnancy is stressful)</strong></li></ul><ul id="322b8ed0-4cfe-45cc-9d23-83864c1e0e98" class="bulleted-list"><li>First 5 years <strong>the roots of mental ill health ,the child needs warm and intimate relationship with father and mother – many mental disorders are due to broken homes.</strong></li></ul><ul id="4d934b02-32e4-42a0-81a7-c5d4da37ddbe" class="bulleted-list"><li>School child<strong> (the child is recipient – everything happens in the school affects the child mental health</strong></li></ul><ul id="f706ac2c-e71c-4e67-ba29-76cacfb73137" class="bulleted-list"><li>Adolescence:<strong> transmission from adolescent to manhood is often stormy – it is the phase of rethinking and independence.)</strong></li></ul><ul id="193a2626-a6d3-4a25-b60f-c61f6089673b" class="bulleted-list"><li>Maturity and Middle Age: <strong>the stress of having a family and a well established career and good rewarding job.</strong></li></ul><ul id="e3b6d48b-d6f7-4302-9177-8062d5ddcfc4" class="bulleted-list"><li>Old age:<strong> serious mental health problems due to: Organic conditions of the brain ,Insecurity and Poor status.</strong></li></ul></details></li></ul><ul id="8f18980e-1600-4156-a4d4-bbe7e5fe77fe" class="toggle"><li><details open=""><summary>mental disorders</summary><ul id="46ebfc24-8ecd-4548-93c9-e2b5dd50ac46" class="toggle"><li><details open=""><summary>what&#x27;re the early signs of mental disorders?</summary><ul id="d84f585c-f445-4345-8a2e-72ebeefb8a30" class="bulleted-list"><li>always worrying</li></ul><ul id="050d9f64-8e57-424a-bb60-223c11ec8275" class="bulleted-list"><li>unable to concentrate because of unknown reason</li></ul><ul id="b7dba2f0-fefe-4172-a6a4-9499453eac80" class="bulleted-list"><li>continually unhappy without justified cause</li></ul><ul id="12813d23-d9aa-4b11-82be-7971ec71bd50" class="bulleted-list"><li>loose temper easily and often</li></ul><ul id="e67e2578-ffdc-4597-beb3-ba5ca4a93e71" class="bulleted-list"><li>troubled by regular insomnia</li></ul><ul id="9dcaf20e-fa99-4c9c-b9f0-ba8d0bb049ed" class="bulleted-list"><li>wide fluctuations in his moods from depression to elation, back to depression, which incapacitate him</li></ul><ul id="0c5d1264-7a39-4e7e-aa03-28156e854367" class="bulleted-list"><li>continually dislike to be with people</li></ul><ul id="1e76d356-0343-440a-8836-42b995d66600" class="bulleted-list"><li>children consistently get on his nerves</li></ul><ul id="3a18e8a2-9ea0-4aba-996c-8e0e7c207332" class="bulleted-list"><li>“browned off” and constantly bitter without real cause</li></ul><ul id="e3b69ee8-f137-4976-8d17-7fd3d7ad5459" class="bulleted-list"><li>upset if the routine of his life is disturbed</li></ul><ul id="a5faa362-4c7a-42f1-8c01-5b06487d9dc2" class="bulleted-list"><li>always right and others always wrong</li></ul><ul id="e37b95bf-aaa0-4e64-986e-f1368e849da4" class="bulleted-list"><li>have numerous aches and pains for which no doctor can find a physical cause.</li></ul></details></li></ul><ul id="58b9f221-a918-4650-80b9-47622e2fa905" class="toggle"><li><details open=""><summary>what&#x27;re the causes of mental illness?</summary><ol id="6a5dbf97-b0ff-4986-83a6-ca80ffc8877d" class="numbered-list" start="1"><li>Organic conditions (cerebral arteriosclerosis, neurological diseases etc.</li></ol><ol id="b44ac988-20d2-48bd-ada7-bc5672790029" class="numbered-list" start="2"><li>Heredity (a child of 2 parents schizophrenic is 40 times more likely to develop schizophrenia)</li></ol><ol id="444e266a-8287-4f29-8eed-02e12516d959" class="numbered-list" start="3"><li>Social and environmental factors such as poverty, Insecurity, Stress, drugs and alcohol, damaging believes … etc.</li></ol></details></li></ul><ul id="e145cd60-37cc-4c16-bfeb-5856a3d2db04" class="toggle"><li><details open=""><summary>what&#x27;re the main types of mental illness?</summary><ul id="ee218089-0e56-4332-a86b-ce4b2580f9fb" class="toggle"><li><details open=""><summary>what&#x27;re the major illnesses?</summary><p id="7ed2a44d-bea6-4e28-84fb-3ab1f0ddc67a" class="">lack of normal perception, behavioural or social interaction.</p><ul id="a29ebfaa-d924-4f9b-bb6b-eb6682dfc597" class="bulleted-list"><li>schizophrenias</li></ul><ul id="d862805a-9a0d-43f4-bc3c-c0ec35180d5f" class="bulleted-list"><li>manic depressive psychosis</li></ul><ul id="7a49d100-c21e-472d-a890-3a782eaaf5e4" class="bulleted-list"><li>paranoia</li></ul></details></li></ul><ul id="cd7cdde1-478d-4bcd-8ad2-63eda8adb9f1" class="toggle"><li><details open=""><summary>what&#x27;re the minor illnesses?</summary><p id="5b49544a-61ee-4e26-b525-cb1ffa4c1185" class="">hard to react with life.</p><ul id="24b2ef20-219e-4a78-8c5d-6c28e4d99322" class="bulleted-list"><li>neurosis</li></ul><ul id="ca459698-1db8-410a-92fd-d1582b0fe98e" class="bulleted-list"><li>personality and character disorder</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="6fb13af8-4c6e-4304-97ad-ac7485fd818d" class="toggle"><li><details open=""><summary>how do you preserve mental health?</summary><ul id="a5db0443-43a3-4af5-85e2-5326f4378c4d" class="toggle"><li><details open=""><summary>types of illness preventions?</summary><ul id="e0f4c001-0da5-4451-beea-e2830988ed47" class="bulleted-list"><li>Primary<strong>:</strong> <strong>operates on community basis. It includes working for better living conditions and welfare resources in the community e.g. Improving socioeconomic conditions , avoiding drugs, alcohol etc</strong></li></ul><ul id="6a8f45ac-d2f3-43fb-826b-0c22ffc20038" class="bulleted-list"><li>Secondary <strong>Early diagnosis and treatment (Reduction of duration of mental illness) through screening prog.in schools and universities, workplaces… etc</strong></li></ul><ul id="f6bca87b-529c-4716-bdd7-fcf95d9be77e" class="bulleted-list"><li>Tertiary:<strong> The goal at this level is to prevent further break-down and disruption as well as Rehabilitation.</strong></li></ul></details></li></ul></details></li></ul><ul id="31af427d-4929-45c9-9b34-b190159f3a84" class="toggle"><li><details open=""><summary>what&#x27;s the WHO&#x27;s contribution in improving mental health?</summary><ul id="f50a2bf7-8a7f-4bc0-896a-e3c97bd48465" class="bulleted-list"><li>The promotion of mental well-being,</li></ul><ul id="616e54fa-e94e-4ebb-85fc-5ef6de3eed90" class="bulleted-list"><li>The prevention of mental disorders,</li></ul><ul id="111b3411-0dfb-4c8a-9489-2feb219ba0b0" class="bulleted-list"><li>The protection of human rights and</li></ul><ul id="7563cba0-204e-4be0-ab5c-00ca3bcc544f" class="bulleted-list"><li>The care of people affected by mental disorders.</li></ul><ul id="9cefaa82-0e73-48c6-a00a-b5c8b0d75fbb" class="bulleted-list"><li>supporting governments in the goal of strengthening and promoting mental health and to integrate effective strategies into policies and plans.</li></ul></details></li></ul><ul id="4d636082-ef73-4158-8e75-7a941df963cc" class="toggle"><li><details open=""><summary>why should primary care providers integrate mental health into PHC?</summary><ol id="d1025c4c-f502-4914-9685-7e2f899f6b1b" class="numbered-list" start="1"><li>Primary Care Providers deal with patient’s untreated psychological problem - identified or not</li></ol><ol id="df65cda8-7c8e-4036-99eb-2bb1eea4a0f2" class="numbered-list" start="2"><li>1/3-1/2 of Primary Care patients will refuse referral to Mental Health professional</li></ol><ol id="e8c7af6b-e687-47c9-9c3f-824ae8d9cedd" class="numbered-list" start="3"><li>Patients who refuse referral tend to be high utilizers with unexplained physical symptoms</li></ol><ol id="96d5063c-8a24-4166-b86d-59997cea7ecc" class="numbered-list" start="4"><li>With expectation of seriously mentally ill, basic MH services can be managed in Primary Care setting</li></ol><ol id="1a9f1c3e-b553-4309-ae4d-f0ca123b3b0b" class="numbered-list" start="5"><li>Growing evidence that integrated primary care is cost-effective</li></ol></details></li></ul><ul id="c205c272-6911-41c9-b430-73a97daf1701" class="toggle"><li><details open=""><summary>what&#x27;s the WHO&#x27;s comprehensive mental health action plan 2013–2020?</summary><ul id="df0f25ad-7eaa-469f-b0c3-0038d80cd158" class="bulleted-list"><li>focuses international attention on a long-neglected problem and is firmly rooted in the principles of human rights.  The action plan calls for changes in the attitudes that perpetuate stigma and discrimination that have isolated people since ancient times and it also calls for an expansion of services in order to promote greater efficiency in the use of resources.</li></ul><ul id="a1510a00-8a55-45b1-b15a-f9166d12d8ed" class="toggle"><li><details open=""><summary>goal</summary><ul id="f780576f-863a-4afc-b91e-db1eb85a3de2" class="bulleted-list"><li>To promote mental well-being,</li></ul><ul id="02dcd545-85df-492a-8956-9933b258878e" class="bulleted-list"><li>prevent mental disorders,</li></ul><ul id="14e5d69d-a636-498f-976c-eae256c9f250" class="bulleted-list"><li>provide care,</li></ul><ul id="a1f47482-46c2-484f-8f86-210bea8d5767" class="bulleted-list"><li>enhance recovery,</li></ul><ul id="f376b171-de16-46c4-bc99-8e63b7704dc9" class="bulleted-list"><li>promote human rights</li></ul><ul id="9a572add-ff33-4266-989c-4b5339efb175" class="bulleted-list"><li>and reduce the mortality, morbidity and disability for persons with mental disorders.</li></ul></details></li></ul><ul id="d8573ff9-b338-450c-ad25-dcd6ebf496c2" class="toggle"><li><details open=""><summary>objectives?</summary><ul id="d7f00f74-987b-4295-b4e4-11a86291b5e1" class="bulleted-list"><li>Strengthen effective leadership and governance for mental health.</li></ul><ul id="1027d13c-fde6-49f9-843e-7f0977706647" class="bulleted-list"><li>Provide comprehensive, integrated and responsive mental health and social care services in community-based settings.</li></ul><ul id="78ab5857-4fdc-4c3c-880d-ab67aaa6a72b" class="bulleted-list"><li>Implement strategies for promotion and prevention in mental health.</li></ul><ul id="59f24ba9-0dd3-4132-b8dd-a398ea0c9184" class="bulleted-list"><li>Strengthen information systems, evidence and research for mental health.</li></ul></details></li></ul><ul id="570d68dc-9dbd-47c2-aa2a-cfebc6d42c1d" class="toggle"><li><details open=""><summary>outcomes for mental pts</summary><ul id="2eef1528-3ba5-4dfe-8fa5-99b2e0b41623" class="bulleted-list"><li>find it easier to access mental health and social care services;</li></ul><ul id="8c10ccd1-2538-441d-9cb3-853455a1980b" class="bulleted-list"><li>be offered treatment by appropriately skilled health workers in general health care settings;</li></ul><ul id="c1e8ced8-968d-4afc-93c5-c2e4b96b6f71" class="bulleted-list"><li>participate in the reorganization, delivery and evaluation of services so that care and treatment becomes more responsive to their needs;</li></ul><ul id="73c4ef06-6e43-43fa-904c-89131e3204ce" class="bulleted-list"><li>gain greater access to government disability benefits, housing and livelihood programs, and better participate in work and community life and civic affairs.</li></ul></details></li></ul></details></li></ul><ul id="00637b7d-9a88-4592-b6ff-28a09aec306f" class="toggle"><li><details open=""><summary>what&#x27;s the WHO&#x27;s special initiative for mental health action plan 2019-2023?</summary><ul id="821371ba-a0a3-48c2-a83e-0d49de47f1cc" class="bulleted-list"><li>Increase investment is required on all fronts:</li></ul><ul id="d55a7ae1-c2c6-4def-bbdd-af8e38b62039" class="bulleted-list"><li>for mental health awareness to increase understanding and reduce stigma;</li></ul><ul id="ad8dba47-846e-4599-b79f-4e44af6acb8b" class="bulleted-list"><li>for efforts to increase access to quality mental health care and effective treatments;</li></ul><ul id="0d0c840a-c3b1-4c01-8396-7d627ecfa8c2" class="bulleted-list"><li>and for research to identify new treatments and improve existing treatments for all mental disorders.</li></ul></details></li></ul><ul id="42852265-0cf8-4b9a-8ef2-a4b24539050e" class="toggle"><li><details open=""><summary>psychological first aid?</summary><ul id="e71a8ea5-ac3f-49b4-873d-68912548f520" class="toggle"><li><details open=""><summary>def?</summary><p id="7e6050a3-8ad3-4164-a621-76a3d3d2a36b" class="">first-line psychosocial support for people affected by crisis events (Immediately after a crisis event).</p></details></li></ul><ul id="7a79efc9-098d-4074-aa9f-c2cc57438f02" class="toggle"><li><details open=""><summary>target population?</summary><ul id="f94ed0e1-89f9-432d-b06d-e2f90672ab9b" class="bulleted-list"><li>People who Likely Need Special Attention (to be safe, to access services). Children and adolescents especially those separated from caregivers</li></ul><ul id="669196c2-5b80-4c3d-80fb-f0dbceb6073a" class="bulleted-list"><li>People with health conditions and disabilities</li></ul><ul id="1d92062b-0e90-47d3-a7b3-6121990ee8fc" class="bulleted-list"><li>People who are non-mobile, or who have chronic illness, hearing/visual impairments (deaf or blind), or severe mental disorders</li></ul><ul id="28e34b4d-2934-4936-b482-b99df2c018fd" class="bulleted-list"><li>Frail elderly people, pregnant or nursing women</li></ul><ul id="ae59aadc-a980-4e27-917e-a4d6d7afd1b3" class="bulleted-list"><li>People at risk of discrimination or violence . Women, people of certain ethnic or religious groups, people with mental disabilities</li></ul></details></li></ul><ul id="3f84523e-1b9f-48c4-96c8-c3aa3c22f037" class="toggle"><li><details open=""><summary>when and where should the PFA be provided?</summary><ul id="5d5dbd1d-9120-4f27-a223-a662cf734994" class="bulleted-list"><li>When encountering a person in distress, usually immediately following a crisis event</li></ul><ul id="99d08273-5353-484f-9400-c6dd6c705074" class="bulleted-list"><li>Anywhere that is safe for the helper and affected person, ideally with some privacy as appropriate to the situation.</li></ul></details></li></ul></details></li></ul></div></article></body></html>

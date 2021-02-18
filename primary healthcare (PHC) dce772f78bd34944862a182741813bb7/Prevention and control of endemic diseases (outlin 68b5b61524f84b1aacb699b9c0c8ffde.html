@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Prevention and control of endemic diseases (outline)</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="68b5b615-24f8-4b1a-acb6-99b9c0c8ffde" class="page sans"><header><h1 class="page-title">Prevention and control of endemic diseases (outline)</h1></header><div class="page-body"><ul id="491058b5-f5ec-48db-a476-1b160a567677" class="toggle"><li><details open=""><summary>basic concepts</summary><ul id="c1a459b3-6b89-4f29-a34c-b0ccbabb4c8e" class="toggle"><li><details open=""><summary>disease control</summary><ul id="79d9bea5-126f-4890-991c-a3be2ac1b010" class="toggle"><li><details open=""><summary>def</summary><p id="22a530f0-3f69-479c-9003-76f265e8ca0e" class="">is a public policy intervention that restricts the circulation of an infectious agent beyond the level that would result from spontaneous, individual behaviours to protect against infection.</p></details></li></ul><ul id="003a6a67-90fe-439e-a5c0-f5ff77fb9125" class="bulleted-list"><li>describes <strong>ongoing</strong> operations  aim at <strong>reducing</strong>:<ol id="bc5a1310-6948-4567-8cb2-bb92cd9225de" class="numbered-list" start="1"><li>The incidence of the disease</li></ol><ol id="2e01b0ec-a22c-42c9-8b21-de20b41360bc" class="numbered-list" start="2"><li>The duration of the disease and consequent risk of transmission</li></ol><ol id="37ec2e69-9ea7-4f23-8efb-749fee9d5b31" class="numbered-list" start="3"><li>The effect of the infection including physical and psychosocial complications</li></ol><ol id="1295eeba-ea58-4a1e-962e-844b96f833bf" class="numbered-list" start="4"><li>The financial burden to the community</li></ol></li></ul><ul id="137e25d0-4dc9-435f-8b65-c4e1a6d3fb79" class="bulleted-list"><li>the agent is allowed to persist at a level where it is not a public health problem and an equilibrium is established between disease agent host and <a href="http://environment.eg/">environment.eg</a> Control of Malaria (not eradication)</li></ul></details></li></ul><ul id="71c9173b-4126-4f47-840a-ced1f2ca81a6" class="toggle"><li><details open=""><summary>disease elimination</summary><ul id="05cbba45-8133-4262-948e-13c23ca174a0" class="toggle"><li><details open=""><summary>def</summary><p id="f1abc54b-9cb6-40e5-9b3c-48891dab157d" class="">reduction to zero of the incidence of a specified disease in a defined geographical area as a result of deliberate efforts.</p></details></li></ul><ul id="a5d3040c-48bc-42f3-96f6-b8ca52074e58" class="bulleted-list"><li>interruption of transmission of the disease</li></ul><ul id="bb15dd71-18b8-4d80-92d7-da4d60477af8" class="bulleted-list"><li>Between control and eradication an intermediate goal has been described it is Regional Elimination</li></ul><ul id="62ee020a-45c7-49f4-b8b5-9f3dc09ca340" class="bulleted-list"><li>elimination is now seen as an important precursor of eradication</li></ul></details></li></ul><ul id="12ffaed9-b394-4b8e-8d53-4f2d418a622e" class="toggle"><li><details open=""><summary>disease eradication</summary><ul id="aaa26eac-ac02-437d-ba37-dfb132c5aff7" class="toggle"><li><details open=""><summary>def</summary><ul id="4e7e9410-cbf1-4729-9ec6-1f6f26122d00" class="bulleted-list"><li>termination of all transmission of infections by extermination of infectious agents</li></ul><ul id="878ebf6f-5a91-4bfc-a052-de29c6987df8" class="bulleted-list"><li>vs extinction = the agent doesn&#x27;t exist in nature or labs</li></ul></details></li></ul><ul id="043b422e-3bd5-434d-8c7a-6fd10b71b9ac" class="bulleted-list"><li>termination of all transmission infection by extermination of the infected agent.</li></ul><ul id="2be44c93-c76c-4a31-8b53-a8d0784e817b" class="bulleted-list"><li>Only disease eliminated is small pox. Candidates for global eradication include: Polio, Measles, Dracunculiasis.</li></ul><ul id="daf09286-500a-420a-8ad0-4b4535d7f5e0" class="toggle"><li><details open=""><summary>characteristics of eradication</summary><ul id="ba85de9c-837f-4334-8c41-8efa2d7b62d5" class="bulleted-list"><li>It is an absolute process not relative goal.</li></ul><ul id="b96685de-cc12-4366-982f-f65e7106a4fd" class="bulleted-list"><li>It is all or none phenomenon</li></ul><ul id="4cbb011e-ff0d-4961-9c0b-2b2744e77f95" class="bulleted-list"><li>Eradication is reserved to cession of infection and disease from whole world.</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="88e3a66d-e6dd-4e2f-9cd8-5188d637126d" class="toggle"><li><details open=""><summary>monitoring and surveillance</summary><ul id="dcd7c407-e8d0-4d5f-83e3-7efac55eb68f" class="toggle"><li><details open=""><summary>monitoring</summary><p id="a24468da-e076-47b8-aa9d-f15a1897f03b" class="">It is performance and analysis of routine measurement aimed at detecting changes in environment or health status of population.</p><ul id="87374200-8857-4216-a384-d8e5522b3da4" class="toggle"><li><details open=""><summary>examples</summary><p id="b118e668-3f9f-4bd3-ae54-43b8c6b998e0" class="">monitoring of air pollution, water quality. Also refers to ongoing measurement of performance of health professionals or patient comply to advice.</p></details></li></ul></details></li></ul><ul id="83cfffa2-82b1-4097-bbc7-6be8db701668" class="toggle"><li><details open=""><summary>surveillance</summary><ul id="7a378b6d-70ad-43fd-8463-d7aa2f8fe18d" class="toggle"><li><details open=""><summary>def</summary><ul id="111f0cc3-6bcf-413e-b091-1bb15b9a01b7" class="bulleted-list"><li>to watch over with great attention authority and often with suspicion.</li></ul><ul id="cf297917-57f5-4c36-a4ac-27ee6823a1e0" class="bulleted-list"><li>continuous scrutiny of the factors that determine the occurrence and distribution of disease and other condition of health</li></ul></details></li></ul><ul id="b24392e4-f38c-4ac1-b0f7-680b1b0f0882" class="toggle"><li><details open=""><summary>examples</summary><p id="0515dcce-0233-441e-ad73-25ed46b52048" class="">nutritional surveillance, epidemiological and demographic</p></details></li></ul><ul id="0496d05b-1bb7-4554-8907-84b47ced17d9" class="toggle"><li><details open=""><summary>objectives</summary><ul id="bd0f6a98-3ff4-4700-9e5d-689383ff208f" class="bulleted-list"><li>To provide information about &amp; new &amp; changing trends in health status of population e.g. morbidity , mortality, nutritional ,environmental hazards, health practice.</li></ul><ul id="0facec73-4a76-4798-b7cf-702d2577e17d" class="bulleted-list"><li>To provide feedback which may be expected to modify the policy and system itself</li></ul><ul id="0bef68da-eca7-4f6e-ba5e-17aa810490df" class="bulleted-list"><li>To provide timely warning of public health disasters so that intervention may be modified.</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="22438b8a-3d11-49a0-b0dc-faf36b9dd490" class="toggle"><li><details open=""><summary>prevention</summary><ul id="e88da689-20c4-4eb6-ad5b-125459d39908" class="toggle"><li><details open=""><summary>objective of preventive medicine</summary><p id="34447a80-ac40-42c1-9afd-50ab05694f72" class="">to intercept or oppose the cause and disease processes (in this sense treatment is one mode of intervention).</p></details></li></ul><ul id="fde17f8c-e34e-4171-9f1a-96139a2855c7" class="toggle"><li><details open=""><summary>levels of prevention (not the leavell&#x27;s nomenclature!)</summary><ul id="39eb5035-97ef-4c68-b965-4a6d5ee18bb8" class="toggle"><li><details open=""><summary>primordial</summary><ul id="275c0448-d207-4518-b56e-8dee36883d1f" class="bulleted-list"><li>It is prevention of development of risk factors when they have not yet appeared</li></ul><ul id="a16cd9b1-9710-4ac4-8d70-f6ca4521e6a5" class="bulleted-list"><li>Main intervention is through education</li></ul><ul id="13cd7ce8-efc7-4d67-9d0b-1fa00559151f" class="toggle"><li><details open=""><summary>example</summary><p id="834f2f2b-67cb-429a-b68e-9b8e935753d0" class="">Hypertension have early origin in childhood for this is the time when life styles are formed (smoking, eating patterns etc)</p><p id="4f310b5e-fa96-4b18-b433-05d04ef77e90" class="">Efforts here directed  towards discouraging</p></details></li></ul></details></li></ul><ul id="70da71b7-6114-4ce0-ab0b-33385aa2b363" class="toggle"><li><details open=""><summary>primary</summary><ul id="8341b905-e021-4d22-bf8d-1cf664f0e358" class="bulleted-list"><li>It is action taken prior to onset of the disease which removes the possibility that a disease will ever occur.</li></ul><ul id="008ef4fe-c052-48bd-b5e1-9778de8e185d" class="bulleted-list"><li>It is intervention in the pre-pathogenic phase. Accomplish by measures designed to promote general health or to protect against specific disease agents and hazards in the environment.</li></ul><ul id="076fa124-7dc3-482d-907d-8f175dbf9970" class="toggle"><li><details open=""><summary>how do you achieve primary prevention</summary><ul id="f3c70472-57ec-404b-85d1-cd26c4200581" class="toggle"><li><details open=""><summary>health promotion</summary><ul id="04cd9276-bdd6-4f44-85a7-ff069d21b6b0" class="bulleted-list"><li>Health education</li></ul><ul id="e0ac58e8-191a-46bf-b6cf-5e32d1440bc7" class="bulleted-list"><li>Environmental modifications</li></ul><ul id="4e11f115-6ee7-4007-addf-34f226343598" class="bulleted-list"><li>Nutritional interventions</li></ul><ul id="f77f5a73-41ef-4adb-a619-2249b09057ab" class="bulleted-list"><li>Life style and behavioural changes</li></ul></details></li></ul><ul id="87834750-9b9b-4c76-b4cb-88163f9cfa24" class="toggle"><li><details open=""><summary>specific protection</summary><ul id="251f64c2-ba97-461f-a9de-f5ea00642898" class="bulleted-list"><li>Immunization and seroprophylaxis</li></ul><ul id="09f57825-07d0-4d75-a9f6-cedc83044814" class="bulleted-list"><li>Chemoprophylaxis</li></ul><ul id="7ceac1cf-bd00-4f59-aeae-836e6046c1d1" class="bulleted-list"><li>Use of specific nutrients</li></ul><ul id="49376e39-f09a-4ca1-bcda-4c6b06093ef3" class="bulleted-list"><li>Protection against occupational hazards</li></ul><ul id="c41f17e5-5177-4867-b58c-33b841640230" class="bulleted-list"><li>Safety of drugs and foods</li></ul><ul id="69660cda-6c6d-4bba-83d6-c9151437360e" class="bulleted-list"><li>Control of environmental hazards, e.g. air pollution</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="d578f941-5e49-4c87-8b45-0980e5d765e3" class="toggle"><li><details open=""><summary>secondary</summary><ul id="548243d5-49e9-457e-be35-1a08f56b1530" class="bulleted-list"><li>Actions which halt the progress of the disease at its early stage and prevent complications, specifically it is early diagnosis and treatment.</li></ul><ul id="51da24e9-79c0-44de-ad25-1ac8a2c06965" class="bulleted-list"><li>For Infectious diseases it&#x27;s an imperfect tool, more expensive and less effective than Primary Prevention. treat before irreversible changes occur and reverse communicability of infectious diseases</li></ul><ul id="197e7697-00e3-4139-8f15-c4df2e171395" class="bulleted-list"><li>for latent diseases, pre-symptomatic Dx and Rx.</li></ul></details></li></ul><ul id="a9ff0c7e-80be-4879-a2f7-5d8e441ea012" class="toggle"><li><details open=""><summary>tertiary</summary><ul id="62b672ba-dcb9-4c55-ba2b-6b223b901390" class="bulleted-list"><li>interventions in late pathogenic stage and include all measures that reduce or limit impairment and disabilities, minimize sufferings and to promote patient adjustment to irreversible conditions.</li></ul><ul id="f92c2735-adb6-45ee-84da-b74eb9f52d4e" class="bulleted-list"><li>disability limitation for early symptomatic disease and rehabilitation for late symptomatic disease.</li></ul><ul id="1f8e7f11-6c77-4395-9155-bc10609889b6" class="bulleted-list"><li>Modern Rehabilitation include psychological , vocational and medical components.</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="7f515000-53c0-48cb-96ec-f314071a0ddc" class="toggle"><li><details open=""><summary>interventions</summary><ul id="a93e052a-39a6-45ba-bcc6-b4ecd4580512" class="toggle"><li><details open=""><summary>def</summary><p id="bc4ec919-67b6-47b6-abf0-d08ccb118adc" class="">Interventions are any attempt to interrupt the usual sequence of disease development.</p></details></li></ul><ul id="a21a5e17-ed8f-42ec-87d7-f59d7c39b9d1" class="toggle"><li><details open=""><summary>modes</summary><ul id="81ec665c-f859-4f7c-a706-4cbd87c8ebb2" class="toggle"><li><details open=""><summary>health promotion</summary><ul id="25c38de4-42a7-4637-a4db-072bcd7d722f" class="toggle"><li><details open=""><summary>def</summary><p id="c2733d15-d42a-4cbf-9174-e8c1e80bf35f" class="">It is the process of enabling people to increase control over and improve health</p></details></li></ul><ul id="d8f113d8-4200-4cf3-842b-f84e4c61e989" class="toggle"><li><details open=""><summary>interventions</summary><ul id="7ed0099e-9074-4e08-b3ea-2a2d42e6c581" class="toggle"><li><details open=""><summary>health ed</summary><ul id="7b999719-8f8a-4a9a-b098-c86315971651" class="bulleted-list"><li>Target of education may be “general public, patients, priority groups, health providers, community leader and decision makers.</li></ul></details></li></ul><ul id="9b71d796-0f2b-4f59-8191-5da3de592a34" class="toggle"><li><details open=""><summary>environmental modification</summary><ul id="48b563d2-31d3-47ae-b232-e9f73c0ba40c" class="bulleted-list"><li>Such as safe water, sanitary latrines, improvement of housing.</li></ul></details></li></ul><ul id="f8e8cbe3-abcd-4e97-8616-69dcc59310d7" class="toggle"><li><details open=""><summary>nutritional interventions</summary><ul id="c4aef936-7037-47a3-92a2-ab676cb0cd8a" class="bulleted-list"><li>this consist of: food distribution, nutritional improvements, child feeding programmers, food fortification, nutrition education and others.</li></ul></details></li></ul><ul id="61fb73d0-b7ea-4401-861f-b8c2e6b1bc9e" class="toggle"><li><details open=""><summary>life style and behavioural changes</summary><ul id="fa91c4b7-9d86-4755-bc20-8c51ad35fc64" class="bulleted-list"><li>It involves organizational, political, social and economic interventions designed to facilitate environmental and behavioural adaptations that will improve or protect health.</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="9d4cd310-4538-4a1f-b7e5-74ab1bd6012c" class="toggle"><li><details open=""><summary>specific protection</summary><p id="d7994514-3ecb-4328-97fa-a8b4bac79093" class="">Currently available interventions aimed at specific protection are:</p><ol id="98dd981c-aeed-48d3-8487-2f9c62a21d99" class="numbered-list" start="1"><li>Immunization</li></ol><ol id="7a50000d-673d-4b15-91ca-fd53693548ea" class="numbered-list" start="2"><li>Use of specific nutrients</li></ol><ol id="02c80aed-fee4-4a9e-b661-125e7fcf46f1" class="numbered-list" start="3"><li>Chemoprophylaxis</li></ol><ol id="d1c162df-52f0-44d8-a197-c439b5ad3d32" class="numbered-list" start="4"><li>Protection against occupational hazards</li></ol><ol id="9de28883-8590-4692-a6ae-cf7f4f459b7a" class="numbered-list" start="5"><li>Protection against accidents</li></ol><ol id="31df91af-dfbf-41f1-aa82-aff56c3bfa49" class="numbered-list" start="6"><li>Protection from carcinogens</li></ol><ol id="720279d0-48a1-4e1c-9f49-800e45356e2f" class="numbered-list" start="7"><li>Avoidance of allergens</li></ol><ol id="981f8dd7-a688-4e9a-9a16-f38d6d3e3b9a" class="numbered-list" start="8"><li>Control of specific hazards in general envir. e.g. air pollution, noise control.</li></ol><ol id="30e961d8-1b0f-4db3-a779-95a723d504cf" class="numbered-list" start="9"><li>Control of consumer products quality and safety of food, drugs, cosmetics etc</li></ol></details></li></ul><ul id="815348ac-7b08-407a-9754-2c33fa8e2bc0" class="toggle"><li><details open=""><summary>early diagnosis and treatment</summary><ul id="7362003b-ba1d-4f9f-b888-002badf70604" class="toggle"><li><details open=""><summary>def</summary><p id="0addfef4-3452-41a1-8c2b-028b0f8e2b5e" class="">Detection of disturbances of homoeostatic and compensatory mechanisms while biochemical, morphological and functional changes are still reversible.</p></details></li></ul><ul id="86b4f9e3-d28b-495a-980a-6398ab07c924" class="toggle"><li><details open=""><summary>importance</summary><ul id="901f4b81-83b2-4306-99eb-d36df2a8c523" class="bulleted-list"><li>To  prevent overt disease, the criteria of diagnosis should be based on early changes before signs appear.</li></ul><ul id="e15da126-6d53-4674-a966-16b127aeb4b0" class="bulleted-list"><li>This mode is not as effective or economic as primary prevention but is important to reduce mortality and morbidity in certain diseases such as hypertension, cancer of cervix, Breast cancer.</li></ul><ul id="695b28d6-5ea5-42ac-840d-007d2392aed9" class="bulleted-list"><li>For TB, Leprosy and STDs this the only effective mode.</li></ul><ul id="d302c283-9cb4-47b3-b483-6f1230744ed5" class="bulleted-list"><li>For IDs this mode shorten period of communicability and reduce mortality from acute IDs</li></ul></details></li></ul><ul id="40f834eb-c5b7-4c83-a4a7-c243979f6c00" class="toggle"><li><details open=""><summary>mass treatment</summary><ul id="e020863b-b9af-40a4-bb6d-a84ebceaece9" class="bulleted-list"><li>Used in control of certain Ds i.e. yaws, pinta, bejel, trachoma and malaria.</li></ul><ul id="c191fa7d-4d31-45dd-a6df-58c1ffd5e403" class="bulleted-list"><li>The rationale is existence of at least 4-5 cases of latent infection for each clinical case.</li></ul><ul id="b307a4e2-101b-4bc7-8f7d-0a1dbbd9885d" class="bulleted-list"><li>Patient with latent (incubating) infection may develop the D at any time.</li></ul><ul id="ee857405-9913-442a-95f9-b3b08288b930" class="bulleted-list"><li>In this case mass treatment  is critical factor in interruption of transmission.</li></ul></details></li></ul></details></li></ul><ul id="b6bba1a6-c6df-470f-a5c0-9d2f1799ea2b" class="toggle"><li><details open=""><summary>disability limitation</summary><ul id="83d8e0f3-baae-43da-8291-3538e4a14390" class="bulleted-list"><li>prevent or halt transition of disease process from impairment to handicap</li></ul><ul id="10ff8893-c8da-4aa4-b664-5dc20c0a2524" class="toggle"><li><details open=""><summary>The sequence of events leading to disability &amp; handicap</summary><p id="a4155a25-b4b9-42dc-b742-d2527b934aac" class="">disease 🔜 impairment 🔜 disability🔜 handicap</p><ul id="d8b7390b-bbe4-43f2-a209-b8edfa5a693d" class="toggle"><li><details open=""><summary>def impairment</summary><p id="34d3d915-9769-4fad-9606-35bfbc8d4feb" class="">it is any loss or abnormality of psychological, physiological or anatomical structure or function.</p><p id="42272d50-6ad2-4b8e-86dc-6048197a17e4" class="">e.g. loss of foot, defective vision or mental retardation. Primary may lead to 2ry (nerve damage lead to ulcer).</p></details></li></ul><ul id="e7277ff7-efe7-4bd7-ae4f-a590068a3e3e" class="toggle"><li><details open=""><summary>def disability</summary><p id="a27e3b48-9b64-4e62-ae2b-6c45a3a67825" class="">It is any restriction or lack of ability to perform an activity in manner or within the range considered normal for a human being.</p></details></li></ul><ul id="81384799-11a9-4763-8f51-7304443f97c6" class="toggle"><li><details open=""><summary>def handicap</summary><p id="c52ee0ff-8ea4-4882-a99a-2d30bda023b7" class="">Disadvantage for a given individual, resulting from impairment or disability that limits or prevent the fulfillment of a role that is normal for that individual.</p></details></li></ul></details></li></ul></details></li></ul><ul id="0693452e-df95-4d5e-8d1f-c25734e1a999" class="toggle"><li><details open=""><summary>rehab</summary><ul id="57b6042f-2474-4b84-b9cf-8cc3ebc8cf8a" class="toggle"><li><details open=""><summary>def</summary><p id="6ced4a74-bfab-490e-84b4-61e7844639d4" class="">combined and coordinated use of medical , social, educational, and vocational measures for training and retraining the individual to the highest possible level of functional ability</p></details></li></ul><ul id="dc4d7196-ad2b-4ed6-bb21-0dc29695472d" class="bulleted-list"><li>It include all measures aimed at reducing the impact of disabling and handicapped conditions and at enabling the disabled and handicapped to achieve social integration.</li></ul><ul id="3edc17d4-b357-496a-802d-377ee2138871" class="toggle"><li><details open=""><summary>types of rehab</summary><ul id="4fba0302-1d2a-4f52-8f11-a5e8674d2a04" class="bulleted-list"><li>medical: restore function</li></ul><ul id="41eff944-208d-46cd-9ae4-1521e0ab3848" class="bulleted-list"><li>vocational: restore capacity to earn living</li></ul><ul id="e41ebba6-42d1-416b-8d3c-01d634f17288" class="bulleted-list"><li>social: restore fam and social relationships</li></ul><ul id="317b6377-b501-453a-9bf3-23bad19a6385" class="bulleted-list"><li>psychological: restore dignity and confidence</li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul></div></article></body></html>

@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Maternal and child health [MCH]</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1cef11b0-d7dd-4499-a5ea-ab6c4a7b9fcb" class="page sans"><header><h1 class="page-title">Maternal and child health [MCH]</h1></header><div class="page-body"><ul id="46286686-003e-48bf-9bd9-645590a262a3" class="toggle"><li><details open=""><summary>MCH</summary><ul id="db2693b5-d090-4f95-a99d-6d7ddfb2d472" class="toggle"><li><details open=""><summary>def?</summary><p id="32c83bb4-4969-416b-8972-79b7d8499a42" class="">is one of the elements of the PHC</p></details></li></ul><ul id="86685597-9de1-4ed1-b5fc-00b5660ef157" class="toggle"><li><details open=""><summary>objectives?</summary><ul id="c9e1d836-2669-4023-8801-246a663299a8" class="bulleted-list"><li>life long health for both the mother and her child</li></ul><ul id="2bb4314a-7485-4e0b-8dab-ec65ac91380b" class="toggle"><li><details open=""><summary>justification of the objective?</summary><ul id="373797e0-9149-4245-a1c0-11017898401d" class="bulleted-list"><li>By improving the health of mothers and children, we contribute to the health of general population</li></ul><ul id="f3b957ba-95ef-4c3a-81fb-8c10326e6fad" class="bulleted-list"><li>any community mothers and children constitute a priority group ( a special risk group).</li></ul></details></li></ul><ul id="8a27ea36-500f-4e75-8a94-bf187dcd80c1" class="toggle"><li><details open=""><summary>why must the child and mother be considered as one unit?</summary><ol id="d3946b94-cb34-41d9-b1f1-150e3f8312fb" class="numbered-list" start="1"><li>During the antenatal period the <mark class="highlight-orange_background">fetus is part of the mother</mark> and during this period obtains all the building materials and oxygen from the mother’s blood.</li></ol><ol id="d350b5fc-a6f5-4b93-b246-bc25801b99dc" class="numbered-list" start="2"><li><mark class="highlight-orange_background">Child health is closely related to maternal health</mark>; a healthy mother brings a healthy child.</li></ol><ol id="9f6c0e83-a1a7-4ee8-bbfe-2e083f94d496" class="numbered-list" start="3"><li>Certain diseases and conditions of mother during pregnancy are likely to have their <mark class="highlight-orange_background">effects upon the fetus </mark>e.g. German measles; drug intake…ect.</li></ol><ol id="a55cf940-8d27-42fd-801d-37d1f50eecc7" class="numbered-list" start="4"><li>After birth, the <mark class="highlight-orange_background">child is completely dependant upon the mother</mark> for feeding; mother is the first teacher of the child.</li></ol></details></li></ul></details></li></ul><ul id="91456082-f622-4727-9f44-48826f93820c" class="toggle"><li><details open=""><summary>meeting the objectives?</summary><ul id="386f3057-0448-4b71-9f97-6f0be4ddc1dd" class="toggle"><li><details open=""><summary>what are the measures adopted in child health?</summary><ul id="e29b6571-89d9-4dfa-b293-414d71a5d4f7" class="bulleted-list"><li>The continuation of <mark class="highlight-orange_background">national immunization</mark> campaigns to eradicate major childhood diseases in all countries;</li></ul><ul id="11a379b3-2d14-425a-82d0-8d685638b0a6" class="bulleted-list"><li>Promotion of <mark class="highlight-orange_background">breast feeding</mark>;</li></ul><ul id="075195ec-1662-428e-a4b0-ad8a14b1c1b6" class="bulleted-list"><li>Formulation and implementation of a <mark class="highlight-orange_background">nutrition policy</mark></li></ul><ul id="c26aad16-20a1-4630-8099-ac9682399dd4" class="bulleted-list"><li><mark class="highlight-orange_background">Free health</mark> care for pregnant mothers and children under the age of six</li></ul><ul id="6a681813-a61b-4e54-b212-40929d8c8bf8" class="bulleted-list"><li><mark class="highlight-orange_background">Free treatment for malnutrition</mark> and diarrhoeal diseases.</li></ul><ul id="fedaf2fd-1297-473d-83f4-b2db61d028ec" class="bulleted-list"><li>The adoption of the WHO/UNICEF approach for an <mark class="highlight-orange_background">integrated management of childhood illness</mark> (IMCI).</li></ul><ul id="cfbf5085-4890-44b0-978e-5b028a84c942" class="bulleted-list"><li>Improvements in child health are closely associated with the availability of basic, cost-effective prevention tools such as vaccines, insecticide-treated bed nets, vitamin A supplementation.</li></ul></details></li></ul><ul id="a6e24407-3da6-4cb7-b035-390cc3dc20cc" class="toggle"><li><details open=""><summary>what&#x27;s safe motherhood?</summary><ul id="a3e16c28-dfdf-4c92-976d-62c03449c2a7" class="bulleted-list"><li>means ensuring that all women receive the care they need to be safe and healthy throughout pregnancy and childbirth</li></ul><ul id="9a821766-160f-42ff-a7a9-8fb96d8cea9e" class="toggle"><li><details open=""><summary>why is it important?</summary><p id="f7c4bacc-b898-4485-8c31-305953238715" class="">lot&#x27;s of women die from pregnancy or childbirth complications</p></details></li></ul><ul id="a97d1602-fdae-413b-bbf9-3270a0aa28cc" class="toggle"><li><details open=""><summary>how can it be achieved?</summary><ul id="144982aa-b36a-4188-9b54-2e5d23a4efc1" class="bulleted-list"><li>Antenatal care: Is the care of the woman during pregnancy to achieve at the end a healthy mother and a healthy baby.</li></ul><ul id="688c9cd7-4fb8-421e-9711-d1879fe02495" class="bulleted-list"><li>Intranatal care : Is the care of the woman during child birth and although labour is a normal physiological process but complications may arise e.g. septicemia, tetanus neonatrum.</li></ul><ul id="a42f38ca-2297-44b2-be7a-c002e12bd91a" class="bulleted-list"><li>Postnatal care: Is care of the mother and the newborn after delivery e.g. breast feeding, immunization, family planning …etc.</li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="00cc2983-6cbe-4ba1-b4ed-a81283e7a350" class="toggle"><li><details open=""><summary>MNCH</summary><ul id="eb6f011d-0608-4051-ae6b-0ff71c982811" class="toggle"><li><details open=""><summary>def?</summary><p id="21216947-8eeb-4739-b44c-a2598bd77426" class="">refers to an effective and integrated continuum of care that delivers basic services to mothers, newborns, children and adolescents</p></details></li></ul><ul id="90cce1ff-a530-460c-bb2f-d8a4b12ac56b" class="toggle"><li><details open=""><summary>what are the objectives?</summary><p id="044eed0a-846a-4759-9273-b61f83924d1b" class="">to ensuring the health and survival of</p><ul id="3f10cd49-497e-4df7-9935-e66808165b04" class="bulleted-list"><li>mothers and their infants,</li></ul><ul id="991ff561-d499-4d17-983a-b4cfb86498c1" class="bulleted-list"><li>children in their first five years of life,</li></ul><ul id="b4221426-9ca1-4fce-9ad1-3fa6e187fc2f" class="toggle"><li><details open=""><summary>Adolescents </summary><ul id="8b8e0bf9-79df-46ba-9d0b-5a41a21ff172" class="toggle"><li><details open=""><summary>def adolescents?</summary><ul id="d2f0a316-ea95-4bba-832b-e473e204b5b2" class="bulleted-list"><li>young people between the ages of 10 and 17 years.</li></ul></details></li></ul><ul id="5675901f-3d8d-4e1f-8f77-13188884e84b" class="toggle"><li><details open=""><summary>what&#x27;re the main health issues for adolescents?</summary><ul id="8019e397-3d9a-4433-96e9-b6945c2e4826" class="bulleted-list"><li>Early pregnancy and childbirth</li></ul><ul id="e7c83fdf-076c-43ba-bbf7-b515b1d3d3e6" class="bulleted-list"><li>Violence</li></ul><ul id="d78fd522-251a-4d8a-a1de-9c096e88181a" class="bulleted-list"><li>HIV</li></ul><ul id="d063fe48-3e55-40cb-98a8-b6ec8fab8eb5" class="bulleted-list"><li>Alcohol and drugs</li></ul><ul id="68ee02b3-df2c-4eb9-80b8-2b9744116cc9" class="bulleted-list"><li>Tobacco use</li></ul><ul id="bf6b2a5f-eac9-4ee6-b026-0b4f3468d032" class="bulleted-list"><li>And all the other diseases affecting any age.</li></ul><ul id="ff60af21-cddd-4695-8da5-550a6469439a" class="bulleted-list"><li>access to treatment against infectious diseases (including</li></ul><ul id="5ee6bbe3-8e83-46f5-b5f5-3eb26e252604" class="bulleted-list"><li>antibiotics, anti-malarial drugs).</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="15c6edb5-d9ea-400b-ba94-338f292ab3e3" class="toggle"><li><details open=""><summary>what are the goals?</summary><ol id="629c4739-62cb-4821-8c53-06a2945e3321" class="numbered-list" start="1"><li>better prenatal care.</li></ol><ol id="2bfd697f-8972-44e8-9fdc-d7c45d3a415d" class="numbered-list" start="2"><li>having a skilled health assistant during birth.</li></ol><ol id="e959a328-4da5-486c-9dff-97bc9cd1afff" class="numbered-list" start="3"><li>access to emergency obstetrics and newborn care.</li></ol><ol id="e8abbede-8b7c-468c-97ef-fac45a221bd4" class="numbered-list" start="4"><li>postnatal visits,and antibiotics to treat infections of mothers and newborns.</li></ol><ol id="d2d88caf-d638-44ea-9163-542bd137971c" class="numbered-list" start="5"><li>Adequate nutrition and education to improve health, and good hygiene practices are also key.</li></ol></details></li></ul></details></li></ul><ul id="f193cf77-8244-44b8-82a9-a479d54174a0" class="toggle"><li><details open=""><summary>reproductive health ( part of maternal care)</summary><ul id="0014d27f-9f51-4af1-8330-de8ad0b5dcc2" class="toggle"><li><details open=""><summary>def?</summary><p id="2c865c3e-7eeb-4324-8292-def0495c83d7" class="">It is a state of complete physical, mental and social well-being and not merely absence of disease or infirmity, in all matters relating to reproductive system and to its functions and processes.</p></details></li></ul><ul id="355089d1-5516-41a4-b667-9a7af7277be4" class="toggle"><li><details open=""><summary>explain the concept of RH?</summary><ul id="6fb09753-57f0-4da9-ae88-1ed620815592" class="bulleted-list"><li>It implies that couples have the ability to reproduce and regulate their fertility.</li></ul><ul id="bb5dd63f-e6ba-4a9b-b60b-107c868ceaff" class="bulleted-list"><li>Women are able to go through pregnancy and child birth safely</li></ul><ul id="0e5e4eaf-128b-4bd0-b30c-d7986046b7c6" class="bulleted-list"><li>Outcome of the pregnancy is successful in terms of maternal and infant survival and well-being and</li></ul><ul id="e349dbcb-43a5-48ea-a400-fe17080a4b96" class="bulleted-list"><li>Couples are able to have sexual relations free of the fear of pregnancy and of contracting any disease</li></ul></details></li></ul><ul id="1b7ab70e-3bd2-4301-86d5-a0ab2c26cdd1" class="toggle"><li><details open=""><summary>def RH care?</summary><p id="c866422b-de8d-4825-b71c-8033697df3e5" class="">the constellation of methods, techniques and services that contribute to reproductive health and well-being through preventing and solving reproductive health problems.</p></details></li></ul><ul id="cbf9abf0-0b9a-4e60-9dc2-b6bac265338a" class="toggle"><li><details open=""><summary>what does RH care address?</summary><p id="d14371d3-3dfe-4404-94ba-968d98f807fd" class="">the reproductive processes, functions and system at all stages of life.</p></details></li></ul><ul id="f593f98d-b503-4346-8ebc-41912388cae7" class="toggle"><li><details open=""><summary>what&#x27;re the serves package included in RH care?</summary><ul id="e3c1bc29-80f1-4a8b-8f61-37314dc59c75" class="toggle"><li><details open=""><summary>Comprehensive <mark class="highlight-orange_background">family planning</mark> for females and males.</summary><ul id="df72606f-a542-4b2e-8240-8048596f11f2" class="toggle"><li><details open=""><summary>concept?</summary><p id="58f6f708-ace6-4167-ba33-39f614fb39c7" class="">allows people to attain their <mark class="highlight-orange_background">desired number of children</mark> and determine the <mark class="highlight-orange_background">spacing of pregnancies</mark>. Family planning allows spacing of pregnancies and can delay pregnancies in young women at increased risk of health problems and death from early childbearing. It <mark class="highlight-orange_background">prevents unintended pregnancies</mark>, including those of older women who face increased risks related to pregnancy. It <mark class="highlight-orange_background">is achieved through use of contraceptive methods and the treatment of infertility.</mark></p></details></li></ul><ul id="c811417f-11a3-4783-8e3b-3b9b9db1e2e7" class="toggle"><li><details open=""><summary>benefits?</summary><ul id="6be66a45-6e1c-459d-b40e-ceb626dea0d2" class="bulleted-list"><li>Preventing pregnancy-related health risks in women</li></ul><ul id="cda6e51c-0619-47a7-8716-a7c95d5cf226" class="bulleted-list"><li>A woman’s ability to choose if and when to become pregnant has a direct impact on her health and well-being.</li></ul><ul id="610e16ec-87f9-456d-a28f-232b28353be6" class="bulleted-list"><li>Family planning enables women who wish to limit the size of their families to do so since evidence suggests that women who have more than 4 children are at increased risk of maternal mortality.</li></ul><ul id="3df68f5a-e8ec-4238-be09-57ea0a35e895" class="bulleted-list"><li>Reducing infant mortality since infants of mothers who die as a result of giving birth also have a greater risk of death and poor health.</li></ul><ul id="ef5579ee-fb86-4731-b6af-a3b731b3ae2e" class="bulleted-list"><li>Helping to prevent HIV/AIDS since Family planning reduces the risk of unintended pregnancies among women living with HIV, resulting in fewer infected babies and orphans. In addition, male and female condoms provide dual protection against unintended pregnancies and against STIs including HIV.</li></ul></details></li></ul><ul id="387c1c8d-6479-411b-b18f-87be2d180c15" class="toggle"><li><details open=""><summary>who provides fam planning?</summary><p id="b811884b-28cd-43c4-84d2-57008a4bd81e" class="">midwives and other trained health workers.</p><p id="4cf7114b-eba4-487e-bcc6-5c0f93985d43" class="">Midwives are trained to provide (where authorized) locally available and culturally acceptable contraceptive method and also provide counseling and some family planning methods, for example pills and condoms. But for methods such as sterilization, women and men need to be referred to a clinician.</p></details></li></ul><ul id="731f2651-38c6-42e4-bf1e-5e37b664c9d0" class="toggle"><li><details open=""><summary>UNFPA?</summary><ul id="516cbc40-4a80-4dd7-8d50-49b2bbbe9d62" class="toggle"><li><details open=""><summary>what is it?</summary><p id="3ec7ad2a-4e8b-44d9-a5f9-60c0cff2bf2d" class="">United Nation Fund for Population Activity</p></details></li></ul><ul id="8b51f65f-c188-4981-a9e0-a54167731b36" class="toggle"><li><details open=""><summary>the goals?</summary><p id="eae8b45e-e01e-4352-9db9-41d4439ba67d" class="">reduce maternal death.</p></details></li></ul><ul id="3ab14cfd-ff2a-47c6-93bd-85cbbe8842ad" class="toggle"><li><details open=""><summary>how does it achieve such goal?</summary><ul id="c07f940d-c795-4815-b27b-5c03a4430eda" class="bulleted-list"><li>UNFPA supports programs to strengthen basic and comprehensive Emergency Obstetric and Neonatal Care services .It increase availability of family planning commodities and support training of professional and village midwives as well as programs for prevention and management of Fistula and HIV.</li></ul><ul id="1c9a210a-1ab0-4e4f-879f-a46e2a73e177" class="bulleted-list"><li>Major support has been provided to rehabilitate and equip state midwifery schools and to train hundreds of Village Midwives for deployment for vulnerable groups, particularly in the rural, poor, and displaced communities.</li></ul></details></li></ul></details></li></ul><ul id="dad19d86-8ea0-44ff-8ff4-dde060731430" class="toggle"><li><details open=""><summary>contraceptive methods?</summary><ol id="89d1db43-9fa6-4d66-aa3d-5f7cfac4f59c" class="numbered-list" start="1"><li>Long-acting reversible contraception, such as an implant, or an intra uterine device.</li></ol><ol id="c8dad563-abb1-4e43-aab6-00f6c040cc4e" class="numbered-list" start="2"><li>Hormonal contraception such as contraceptive pills – “the pill”, the injection and vaginal rings.</li></ol><ol id="d775ef8b-c768-4807-838f-b3959487dbff" class="numbered-list" start="3"><li>Barriers methods, such as condoms and diaphragms.</li></ol><ol id="aa6db4ac-5761-4a42-b4ca-572d9e10ef7e" class="numbered-list" start="4"><li>Natural Family Planning Methods.</li></ol><ol id="bcb08acd-6631-43a2-af5d-93390e595227" class="numbered-list" start="5"><li>Emergency contraception.</li></ol><ol id="7e6a29ff-0c72-4141-8c0a-993ba0117a9f" class="numbered-list" start="6"><li>Permanent contraception, such as vasectomy and tubal ligation.</li></ol></details></li></ul></details></li></ul><ul id="06ef9899-38fd-4010-bcce-a3e71680f7f8" class="bulleted-list"><li><mark class="highlight-orange_background">Maternal health</mark> care including safe motherhood and pre and post abortion care for complications.</li></ul><ul id="fc3f655a-982e-4059-95a9-c41513f8b5a6" class="bulleted-list"><li>Infant Health Care.</li></ul><ul id="931d0801-e7fc-49fe-91e9-c26a479076ba" class="bulleted-list"><li><mark class="highlight-orange_background">Management of reproductive health</mark> related problems of adolescents.</li></ul><ul id="cfc4454b-5002-4fa0-9487-c45eadadc5d7" class="bulleted-list"><li>Management of other reproductive health related problems of women.</li></ul><ul id="2470130c-08b9-4d84-accc-d3422348b4ad" class="bulleted-list"><li><mark class="highlight-orange_background">Prevention and management of STIs</mark> and HIV/AIDS.</li></ul><ul id="24f8eece-1ab6-4024-a7be-ab8eb8eb5c75" class="bulleted-list"><li>Management of infertility.</li></ul><ul id="1caf249b-1342-4529-a703-35520c03922e" class="bulleted-list"><li>Detection of breast and cervical cancers.</li></ul><ul id="bc6ef315-db53-4c81-92eb-8b2cee521721" class="bulleted-list"><li>Management of reproductive health related issues of men.</li></ul></details></li></ul></details></li></ul></div></article></body></html>

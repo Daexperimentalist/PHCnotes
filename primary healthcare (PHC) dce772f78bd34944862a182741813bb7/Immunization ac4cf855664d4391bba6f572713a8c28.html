@@ -1,0 +1,629 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Immunization</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ac4cf855-664d-4391-bba6-f572713a8c28" class="page sans"><header><h1 class="page-title">Immunization</h1></header><div class="page-body"><ul id="e9534b29-e00a-4170-8260-f97c70312773" class="toggle"><li><details open=""><summary>def?</summary><p id="80cddf8c-0631-4278-91c9-7978511fcb5f" class="">Is the process whereby a person is made immune or resistant to an infectious disease, typically by the administration of a vaccine.</p></details></li></ul><ul id="9bd77ea6-5f7f-4a2c-965f-a79b4ef005bc" class="toggle"><li><details open=""><summary>history</summary><ul id="b9a2ccbd-09ed-4c9e-b106-8b9e25d84018" class="bulleted-list"><li>Edward Jenner: An English Surgeon born in 1749. is considered the founder of vaccinology in the West. In 1796 experimented by inoculating a 13 years boy with the Cowpox, followed by conventional Smallpox inoculation. In 1798, the first smallpox vaccine was developed. </li></ul><ul id="32453961-a7bf-431f-8236-24d3db28ad37" class="bulleted-list"><li>Louis Pasteur’s experiments spearheaded the development of live attenuated cholera vaccine and inactivated anthrax vaccine in humans (1897 and 1904, respectively).</li></ul></details></li></ul><ul id="a42960ea-00b3-41e6-8106-0be9b9f85504" class="toggle"><li><details open=""><summary>importance?</summary><ul id="dbc1c18e-7eb4-4dce-968d-20f965e94fb2" class="bulleted-list"><li>protect children from developing potentially serious diseases</li></ul><ul id="07211494-98d7-4c0a-865a-0608fd8169ee" class="bulleted-list"><li>protect the community by reducing the spread of infectious diseases</li></ul></details></li></ul><ul id="7e953161-115b-461f-b36e-5fa8308fc27a" class="toggle"><li><details open=""><summary>immunity</summary><ul id="bf6d3387-08a5-425a-8581-c909de855383" class="toggle"><li><details open=""><summary>types?</summary><ul id="483ce971-6906-4119-bc6f-b8e261322324" class="toggle"><li><details open=""><summary>active</summary><p id="8114b508-0191-414e-9f6a-9a06217d9f48" class="">is that which an individual develops as a result of infection e.g. measles or following sub clinical infection or following specific immunization.</p></details></li></ul><ul id="129822c4-8443-4cd4-8bd7-781006474447" class="toggle"><li><details open=""><summary>passive</summary><p id="759d29e4-f9b7-44ed-8c63-9571445bd65d" class="">is that which passes from the mother to the child through the placenta, and through breast milk giving the child a ready-made antibodies, such as an immunized mother from Measles.</p></details></li></ul></details></li></ul></details></li></ul><ul id="274cd450-1439-4e8a-9e22-334eeb65f80a" class="toggle"><li><details open=""><summary>vaccines ( Immunizing agents)</summary><ul id="0a344702-dbb7-4ff1-af51-b0a9a6eec2e5" class="toggle"><li><details open=""><summary>def?</summary><p id="1f178ebc-fe3d-4ed6-b219-b718619a7f56" class="">Is a substance that stimulates the body`s immune response. It is a biological preparation that improves immunity to a particular disease</p></details></li></ul><ul id="95fb2edb-afe0-4918-9523-58d626ca1a7d" class="toggle"><li><details open=""><summary>types?</summary><ul id="5d31561c-2f3c-4155-a308-ab644608b0e1" class="bulleted-list"><li><mark class="highlight-orange_background">live attenuated</mark> e.g. BCG.</li></ul><ul id="d754231f-93e7-4f86-af56-f9ccdad51e4c" class="bulleted-list"><li><mark class="highlight-orange_background">Inactivated or killed vaccines</mark> e.g. Pertussis.</li></ul><ul id="9ca60487-a858-486f-a032-ee316637be2b" class="bulleted-list"><li><mark class="highlight-orange_background">Toxoids</mark> e.g. Diphtheria; tetanus.</li></ul><ul id="2c09a688-64a8-4f41-9891-affcec2d622b" class="bulleted-list"><li><mark class="highlight-orange_background">Polysaccharide and polypeptide</mark> (cellular fraction) vaccines. They are prepared from extracted cellular fractions e.g. meningococcal vaccine from the polysaccharide antigen of the cell wall.</li></ul><ul id="365af5fe-d41c-4597-bb87-a82e9f31cf92" class="bulleted-list"><li><mark class="highlight-orange_background">Surface antigen</mark> (recombinant) vaccines. It is prepared by cloning HBsAg gene in yeast cells where it is expressed. HBsAg produced is then used for vaccine preparations.</li></ul></details></li></ul><ul id="1d1a08c7-a161-4e8b-ad30-2e3fb5ce3c8c" class="toggle"><li><details open=""><summary>EPI?</summary><ul id="8571ac58-e9d5-4334-b351-4c98bb1f5023" class="toggle"><li><details open=""><summary>what is it?</summary><p id="2b142470-3c33-4f58-ae78-c08409d91085" class="">a World Health Organization program with the goal to make vaccines available to all children which is initiated in 1974.</p></details></li></ul><ul id="84ebf191-3f26-4181-a988-748206bc4b10" class="toggle"><li><details open=""><summary>history</summary><p id="c5614d86-6bbb-4c71-9755-4da374023e3e" class=""><mark class="highlight-orange_background">In Sudan EPI was launched in 1976</mark>. <mark class="highlight-orange_background">It introduced vaccines for TB ( BCG)</mark>, Diphteria Pertussis , Tetanus(DPT), <mark class="highlight-orange_background">poliomylites</mark> (OPV). with <mark class="highlight-orange_background">measles vaccine lastly introduced in 1985</mark>. Early <mark class="highlight-orange_background">2005 the program introduced Hepatitis B</mark>. Early <mark class="highlight-orange_background">2008 Penta vaccine was introduced </mark>(DPT+Hep.B+Haem.I.B). <mark class="highlight-orange_background">Rota vaccine was introduced in Sudan in </mark><mark class="highlight-orange_background"><a href="http://2011.in/">2011</a></mark><a href="http://2011.in/">.In</a> <mark class="highlight-orange_background">2013 PCV13</mark> was introduced (include pneumonia, meningitis and febrile bacteraemia, as well as otitis media, sinusitis and bronchitis.) .In <mark class="highlight-orange_background">2015 a new shot(i/m) of polio</mark> vaccine was introduced to be given at 14 weeks in addition to the routine oral polio vaccine(OPV). In <mark class="highlight-orange_background">2016 meningococcal A conjugate vaccine</mark> was introduced to be given at 9 month.</p></details></li></ul><ul id="0781d6ea-a5f1-4610-8766-11a58d68eab7" class="toggle"><li><details open=""><summary>dosing?</summary><ul id="014dfdd2-bdb8-45a6-b656-3e8898f3406a" class="bulleted-list"><li><strong>At birth</strong> BCG and Polio (OPV)(zero dose)</li></ul><ul id="528b9cb2-253f-4121-bbf7-941c503573e3" class="bulleted-list"><li><strong>6 weeks</strong> PCV13 ( DPT + Hepatitis B +Haem.Influenza B )+ OPV(1) +Rota</li></ul><ul id="d0ff4558-da26-4741-9d7a-940ecfba9100" class="bulleted-list"><li><strong>10 weeks</strong> PCV13 ( DPT + Hepatitis B +Haem.Influenza B )+ OPV(2) +Rota</li></ul><ul id="41888226-946a-4bfe-9124-a160bb4b071e" class="bulleted-list"><li><strong>14 weeks</strong> PCV13 (DPT + Hepatitis B +Haem.Influenza B )+ OPV(3) + Polio (i/m)</li></ul><ul id="3acb9249-5c5d-4aa8-9ff3-9ddc5a54d5ea" class="bulleted-list"><li><strong>9 month</strong> Measles + meningococcal A conjugate</li></ul><ul id="6587d039-544b-461a-9dbd-03c30b0ac69d" class="bulleted-list"><li><strong>18 month</strong> Measles (Booster)</li></ul><p id="c24db174-afd9-410e-a932-60c2f7b7d6c8" class="">
+Pentavalent vaccine = D( Diphteria) +P (Pertussis) + T (Tetanus) + Hepatitis B +Haemophilius Influenza B</p><p id="154a10ae-a499-49f5-bc29-5e70e0050fc4" class="">Rota vax = First dose can be given between 6-15 week. (Never give first dose of Rota vaccine after 15 weeks (3 and half month). Never give second dose after 32 weeks (8 month) because it can lead to Intussusception.</p></details></li></ul><ul id="c121201e-4b52-4364-85bb-be1eb990e1b1" class="toggle"><li><details open=""><summary>what&#x27;s the NID ( national immunization day)?</summary><p id="bf73eafe-b78f-4e3c-8337-abe5b3ef6181" class="">These are days selected for the booster doses of certain diseases which is at the target of eradication e.g. NIDs for poliomyelitis.</p></details></li></ul></details></li></ul><ul id="84fff20d-2ff0-442a-aaef-2cab4b649c1f" class="toggle"><li><details open=""><summary>what&#x27;re the advantages of vaccine combinations?</summary><ol id="3f3acbbb-b5f4-41b5-99ef-cd57012062e8" class="numbered-list" start="1"><li>Facilitate response i.e. no impairment of effectiveness.</li></ol><ol id="7e2aff7a-a4d5-451d-bb27-088903a5cc7e" class="numbered-list" start="2"><li>Simplifies vaccine schedules.</li></ol><ol id="4e746896-6263-4ec8-b320-b33ecd78b12f" class="numbered-list" start="3"><li>Facilitate administration of multiple vaccines.</li></ol><ol id="d72e546d-6f5b-493e-ad8e-8b876b1ffde6" class="numbered-list" start="4"><li>Reduce number of necessary injections.</li></ol><ol id="dcd7799b-3f84-49a0-aaf6-508e93ee26b7" class="numbered-list" start="5"><li>Economic</li></ol><ol id="c201ce98-776b-4cda-abf0-926d1c63caed" class="numbered-list" start="6"><li>Reduce number of visits.</li></ol><ol id="5eba07e7-caea-4528-bec8-8d48b087f1f6" class="numbered-list" start="7"><li>Increase coverage rate e.g. hard to reach groups.</li></ol></details></li></ul><ul id="a78e94b0-df11-4ece-ac0b-0545a0c6bc8c" class="toggle"><li><details open=""><summary>precautions during routine vaccination?</summary><ul id="679df1ec-ee97-45c0-a172-92dd18378261" class="bulleted-list"><li>Moderate or severe acute illness.</li></ul><ul id="2bb530c9-d345-4017-b55d-812f49f63efa" class="bulleted-list"><li>Temp. of ≥ 40 within 48 hrs of a prior dose.</li></ul><ul id="15157032-27e4-4039-9d37-0f2ec7f5091d" class="bulleted-list"><li>Unwell or fever on day of vaccination.</li></ul></details></li></ul><ul id="8da26300-0f7b-4d53-94a7-52c3e91d80b1" class="toggle"><li><details open=""><summary>what are some of the contraindications for immunization in children?</summary><ul id="aa216fbf-d34a-4cc3-83c7-8d808230a4b6" class="bulleted-list"><li>Anaphylactic or severe reaction.</li></ul><ul id="ba2e320e-98e6-4644-b82e-d321822a223c" class="bulleted-list"><li>Immune – compromised child.</li></ul><ul id="3d9449b7-5aeb-4415-baac-1b6ba5ca8fe1" class="bulleted-list"><li>With high dose steroids .</li></ul><ul id="7e45687d-244c-4703-82a8-bbf385af1e11" class="bulleted-list"><li>Unstable neurological illness</li></ul></details></li></ul><ul id="b4aea2b7-6af4-41b2-b3d5-5aa019564825" class="toggle"><li><details open=""><summary>SPECIAL CIRCUMSTANCES to be taken in consideration</summary><ul id="dbced502-6b4b-4f86-bc79-7d7a3219e9c0" class="toggle"><li><details open=""><summary>preterm</summary><ul id="f100c815-6d1a-4ed0-96ac-4892daf811ef" class="bulleted-list"><li>Prematurity <mark class="highlight-orange_background">does not increase the incidence of vaccine-related adverse events</mark>. So Vaccination is according to routine schedule. One <mark class="highlight-orange_background">exception is Hepatitis B Virus</mark>.</li></ul><ul id="7403a2cb-d76f-44d3-91c6-3ae758618d91" class="bulleted-list"><li>Premature <mark class="highlight-orange_background">low birth weight (&lt;2kg) may not respond well to vaccination at birth</mark>. Therefore, doses given to <mark class="highlight-orange_background">infants &lt;2kg should not be counted towards the primary series.</mark></li></ul></details></li></ul><ul id="84d61725-fa42-495a-8058-77018a65373b" class="toggle"><li><details open=""><summary>children with HIV/ low immunity</summary><p id="00cfd862-d13a-4d4a-be8d-56647144aa6c" class=""><mark class="highlight-orange_background">Should receive the standard vaccines but live bacterial &amp; viral Vaccines not given in significant immuno-suppression</mark>. Children who are HIV positive or unknown HIV status with symptoms consistent with HIV should not be vaccinated with BCG.</p></details></li></ul></details></li></ul><ul id="a703cc02-3cd4-47d4-8b08-df478a8bf877" class="toggle"><li><details open=""><summary>Tetanus vaccine and maternal health</summary><ul id="eaa21e26-10c4-4be1-8232-9d12876924ab" class="bulleted-list"><li>Tetanus can be prevented through immunization with tetanus-toxoid-containing vaccines (TTCV)</li></ul><ul id="c5afae1b-967f-4c06-af92-5d7091201d0e" class="bulleted-list"><li>Neonatal tetanus can be prevented by immunizing women of reproductive age with TTCV, either during pregnancy or outside of pregnancy.</li></ul><ul id="13192dbd-1658-4ce0-aec6-b37852c81ab1" class="toggle"><li><details open=""><summary>what&#x27;s a maternal anti-tetanus?</summary><p id="47a71627-996d-492d-929a-8351cc4acaa2" class="">is a supplement to the routine immunization activities.</p><ul id="9116dc2b-3f16-466b-9a8e-51f997e54e0f" class="bulleted-list"><li>It is routinely given to pregnant women, usually during antenatal care contacts.</li></ul><ul id="49294b40-9e34-4bd2-aa37-a3c0c3b73dc8" class="bulleted-list"><li>In Sudan 2 doses are given one month apart in the first pregnancy early in second trimester,</li></ul><ul id="8b8879fc-5f7d-4e4d-930b-f0dcb60b696b" class="bulleted-list"><li>Then 1 dose in each subsequent pregnancy to a total of five doses</li></ul></details></li></ul></details></li></ul></details></li></ul><ul id="e04f27c6-3973-4afe-ac7f-bfc7f8e99f07" class="toggle"><li><details open=""><summary>cold chain?</summary><ul id="38bda212-5984-450d-9ee2-5e5792344546" class="toggle"><li><details open=""><summary>def?</summary><p id="99724704-7387-4bc7-8163-c29decf82aaf" class="">is a system of storage and transport of vaccines at a low temperature from the manufacturer to the actual vaccination site.</p></details></li></ul><ul id="b9d29dd1-22da-472d-91e5-13af0636da83" class="toggle"><li><details open=""><summary>what&#x27;s for?</summary><ul id="870faba7-78bf-4cab-8095-b74e06afa68c" class="bulleted-list"><li>Among the vaccines, <mark class="highlight-orange_background">polio</mark> is the most sensitive to heat, requiring storage at <mark class="highlight-orange_background">minus 20 degree</mark> C. Also <mark class="highlight-orange_background">measles</mark> vaccines must be stored in the freezer compartment.</li></ul><ul id="b1384376-ad0d-427f-83e9-cf33e8a99860" class="bulleted-list"><li>Vaccines which must be stored in the <mark class="highlight-orange_background">COLD PART but never allowed to freeze </mark>are: <mark class="highlight-orange_background">DPT, tetanus toxoid, DT, BCG and diluents.</mark></li></ul></details></li></ul></details></li></ul><ul id="8a2ca8ae-0d13-4fb3-b460-0fa9d1f4816b" class="toggle"><li><details open=""><summary>Poliomyelitis</summary><ul id="d1feec47-ecdf-42dc-8397-9b2a6565e288" class="toggle"><li><details open=""><summary>about</summary><ul id="371795bf-1cc1-407f-9458-419fff2b20de" class="bulleted-list"><li>Poliomyelitis (polio) is a highly infectious disease mainly affects children below 5 years of age caused by a virus that enters the body through the mouth and multiplies in the intestine. It invades the nervous system and can cause total paralysis in a matter of hours.</li></ul><ul id="3f12efa1-2571-465d-b192-4524929a804b" class="toggle"><li><details open=""><summary>mirco stuff?</summary><ul id="390b1412-7e26-4aa5-8371-cf0f4741ec36" class="bulleted-list"><li>Poliomyelitis is caused by a human enterovirus of the Picornaviridae family. The virus is composed of a single-stranded, positive-sense RNA genome and a protein capsid. The 3 serotypes of poliovirus are antigenically distinct. Of the 3 types of wild polio virus (type 1-2 and 3)</li></ul><ul id="988265c5-7158-410f-85c7-21646932dd46" class="bulleted-list"><li>Type 2 which is the wildest one has been successfully eradicated since 1999 but was declared eradicated in September 2015, and case numbers of Type 3 wild poliovirus are down to the lowest-ever levels and has not been detected anywhere in the world since November 2012</li></ul><ul id="ea3abad7-9832-4104-91db-0d036749dbcc" class="bulleted-list"><li>There are just 3 countries which have never stopped transmission of polio Afghanistan, Nigeria and Pakistan.</li></ul><p id="3ca528a2-bd0b-4b73-9479-ead0230dfc28" class="">
+</p></details></li></ul></details></li></ul><ul id="001cc3ba-3363-44ee-9002-e1c50a456064" class="toggle"><li><details open=""><summary>vaccine</summary><ul id="6e58c1ca-8b56-4edc-8439-e83b18bf4133" class="toggle"><li><details open=""><summary>types?</summary><ul id="088720a3-46c1-4fcc-b203-497b3b35807c" class="bulleted-list"><li>One type is the inactivated vaccine, which contains no live poliovirus.</li></ul><ul id="f158b78d-b68b-4f84-9355-2d3d6f5779bd" class="bulleted-list"><li>The other type is the oral vaccine, which contains live but weakened poliovirus.</li></ul></details></li></ul><ul id="2bdf0b9f-8557-414d-9a7f-2b58d58e16e8" class="toggle"><li><details open=""><summary>which vaccine was recommended for polio eradication?</summary><ul id="c1f69399-d1da-460c-89ec-f4ad3e6657ac" class="bulleted-list"><li>Oral polio vaccine (OPV) is safe, effective, inexpensive, and the recommended vaccine for the global effort to eradicate poliomyelitis.</li></ul><ul id="2497e89b-5105-4298-88cd-7e9364be58ef" class="bulleted-list"><li>Because of its high levels of immunity, especially in the intestines, it is the only vaccine proven to stop transmission of the virus in developing countries. OPV is easy to deliver, it drops from a vial into the mouth of the child and can be administered by volunteers as well as trained health workers.</li></ul></details></li></ul><ul id="12ae72c3-570c-4329-90f7-abcd6237a535" class="toggle"><li><details open=""><summary>why is polio eradicable?</summary><ul id="0357fcdf-a193-4bb6-8655-8c09f74c5faf" class="bulleted-list"><li>Because it cannot survive long outside the human body,</li></ul><ul id="5d94fe08-ce79-457a-9110-1af06070c9e2" class="bulleted-list"><li>There is no intermediate host</li></ul><ul id="1d76103c-7df5-482e-9865-126e74cbae3b" class="bulleted-list"><li>The availability of an inexpensive and effective immunization mechanism, oral polio vaccine (OPV).</li></ul></details></li></ul><ul id="cdb1cf98-47c2-4619-9207-75ee10b33aba" class="toggle"><li><details open=""><summary>what&#x27;re the strategies for eradicating polio?</summary><ol id="08a32b3c-1af8-47fd-882e-8955986ce01b" class="numbered-list" start="1"><li>Routine immunization of infants with OPV in the first year of life with one i/m shot at week 14.</li></ol><ol id="23a8ec3a-8f64-4eea-bc7c-1501242ff79e" class="numbered-list" start="2"><li>Supplementary immunization activities, national immunization days and sub-national immunization days (NIDs and SNIDs), during which all children under five years of age are vaccinated, regardless of whether they have been vaccinated before</li></ol><ol id="628e9667-80be-4303-b217-705e90946df6" class="numbered-list" start="3"><li>Campaigns, to ensure that every child is vaccinated and to break the final chains of transmission.</li></ol><ol id="f5e8d5f7-5227-4212-81fd-39ef3e735819" class="numbered-list" start="4"><li>Effective disease surveillance for acute flaccid paralysis (AFP) to find and investigate every newly paralyzed child to determine if poliomyelitis is the cause of the paralysis.</li></ol></details></li></ul><ul id="69441117-69c6-4cca-953f-e657b727f0bc" class="toggle"><li><details open=""><summary>story of polio in Sudan?</summary><ul id="e296502e-353a-43ab-9ee3-e917253e1fb4" class="bulleted-list"><li>Activities was started in 1994 through the NID, the last confirmed case of polio was detected in 2001 in the Unity State in southern Sudan but unfortunately the NID were stopped since 2003 due to global shortage of fund.</li></ul><ul id="746ba9ff-d4a3-4fcb-9ef8-01bb1711a14a" class="bulleted-list"><li>In May 2004 a case was reported at the border village West Darfur State which was proved to be a North Nigerian origin .Then imported Polio virus spreads rapidly &amp; 18 states were re-infected and as a result, the cases amounted to 127 confirmed polio cases by the end of 2004 &amp; 26 cases in 2005. To stop this outbreak a series of NIDs were re-continued through 2004-2005 and it continues.</li></ul><ul id="80821ddc-bbed-4317-bfe0-39ae9929508a" class="bulleted-list"><li>Then the last reported polio case was on the 15th March 2009 and it was announced in 10 August 2015 that Sudan is free from the disease.</li></ul><ul id="45d9e224-716c-499f-8b09-b19ef873ad86" class="bulleted-list"><li>But on 10 August 2020 it re occurs circulating vaccine –derived poliovirus type 2(cVDPV2) .One case( a child of 48 month) in South Darfour coming from Chad(7 march 2020) and the second case(a child of 36 month) in Gadarif coming from Ethiopia(1 April 2020).</li></ul><p id="3983ecc2-e56c-4492-9a04-0d2ef5a64571" class="">Then eleven additional cases were reported as confirmed cases in Red Sea, West Darfur, White Nile, River Nile,&amp; Gezira,</p><ul id="9d559b7a-9e77-41fe-9e69-c30c25cfa238" class="bulleted-list"><li>Hence between 9 August &amp; 26 August 2020 there has been a total of 13 positive case reported.</li></ul><ul id="10411303-2119-4f2c-883a-396841d9de7e" class="bulleted-list"><li>So the WHO assess the risk of further international spread across Central Africa and the Horn of Africa. So it advices that the prone countries should strengthen the surveillance for Acute Flaccid Paralysis in order to detect any new virus importation and to facilitate a rapid response. So the Sudan started again the NIDs to minimize the consequences of any new virus introduction.</li></ul></details></li></ul></details></li></ul><ul id="d11a02c6-4756-4bf8-a0e5-4c66287ce28d" class="toggle"><li><details open=""><summary>what&#x27;re vaccine-derived polioviruses?</summary><ul id="a8637861-cf08-41a6-b35f-c56f34828b81" class="bulleted-list"><li>Rare strains of poliovirus that have genetically mutated from the strain contained in the oral polio vaccine.</li></ul><ul id="a4d81907-ab85-4b79-b58c-c32bd97be142" class="toggle"><li><details open=""><summary>further stuff</summary><ul id="9047c627-3550-4053-bdbf-869b9eb9530a" class="bulleted-list"><li>The weakened vaccine-virus replicates in the intestine for a limited period, thereby developing immunity by building up antibodies. During this time, the vaccine-virus is also excreted. In areas of inadequate sanitation, this excreted vaccine-virus can spread in the immediate community (and this can offer protection to other children through ‘passive’ immunization), before eventually dying out. On rare occasions, if a population is seriously under-immunized, an excreted vaccine-virus can continue to circulate for an extended period of time. The longer it is allowed to survive, the more genetic changes it undergoes.</li></ul><ul id="61c6c04c-5c71-4b98-a6b6-4347022443d9" class="bulleted-list"><li>In very rare instances, the vaccine-virus can genetically change into a form that can paralyse – this is what is known as a circulating vaccine-derived poliovirus (cVDPV). It takes a long time(at least 12 months) for a cVDPV to occur when allowed to circulate in an un- or under-immunized</li></ul><ul id="fa241706-cd85-4b8a-867d-131ad512dc85" class="bulleted-list"><li>Circulating VDPVs occur when routine or supplementary immunization activities (SIAs) are poorly conducted and a population is left susceptible to poliovirus, whether from vaccine-derived or wild poliovirus.</li></ul><ul id="3c949486-8af6-452d-bed1-ea12810b5314" class="bulleted-list"><li>Hence, the problem is not with the vaccine itself, but low vaccination coverage. If a population is fully immunized, they will be protected against both vaccine-derived and wild polioviruses.</li></ul></details></li></ul></details></li></ul></details></li></ul></div></article></body></html>
